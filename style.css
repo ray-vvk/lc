@@ -143,10 +143,6 @@ main section {
   align-items: start
 }
 
-aside {
-  max-width: 100%;
-}
-
 .section-label {
   color: var(--light-blue);
   font-weight: 700;
@@ -230,7 +226,6 @@ figcaption {
   width: 100%;
   border-collapse: collapse;
   margin: 1.4rem 0;
-  min-width: 40rem;
 }
 
 .comparison th, .comparison td {
@@ -247,7 +242,6 @@ figcaption {
 
 .table-overflower {
   overflow: scroll;
-  max-width: 92vw;
 }
 
 .cta {
@@ -297,6 +291,16 @@ footer a {
   color: #fff
 }
 
+@media(max-width:1000px) {
+  .table-overflower {
+    max-width: 92vw;
+  }
+
+  .comparison {
+    min-width: 60rem;
+  }
+}
+
 @media(max-width:850px) {
   .grid {
     grid-template-columns: 1fr
@@ -317,4 +321,5 @@ footer a {
   .footer-flex-left {
     display: inline-block;
   }
+
 }
