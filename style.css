@@ -51,19 +51,25 @@ a {
   background: var(--dark-blue);
   color: #fff;
   padding: .65rem 0;
-  font-size: .93rem
-}
+  font-size: .93rem;
+  height: 4rem;
 
-.topbar .wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center
-}
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    height: 100%;
+    .links {
+      display: flex;
+      gap: 2rem;
+    }
+  }
 
-.topbar a {
-  color: #fff;
-  text-decoration: none
+  a {
+    color: #fff;
+    text-decoration: none
+  }
 }
 
 header {
