@@ -247,7 +247,7 @@ figcaption {
 
 .table-overflower {
   overflow: scroll;
-  max-width: 100%;
+  max-width: 92vw;
 }
 
 .cta {
