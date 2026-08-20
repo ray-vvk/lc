@@ -72,6 +72,10 @@ a {
   }
 }
 
+.hamburger .hamburger-box {
+  display: none;
+}
+
 header {
   padding: 3.2rem 0 2rem;
   background: linear-gradient(180deg, #f8fbff 0%, #fff 100%)
@@ -308,6 +312,14 @@ footer a {
 }
 
 @media(max-width:850px) {
+  .hamburger .hamburger-box {
+    display: block;
+  }
+
+  .topbar .wrap .links {
+    display: none;
+  }
+
   .grid {
     grid-template-columns: 1fr
   }
@@ -316,16 +328,15 @@ footer a {
     grid-template-columns: 1fr
   }
 
-  .topbar .wrap {
-    display: block
-  }
-
   main section {
     padding: 3rem 0
   }
 
   .footer-flex-left {
     display: inline-block;
+    .virovek-logo-div {
+      padding-bottom: 1rem;
+    }
   }
 
 }

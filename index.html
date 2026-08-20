@@ -11,7 +11,8 @@
   <!-- Replace with the final production URL before publishing -->
   <link rel="canonical" href="https://virovek.com/resources/fluorescent-capsid-labeled-aav-vs-gfp/">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/hamburgers.css" />
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="article title goes here!!!! ">
@@ -48,6 +49,11 @@
   <div class="topbar">
     <div class="wrap">
       <div>Virovek Subdomain Name</div>
+      <button class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
       <div class="links">
         <div>
           <a href="https://store.virovek.com/" target="_blank" rel="noreferrer">Product Catalog</a>
@@ -383,12 +389,12 @@
   <footer>
     <div class="wrap">
       <div class="footer-flex-left">
-        <div>
+        <div class="virovek-logo-div">
           <img src="images/Virovek-Logo-Web-300x103.png" class="virovek-logo" />
         </div>
         <div>
           <strong>Virovek Inc.</strong><br>
-          Advanced AAV manufacturing and capsid-engineering solutions<br>
+          Advanced AAV manufacturing and capsid engineering solutions<br>
           <a href="https://virovek.com/" target="_blank" rel="noreferrer">virovek.com</a> · <a
             href="mailto:info@virovek.com">info@virovek.com</a>
         </div>
@@ -398,6 +404,8 @@
         members at Virovek, because we care enough to put in the effort ourselves.</p>
     </div>
   </footer>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>
