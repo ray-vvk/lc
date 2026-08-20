@@ -17,7 +17,7 @@ export default function Topbar() {
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
-        </button>
+        </button> 
 
         {/* links when desktop */}
         <div className="links">
