@@ -60,10 +60,15 @@ a {
     gap: 1rem;
     align-items: center;
     height: 100%;
+
     .links {
       display: flex;
       gap: 2rem;
     }
+  }
+
+  .links.mobile-menu-hidden {
+    display: none;
   }
 
   a {
@@ -316,8 +321,34 @@ footer a {
     display: block;
   }
 
-  .topbar .wrap .links {
-    display: none;
+  .topbar {
+    position: relative;
+  }
+
+  .topbar .wrap {
+
+    .links {
+      display: none;
+    }
+
+    .links.mobile-menu {
+      display: block;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      background-color: var(--dark-blue);
+      width: 100%;
+      padding-bottom: 2rem;
+      text-align: right;
+
+      .wrap {
+        display: block;
+      }
+    }
+
+    .links.mobile-menu-hidden {
+      display: none;
+    }
   }
 
   .grid {
@@ -334,6 +365,7 @@ footer a {
 
   .footer-flex-left {
     display: inline-block;
+
     .virovek-logo-div {
       padding-bottom: 1rem;
     }

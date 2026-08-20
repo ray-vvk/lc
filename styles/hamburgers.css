@@ -5,6 +5,10 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+:root {
+  --hamburger-width: 28px;
+}
+
 .hamburger {
   font: inherit;
   display: inline-block;
@@ -32,7 +36,7 @@
 .hamburger-box {
   position: relative;
   display: inline-block;
-  width: 40px;
+  width: var(--hamburger-width);
   height: 24px
 }
 
@@ -44,7 +48,7 @@
 
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
   position: absolute;
-  width: 40px;
+  width: var(--hamburger-width);
   height: 4px;
   transition-timing-function: ease;
   transition-duration: .15s;

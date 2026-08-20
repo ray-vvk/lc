@@ -121,26 +121,30 @@ function App() {
             </div>
             <div className="table-overflower">
               <table className="comparison">
-                <tr>
-                  <th>Table header</th>
-                  <th>Table header</th>
-                  <th>Table header</th>
-                </tr>
-                <tr>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                </tr>
-                <tr>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                </tr>
-                <tr>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th>Table header</th>
+                    <th>Table header</th>
+                    <th>Table header</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                  </tr>
+                  <tr>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                  </tr>
+                  <tr>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <figcaption><strong>Table 1.</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
@@ -165,22 +169,24 @@ function App() {
             <aside>
               <div className="table-overflower">
                 <table className="comparison">
-                  <tr>
-                    <th>Table header</th>
-                    <th>Table header</th>
-                  </tr>
-                  <tr>
-                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  </tr>
-                  <tr>
-                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  </tr>
-                  <tr>
-                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                    <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                  </tr>
+                  <thead>
+                    <tr>
+                      <th>Table header</th>
+                      <th>Table header</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    </tr>
+                    <tr>
+                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
               <figcaption><strong>Table 2.</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
