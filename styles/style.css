@@ -54,6 +54,16 @@ a {
   font-size: .93rem;
   height: 4rem;
 
+  .logo-and-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .virovek-logo-div {
+    width: 7rem;
+  }
+
   .wrap {
     display: flex;
     justify-content: space-between;
