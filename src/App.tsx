@@ -1,22 +1,14 @@
-import Topbar from "./components/topbar"
-import owl from "./../images/placeholder_owl.jpg"
-import vvkLogo from "./../images/Virovek-Logo-Web-300x103.png"
+import Navbar from "./components/navbar"
+import Footer from "./components/footer"
+import ArticleHeader from "./components/article-header"
+import owl from ".././images/placeholder_owl.jpg"
 
 function App() {
 
   return (
     <>
-      <Topbar />
-
-      <header>
-        <div className="wrap">
-          <div className="eyebrow">Article Category</div>
-          <h1>Article title: lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-          <p className="dek">Article subtitle. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum est quidem
-            temporibus modi aperiam praesentium impedit atque perferendis culpa cumque.</p>
-        </div>
-      </header>
-
+      <Navbar />
+      <ArticleHeader />
       <main>
         <section>
           <div className="wrap">
@@ -329,25 +321,7 @@ function App() {
           </div>
         </section>
       </main>
-
-      <footer>
-        <div className="wrap">
-          <div className="footer-flex-left">
-            <div className="virovek-logo-div">
-              <img src={vvkLogo} className="virovek-logo" />
-            </div>
-            <div>
-              <strong>Virovek Inc.</strong><br />
-              Advanced AAV manufacturing and capsid engineering solutions<br />
-              <a href="https://virovek.com/" target="_blank" rel="noreferrer">virovek.com</a> · <a
-                href="mailto:info@virovek.com">info@virovek.com</a>
-            </div>
-          </div>
-          <p><strong>No-AI article policy</strong> · Every article in the learning center has been written and edited by
-            team
-            members at Virovek, because we care enough to put in the effort ourselves.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

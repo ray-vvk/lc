@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import vvkLogo from "../../../images/Virovek-Logo-Web-300x103.png"
 
-export default function Topbar() {
+export default function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
   // const [navWidthObserved, setNavWidthObserved] = useState(0)
   const observedElementRef = useRef(null)
@@ -25,12 +25,14 @@ export default function Topbar() {
   return (
     <nav className="topbar" ref={observedElementRef}>
       <div className="wrap">
-        <div className="logo-and-name">
-          <div className="virovek-logo-div">
-            <img src={vvkLogo} className="virovek-logo" />
+        <a href="/lc-dist">
+          <div className="logo-and-name">
+            <div className="virovek-logo-div">
+              <img src={vvkLogo} className="virovek-logo" />
+            </div>
+            Subdomain Name
           </div>
-          Subdomain Name
-        </div>
+        </a>
         <button className={`hamburger hamburger--slider ${hamburgerOpen ? "is-active" : ""}`} type="button" onClick={() => {
           setHamburgerOpen(!hamburgerOpen)
         }}>
