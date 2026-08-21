@@ -1,9 +1,30 @@
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export default function Topbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
+  // const [navWidthObserved, setNavWidthObserved] = useState(0)
+  const observedElementRef = useRef(null)
+  useEffect(() => {
+    if (observedElementRef.current) {
+      const ro = new ResizeObserver(observedElements => {
+        for (const element of observedElements) {
+          const cr = element.contentRect
+          // setNavWidthObserved(cr.width)
+          console.log(cr.width)
+          if (cr.width >= 850) {
+            // if width is ever greater than 850, force close the menu which also reverts navbar styles to desktop.
+            setHamburgerOpen(false)
+          }
+        }
+      })
+      ro.observe(observedElementRef.current)
+      return () => {
+        ro.disconnect()
+      }
+    }
+  }, [])
   return (
-    <nav className="topbar">
+    <nav className="topbar" ref={observedElementRef}>
       <div className="wrap">
         <div className="logo-and-name">
           <div className="virovek-logo-div">
