@@ -9,8 +9,8 @@ export default function Topbar() {
       const ro = new ResizeObserver(observedElements => {
         for (const element of observedElements) {
           const cr = element.contentRect
-          if (cr.width >= 850) {
-            // if width is ever greater than 850, force close the menu which also reverts navbar styles to desktop.
+          if (cr.width >= 850 && hamburgerOpen) {
+            // if width is ever greater than 850 and the mobile menu is open, force close it which also reverts navbar styles to desktop.
             setHamburgerOpen(false)
           }
         }
