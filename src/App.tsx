@@ -179,10 +179,8 @@ function App() {
                     <tr>
                       <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
                       <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
-                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
                     </tr>
                     <tr>
-                      <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
                       <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
                       <td>Data points. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, culpa.</td>
                     </tr>
@@ -200,19 +198,19 @@ function App() {
             <h2>Section with ordered list and graphic</h2>
             <p className="lead">Optional subtitle. Lorem ipsum dolor sit amet.</p>
 
-            <h3>1. Attachment and endocytosis</h3>
+            <h3>1. Lorem ipsum dolor sit.</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum autem dolorem molestiae libero dolor
               officiis nihil beatae pariatur fuga sed amet voluptatem voluptate recusandae tempora debitis incidunt, laborum
               modi voluptatibus aut exercitationem aliquid distinctio. Perspiciatis obcaecati aliquid suscipit corporis
               culpa.</p>
 
-            <h3>2. Endosomal trafficking and escape</h3>
+            <h3>2. Lorem ipsum dolor sit amet consectetur.</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum autem dolorem molestiae libero dolor
               officiis nihil beatae pariatur fuga sed amet voluptatem voluptate recusandae tempora debitis incidunt, laborum
               modi voluptatibus aut exercitationem aliquid distinctio. Perspiciatis obcaecati aliquid suscipit corporis
               culpa.</p>
 
-            <h3>3. Perinuclear transport, nuclear entry and uncoating</h3>
+            <h3>3. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita!</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum autem dolorem molestiae libero dolor
               officiis nihil beatae pariatur fuga sed amet voluptatem voluptate recusandae tempora debitis incidunt, laborum
               modi voluptatibus aut exercitationem aliquid distinctio. Perspiciatis obcaecati aliquid suscipit corporis
@@ -265,16 +263,16 @@ function App() {
                 laboriosam minus temporibus mollitia ut id consequuntur expedita.</p>
               <div className="cards">
                 <div className="card">
-                  <h3>Did the vector reach the cell?</h3>
-                  <p>Measure attachment and uptake using the capsid-associated signal.</p>
+                  <h3>Lorem ipsum dolor sit.</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam aliquid pariatur, provident quia sunt exercitationem omnis nam. Pariatur, non.</p>
                 </div>
                 <div className="card">
-                  <h3>Did the vector reach the right compartment?</h3>
-                  <p>Assess endosomal, cytoplasmic, perinuclear or nuclear localization.</p>
+                  <h3>Lorem ipsum dolor sit.</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam aliquid pariatur, provident quia sunt exercitationem omnis nam. Pariatur, non.</p>
                 </div>
                 <div className="card">
-                  <h3>Did delivery produce the intended result?</h3>
-                  <p>Measure GFP, another transgene product or the relevant biological response.</p>
+                  <h3>Lorem ipsum dolor sit.</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam aliquid pariatur, provident quia sunt exercitationem omnis nam. Pariatur, non.</p>
                 </div>
               </div>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ipsum eos architecto praesentium quae,
@@ -283,10 +281,7 @@ function App() {
                 dolor placeat assumenda illum. Ipsum illum quos pariatur doloremque doloribus perferendis. Neque amet
                 deleniti officia magni doloremque aperiam!</p>
               <div className="callout">
-                <strong>Practical note:</strong> Fluorescent labeling can alter capsid properties if the label, labeling
-                site
-                or labeling density interferes with receptor binding, capsid stability or infectivity. Appropriate
-                unlabeled-vector controls and functional comparability testing should therefore be included.
+                <strong>Practical note:</strong> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, tenetur maxime alias ducimus expedita aperiam? Modi unde quae tempore, ipsum molestiae, nobis, odio sequi facere amet placeat vitae minima est labore hic. Similique ratione quibusdam laborum repellendus quia expedita illum velit adipisci accusamus nisi magni, cupiditate molestiae commodi suscipit quisquam?
               </div>
             </div>
           </div>
