@@ -7,7 +7,7 @@ export default function Topbar() {
       <div className="wrap">
         <div className="logo-and-name">
           <div className="virovek-logo-div">
-            <img src="images/Virovek-Logo-Web-300x103.png" className="virovek-logo" />
+            <img src="/lc-dist/images/Virovek-Logo-Web-300x103.png" className="virovek-logo" />
           </div>
           Subdomain Name
         </div>
@@ -17,7 +17,7 @@ export default function Topbar() {
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
-        </button> 
+        </button>
 
         {/* links when desktop */}
         <div className="links">
