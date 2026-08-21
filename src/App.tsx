@@ -1,4 +1,6 @@
 import Topbar from "./components/topbar"
+import owl from "./../images/placeholder_owl.jpg"
+import vvkLogo from "./../images/Virovek-Logo-Web-300x103.png"
 
 function App() {
 
@@ -54,7 +56,7 @@ function App() {
             <p>Sample text goes here. There is a graphic below this paragraph. Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Quo possimus modi aliquid in sit, unde molestias eos? Consectetur, est tempora.</p>
             <figure>
-              <img src="/lc-dist/images/placeholder_owl.jpg" loading="lazy"
+              <img src={owl} loading="lazy"
                 alt="Side-by-side timeline showing immediate visualization of fluorescent capsid-labeled AAV during attachment, endocytosis, endosomal trafficking and genome release, compared with delayed GFP expression after successful gene delivery." />
               <figcaption><strong>Figure 1.</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
                 delectus accusamus laudantium dolores natus, magnam minus distinctio veritatis dicta quod?</figcaption>
@@ -217,7 +219,7 @@ function App() {
               culpa.</p>
 
             <figure>
-              <img src="/lc-dist/images/placeholder_owl.jpg" loading="lazy"
+              <img src={owl} loading="lazy"
                 alt="AAV intracellular trafficking diagram showing receptor binding, endocytosis, endosomal trafficking, endosomal escape, transport toward the nucleus, nuclear entry, genome release and transgene expression." />
               <figcaption><strong>Figure 2.</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. In blanditiis
                 ea facilis dolorem iste fuga eveniet consectetur nobis nostrum. Mollitia?</figcaption>
@@ -242,7 +244,7 @@ function App() {
             </div>
             <aside>
               <figure>
-                <img src="/lc-dist/images/placeholder_owl.jpg" loading="lazy"
+                <img src={owl} loading="lazy"
                   alt="Side-by-side timeline showing immediate visualization of fluorescent capsid-labeled AAV during attachment, endocytosis, endosomal trafficking and genome release, compared with delayed GFP expression after successful gene delivery." />
                 <figcaption><strong>Figure 3.</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
                   delectus accusamus laudantium dolores natus, magnam minus distinctio veritatis dicta quod?</figcaption>
@@ -332,7 +334,7 @@ function App() {
         <div className="wrap">
           <div className="footer-flex-left">
             <div className="virovek-logo-div">
-              <img src="/lc-dist/images/Virovek-Logo-Web-300x103.png" className="virovek-logo" />
+              <img src={vvkLogo} className="virovek-logo" />
             </div>
             <div>
               <strong>Virovek Inc.</strong><br />

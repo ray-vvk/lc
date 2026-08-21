@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react"
+import vvkLogo from "../../../images/Virovek-Logo-Web-300x103.png"
 
 export default function Topbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
@@ -26,7 +27,7 @@ export default function Topbar() {
       <div className="wrap">
         <div className="logo-and-name">
           <div className="virovek-logo-div">
-            <img src="/lc-dist/images/Virovek-Logo-Web-300x103.png" className="virovek-logo" />
+            <img src={vvkLogo} className="virovek-logo" />
           </div>
           Subdomain Name
         </div>
