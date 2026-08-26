@@ -1,0 +1,122 @@
+---
+import { Image } from "astro:assets";
+import vvkLogo from "../../images/Virovek-Logo-Web-300x103.png";
+import HamburgerStyles from "../styles/HamburgerStyles.astro";
+---
+
+<nav class="topbar" id="nav-topbar">
+  <div class="wrap">
+    <a href="/lc-dist">
+      <div class="logo-and-name">
+        <div class="virovek-logo-div">
+          <Image src={vvkLogo} class="virovek-logo" alt="the virovek logo." />
+        </div>
+        Subdomain Name
+      </div>
+    </a>
+    <button
+      id="hamburger-button"
+      class:list={[
+        "hamburger hamburger--slider",
+        // { "is-active": hamburgerOpen },
+      ]}
+      type="button"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    {/* links when desktop (on the navbar) */}
+    <div class="links">
+      <div>
+        <a href="https://store.virovek.com/" target="_blank" rel="noreferrer"
+          >Products</a
+        >
+      </div>
+      <div>
+        <a
+          href="https://store.virovek.com/forms/custom"
+          target="_blank"
+          rel="noreferrer">Custom AAV Request</a
+        >
+      </div>
+    </div>
+
+    {/* links when mobile (a menu that appears below the navbar) */}
+    <div
+      id="mobile-menu"
+      class:list={[
+        "links mobile-menu-hidden",
+      ]}
+    >
+      <div class="wrap">
+        <div>
+          <a href="https://store.virovek.com/" target="_blank" rel="noreferrer">
+            Product Catalog
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://store.virovek.com/forms/custom"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Custom AAV Request
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+  let hamburgerOpen = false;
+  const hamburgerButton = document.getElementById(
+    "hamburger-button",
+  ) as Element;
+  const mobileMenu = document.getElementById("mobile-menu") as Element;
+  hamburgerButton.addEventListener("click", () => {
+    if (hamburgerOpen) {
+      // already open, close it
+      hamburgerButton.className = hamburgerButton.className.replace(
+        " is-active",
+        "",
+      );
+      mobileMenu.className = mobileMenu.className.replace(
+        " mobile-menu",
+        " mobile-menu-hidden",
+      );
+      hamburgerOpen = false;
+    } else {
+      // open it
+      hamburgerButton.className += " is-active";
+      mobileMenu.className = mobileMenu.className.replace(
+        " mobile-menu-hidden",
+        " mobile-menu",
+      );
+      hamburgerOpen = true;
+    }
+  });
+
+  const navTopbar = document.getElementById("nav-topbar") as Element; // assert it must be there!
+  const ro = new ResizeObserver((observedElements) => {
+    for (const element of observedElements) {
+      const cr = element.contentRect;
+      if (cr.width >= 850 && hamburgerOpen) {
+        // if width is ever greater than 850 and the mobile menu is open, force close it which also reverts navbar styles to desktop.
+        hamburgerOpen = false;
+        mobileMenu.className = mobileMenu.className.replace(
+          " mobile-menu",
+          " mobile-menu-hidden",
+        );
+        hamburgerButton.className = hamburgerButton.className.replace(
+          " is-active",
+          "",
+        );
+      }
+    }
+  });
+
+  ro.observe(navTopbar);
+</script>
+<HamburgerStyles />

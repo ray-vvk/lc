@@ -1,14 +1,35 @@
 ---
-import GlobalStyles from "../components/GlobalStyles.astro";
+import GlobalStyles from "../components/styles/GlobalStyles.astro";
+import Navbar from "../components/navbar/navbar.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learning Center Article Template | Virovek</title>
+    <meta name="description" content="description text goes here!!!!" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <!-- Replace with the final production URL before publishing -->
+    <link
+      rel="canonical"
+      href="https://virovek.com/resources/fluorescent-capsid-labeled-aav-vs-gfp/"
+    />
+
+    <link rel="icon" type="image/png" href="/virovek-favicon.png" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="article title goes here!!!! " />
+    <meta property="og:description" content="description text goes here!!!!" />
+    <meta property="og:url" content="article's real url goes here!!!!" />
+    <meta
+      property="og:image"
+      content="hero image url goes here!!!! if it exists."
+    />
   </head>
   <body>
-    <nav>navbar goes here eventually.</nav>
+    <Navbar />
   </body>
 </html>
 <GlobalStyles />
