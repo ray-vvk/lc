@@ -1,0 +1,22 @@
+---
+import ArticleFooter from "../components/article-footer.astro";
+import ArticleHeader from "../components/article-header.astro";
+import GlobalStyles from "../components/GlobalStyles.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <ArticleHeader
+      category="article category"
+      subtitle="article subtitle."
+      title="article title"
+    />
+    <slot />
+    <ArticleFooter />
+  </body>
+</html>
+<GlobalStyles />
