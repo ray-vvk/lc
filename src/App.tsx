@@ -1,6 +1,6 @@
 import Navbar from "./components/navbar"
 import Footer from "./components/footer"
-import ArticleHeader from "./components/article-header"
+// import ArticleHeader from "./components/article-header"
 import owl from ".././images/placeholder_owl.jpg"
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <ArticleHeader />
+      {/* <ArticleHeader /> */}
       <main>
         <section>
           <div className="wrap">
