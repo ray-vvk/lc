@@ -23,7 +23,7 @@ function Index() {
       <section>
         <div className="wrap">
           <h2>Links to articles</h2>
-          <p>Links to articles go here eventually.</p>
+          <p>Links to articles go here eventually. They'll look better, too.</p>
           <div>
             <Link to="/articles/article_category_1/example_1" className="[&.active]:font-bold">
               Example article 1

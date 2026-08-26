@@ -1,11 +1,14 @@
-export default function ArticleHeader() {
+export default function ArticleHeader({ title, subtitle, category }: {
+  title: React.ReactNode
+  subtitle: React.ReactNode
+  category: React.ReactNode
+}) {
   return (
     <header>
       <div className="wrap">
-        <div className="eyebrow">Article Category</div>
-        <h1>Article title: lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
-        <p className="dek">Article subtitle. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum est quidem
-          temporibus modi aperiam praesentium impedit atque perferendis culpa cumque.</p>
+        <div className="eyebrow">{category}</div>
+        <h1>{title}</h1>
+        <p className="dek">{subtitle}</p>
       </div>
     </header>
   )
