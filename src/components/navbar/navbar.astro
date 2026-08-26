@@ -16,10 +16,7 @@ import HamburgerStyles from "../styles/HamburgerStyles.astro";
     </a>
     <button
       id="hamburger-button"
-      class:list={[
-        "hamburger hamburger--slider",
-        // { "is-active": hamburgerOpen },
-      ]}
+      class:list={["hamburger hamburger--slider"]}
       type="button"
     >
       <span class="hamburger-box">
@@ -44,12 +41,7 @@ import HamburgerStyles from "../styles/HamburgerStyles.astro";
     </div>
 
     {/* links when mobile (a menu that appears below the navbar) */}
-    <div
-      id="mobile-menu"
-      class:list={[
-        "links mobile-menu-hidden",
-      ]}
-    >
+    <div id="mobile-menu" class:list={["links mobile-menu-hidden"]}>
       <div class="wrap">
         <div>
           <a href="https://store.virovek.com/" target="_blank" rel="noreferrer">
@@ -78,6 +70,7 @@ import HamburgerStyles from "../styles/HamburgerStyles.astro";
   hamburgerButton.addEventListener("click", () => {
     if (hamburgerOpen) {
       // already open, close it
+      // update styles
       hamburgerButton.className = hamburgerButton.className.replace(
         " is-active",
         "",
@@ -86,6 +79,7 @@ import HamburgerStyles from "../styles/HamburgerStyles.astro";
         " mobile-menu",
         " mobile-menu-hidden",
       );
+      // set state of menu being open to false
       hamburgerOpen = false;
     } else {
       // open it
