@@ -13,7 +13,6 @@ export default defineConfig({
     tanstackRouter({
       target: 'react',
       autoCodeSplitting: true,
-      
     }),
     react(),
     babel({ presets: [reactCompilerPreset()] })
