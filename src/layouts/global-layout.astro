@@ -1,6 +1,8 @@
 ---
-import GlobalStyles from "../components/styles/GlobalStyles.astro";
+import GlobalStyles from "../components/styles/global-styles.astro";
 import Navbar from "../components/navbar/navbar.astro";
+import Footer from "../components/footer.astro";
+
 ---
 
 <html lang="en">
@@ -31,6 +33,7 @@ import Navbar from "../components/navbar/navbar.astro";
   <body>
     <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>
 <GlobalStyles />

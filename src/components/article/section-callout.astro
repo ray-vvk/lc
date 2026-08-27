@@ -1,0 +1,76 @@
+---
+import ArticleCallout from "./article-callout.astro";
+---
+
+<section>
+  <div class="wrap">
+    <div>
+      <h2>Section with a callout</h2>
+      <slot name="before-callout" />
+      <ArticleCallout>
+        <div slot="callout-contents">
+          <div>this goes into the callout.</div>
+          <div>multiple divs.</div>
+        </div>
+      </ArticleCallout>
+      <slot name="after-callout" />
+    </div>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="wrap">
+    <div>
+      <h2>Section with a callout</h2>
+      <p class="lead">
+        Optional subtitle. Lorem ipsum dolor sit, amet consectetur adipisicing
+        elit. Commodi, repellendus?
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. A quis in
+        modi! Soluta, quas cum fuga, aliquid in laudantium hic corporis nobis
+        officiis quisquam, voluptas mollitia blanditiis illo quia deleniti non
+        debitis delectus expedita ducimus dolorem quo quos odio? Quam, odit
+        assumenda! Pariatur et distinctio ratione, doloribus magni aliquid
+        deleniti totam. Provident, architecto quae sit eius repellendus
+        voluptate quos vero.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur id
+        reiciendis laboriosam soluta dolorum, ipsum assumenda dolores rerum nam
+        sequi tempora facere similique possimus ullam! Doloremque id explicabo
+        nemo non laborum iure iste placeat voluptatem ut quibusdam assumenda,
+        omnis, totam at dignissimos odio molestiae culpa animi error aut facere
+        enim eligendi consectetur? Officia culpa dicta eaque sint eligendi.
+        Similique sint ducimus soluta quo illum mollitia adipisci reiciendis
+        repudiandae, optio officiis repellendus veritatis voluptate sed
+        consequuntur minima perspiciatis temporibus veniam. Labore corporis,
+        explicabo cupiditate dignissimos fugiat delectus numquam qui. Repellat
+        repellendus nulla dolorum ut est in delectus, officiis ex asperiores
+        sint?
+      </p>
+      <div class="callout">
+        <div class="question">Callout contents. A quote, perhaps?</div>
+        <div class="question">
+          Or an important statistic from the literature.
+        </div>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tenetur
+        iste perferendis fuga hic? Aliquid, laboriosam sed inventore suscipit
+        quibusdam nihil. Odio laborum voluptatum quisquam dolore iusto neque
+        cumque ullam recusandae. Debitis totam enim laudantium ullam hic
+        laborum, earum similique, eaque, iusto quas corporis? Eius nulla ipsa
+        dignissimos harum numquam illo magni error provident tenetur optio vero
+        corrupti quasi voluptate, veritatis dolor ducimus, adipisci quis neque
+        suscipit ipsam, dolore labore sequi? Laudantium id eum architecto
+        repudiandae porro maxime, vero minima cupiditate nihil molestias.
+        Assumenda non aperiam saepe deserunt ipsum vitae consequuntur debitis
+        similique iste perspiciatis eos corrupti, doloribus nemo ullam nihil
+        optio dolorum voluptatibus, laborum velit odio cupiditate quisquam
+        ratione. Temporibus dolorem vel, accusamus quis ipsa est optio
+        doloremque iusto.
+      </p>
+    </div>
+  </div>
+</section> -->

@@ -1,6 +1,104 @@
 ---
-import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import SectionBasicGraphicAside from "../../components/article/section-basic-graphic-aside.astro";
+import SectionBasic from "../../components/article/section-basic.astro";
+import SectionReferences from "../../components/article/section-references.astro";
+import ArticleLayout from "../../layouts/article-layout.astro";
+import { Image } from "astro:assets";
+import owl from "../../images/placeholder_owl.jpg";
+import SectionBasicGraphic from "../../components/article/section-basic-graphic.astro";
+import SectionCallout from "../../components/article/section-callout.astro";
+import ArticleCallout from "../../components/article/article-callout.astro";
+import ArticleFullsizeImage from "../../components/article/article-fullsize-image.astro";
+import ArticleCards from "../../components/article/article-cards.astro";
+import ArticleCard from "../../components/article/article-card.astro";
 ---
-<ArticleLayout>
-  article stuff goes here.
+
+<head>
+  <title>Article1 | Virovek Learning Center</title>
+</head>
+<ArticleLayout
+  articleCategory={(<>article 1 category</>)}
+  articleTitle={(<>Article 1 title</>)}
+  articleSubtitle={(
+    <>
+      This is the subtitle. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Dolor, ipsa.
+    </>
+  )}
+>
+  <SectionBasicGraphicAside
+    h2="title of section."
+    figSrc={owl}
+    figCaption={(<>figure caption.</>)}
+    figAlt="owl."
+  >
+    <p class="lead">
+      Optional subtitle. This section is also responsively designed.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+      praesentium voluptates optio quaerat? Distinctio, ipsam alias, veniam
+      nobis magnam nisi voluptatem delectus, eos saepe quam ullam modi? Dolores
+      voluptatibus iure ipsum molestiae earum odio doloremque dolore iusto,
+      deleniti, sapiente nisi quae accusantium laboriosam minus temporibus
+      mollitia ut id consequuntur expedita.
+    </p>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, velit
+      aliquam. Exercitationem praesentium veritatis quaerat rem unde, quam iure
+      vel? Porro, ab, amet qui illum nihil nam ipsam placeat omnis ipsa aut
+      neque, provident necessitatibus ad quas eaque quibusdam est.
+    </p>
+  </SectionBasicGraphicAside>
+  <SectionBasic h2="section title">
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+      consequatur pariatur porro perferendis deserunt. Ad, animi eligendi
+      doloribus distinctio facilis quo delectus aspernatur consectetur dolor,
+      illum ipsa. Odit, porro doloremque dolores cumque temporibus modi.
+      Deleniti laborum eligendi at ex! Vel, dignissimos est dolore magnam
+      consequuntur quia fuga adipisci eveniet perspiciatis velit nulla, totam
+      officiis obcaecati. Beatae minima asperiores tempore ipsa dicta
+      voluptates, debitis repellat dolorum velit nemo placeat corporis suscipit
+      voluptatum libero quis quia nam quisquam sit rem officiis delectus
+      adipisci quae aliquid non. Fugit deserunt nemo a aliquid placeat
+      laudantium, explicabo ipsa asperiores culpa iste minima nihil cupiditate
+      repellat.
+    </p>
+    <ArticleFullsizeImage figSrc={owl} figCaption={<><strong>this is an owl.</strong></>} figAlt="owl"/>
+    <p>another paragraph. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi voluptas, voluptatibus eos hic aspernatur accusamus expedita ducimus omnis dolorum sit eaque commodi velit non provident debitis quisquam facilis quod?</p>
+    <ArticleCallout>
+      <div>this is a callout.</div>
+    </ArticleCallout>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam nisi
+      accusantium magnam libero sapiente quam vero provident vitae saepe
+      exercitationem inventore obcaecati commodi laboriosam earum temporibus,
+      cum recusandae laudantium itaque architecto, aut quaerat maiores omnis hic
+      suscipit? Temporibus illum natus cumque similique deserunt. Nisi nostrum
+      nobis officia vero exercitationem quos, nulla, ipsa ad quae neque dolores
+      explicabo hic cum illum illo tempore doloribus beatae quisquam laudantium
+      reiciendis totam, animi velit. Quasi deserunt suscipit exercitationem
+      totam necessitatibus ipsam cumque autem praesentium!
+    </p>
+    <ArticleCards>
+      <ArticleCard cardTitle="lorem ipsum">
+        <p>this is card text</p>
+      </ArticleCard>
+      <ArticleCard cardTitle="lorem ipsum">
+        <p>this is card text</p>
+      </ArticleCard>
+      <ArticleCard cardTitle="lorem ipsum">
+        <p>this is card text</p>
+      </ArticleCard>
+      <ArticleCard cardTitle="lorem ipsum">
+        <p>this is card text</p>
+      </ArticleCard>
+      <ArticleCard cardTitle="lorem ipsum">
+        <p>this is card text</p>
+      </ArticleCard>
+    </ArticleCards>
+  </SectionBasic>
+
+  <SectionReferences />
 </ArticleLayout>
