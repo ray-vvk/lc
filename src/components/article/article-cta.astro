@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="cta">
+  <h2>{title}</h2>
+  <slot />
+</div>
+<!-- <div class="cta">
+  <h2>{title}</h2>
+  <p>
+    Virovek provides high-titer AAV manufacturing, custom vector production and
+    precision capsid engineering for research and development programs. Discuss
+    fluorescent capsid labeling, reporter-vector design, serotype selection or a
+    custom AAV study with our scientific team.
+  </p>
+  <div class="actions">
+    <a
+      class="btn secondary"
+      target="_blank"
+      rel="noreferrer"
+      href="https://store.virovek.com/">Browse Premade AAV Products</a
+    >
+    <a
+      class="btn secondary"
+      target="_blank"
+      rel="noreferrer"
+      href="https://store.virovek.com/forms/custom"
+      >Request a Custom AAV Quote</a
+    >
+    <a
+      class="btn secondary"
+      target="_blank"
+      rel="noreferrer"
+      href="mailto:info@virovek.com">Email the team</a
+    >
+  </div>
+</div> -->

@@ -3,14 +3,13 @@ import SectionBasicGraphicAside from "../../components/article/section-basic-gra
 import SectionBasic from "../../components/article/section-basic.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleLayout from "../../layouts/article-layout.astro";
-import { Image } from "astro:assets";
 import owl from "../../images/placeholder_owl.jpg";
-import SectionBasicGraphic from "../../components/article/section-basic-graphic.astro";
-import SectionCallout from "../../components/article/section-callout.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
 import ArticleFullsizeImage from "../../components/article/article-fullsize-image.astro";
 import ArticleCards from "../../components/article/article-cards.astro";
 import ArticleCard from "../../components/article/article-card.astro";
+import ArticleCta from "../../components/article/article-cta.astro";
+import ArticleFullsizeTable from "../../components/article/article-fullsize-table.astro";
 ---
 
 <head>
@@ -65,8 +64,21 @@ import ArticleCard from "../../components/article/article-card.astro";
       laudantium, explicabo ipsa asperiores culpa iste minima nihil cupiditate
       repellat.
     </p>
-    <ArticleFullsizeImage figSrc={owl} figCaption={<><strong>this is an owl.</strong></>} figAlt="owl"/>
-    <p>another paragraph. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eligendi voluptas, voluptatibus eos hic aspernatur accusamus expedita ducimus omnis dolorum sit eaque commodi velit non provident debitis quisquam facilis quod?</p>
+    <ArticleFullsizeImage
+      figSrc={owl}
+      figCaption={(
+        <>
+          <strong>this is an owl.</strong>
+        </>
+      )}
+      figAlt="owl"
+    />
+    <p>
+      another paragraph. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Sunt eligendi voluptas, voluptatibus eos hic aspernatur accusamus
+      expedita ducimus omnis dolorum sit eaque commodi velit non provident
+      debitis quisquam facilis quod?
+    </p>
     <ArticleCallout>
       <div>this is a callout.</div>
     </ArticleCallout>
@@ -98,6 +110,55 @@ import ArticleCard from "../../components/article/article-card.astro";
         <p>this is card text</p>
       </ArticleCard>
     </ArticleCards>
+  </SectionBasic>
+  <SectionBasic h2="section 2">
+    <ArticleFullsizeTable>
+      <tr slot="thead-contents"
+        ><th>table head cell 1</th><th>table head cell 2</th><th>table head cell 3</th></tr
+      >
+      <Fragment slot="tbody-contents">
+        <tr><th>table body cell 1</th><td>table body cell 2</td><td>table body cell 3</td></tr>
+        <tr><th>table body cell 1</th><td>table body cell 2</td><td>table body cell 3</td></tr>
+      </Fragment>
+      <Fragment slot="figcaption-contents"
+        >contents of the <strong>fig</strong>caption</Fragment
+      >
+    </ArticleFullsizeTable>
+  </SectionBasic>
+  <SectionBasic h2="another section">
+    <p class="lead">A subtitle for this section, perhaps?</p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto neque
+      labore nisi est natus maiores explicabo commodi inventore, voluptas
+      dignissimos consequuntur exercitationem odio nulla esse vel dolor! Est
+      optio ut id voluptas. Incidunt tenetur odio, beatae id aperiam tempora
+      ratione!
+    </p>
+    <ArticleCta title="Call to action title.">
+      <p>This is the first paragraph in the call to action.</p>
+      <p>There can also be a second.</p>
+      <div class="actions">
+        <a
+          class="btn secondary"
+          target="_blank"
+          rel="noreferrer"
+          href="https://store.virovek.com/">Browse Premade AAV Products</a
+        >
+        <a
+          class="btn secondary"
+          target="_blank"
+          rel="noreferrer"
+          href="https://store.virovek.com/forms/custom"
+          >Request a Custom AAV Quote</a
+        >
+        <a
+          class="btn secondary"
+          target="_blank"
+          rel="noreferrer"
+          href="mailto:info@virovek.com">Email the team</a
+        >
+      </div>
+    </ArticleCta>
   </SectionBasic>
 
   <SectionReferences />
