@@ -8,17 +8,14 @@ import ArticleCards from "../components/article/article-cards.astro";
 <GlobalLayout>
   <main>
     <section class="hero">
-      <div class="wrap">
-        <h1>The Learning Center</h1>
-        <p>
-          This will be the homepage. It'll look less ugly later. I haven't
-          worked on it at all yet.
-        </p>
-      </div>
+      <h1>Knowledge Center</h1>
     </section>
     <section class="beneath">
       <div class="wrap">
-        <p>A list of articles and their categories will go here. For now, it's just a couple cards linking to articles.</p>
+        <p>
+          A list of articles and their categories will go here. For now, it's
+          just a couple cards linking to articles.
+        </p>
         <ArticleCards>
           <ArticleCard cardTitle="Article 1">
             <a href="/lc/articles/article1">Article 1</a>
@@ -31,7 +28,10 @@ import ArticleCards from "../components/article/article-cards.astro";
     </section>
     <section class="beneath">
       <div class="wrap">
-        <p>Something else will go here. Probably a call to action. I haven't decided.</p>
+        <p>
+          Something else will go here. Probably a call to action. I haven't
+          decided.
+        </p>
       </div>
     </section>
   </main>
@@ -39,16 +39,27 @@ import ArticleCards from "../components/article/article-cards.astro";
 <GlobalStyles />
 
 <style>
+  body {
+    background-color: var(--pale);
+  }
   main {
     min-height: 80vh;
   }
   section {
-    height: 30rem;
+    min-height: 30rem;
     border: none;
+    background-color: var(--pale);
   }
   .hero {
     background-color: var(--cyan);
     padding: 4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    clip-path: ellipse(2000px 350px at 50% 30%);
+    h1 {
+      font-size: clamp(10rem, 9vw, 12rem);
+    }
   }
   .beneath {
     padding: 4rem;
@@ -56,5 +67,12 @@ import ArticleCards from "../components/article/article-cards.astro";
   }
   .beneath:nth-child(odd) {
     background-color: var(--cyan);
+  }
+  @media (max-width: 1000px) {
+    .hero {
+      h1 {
+        font-size: clamp(3.5rem, 15vw, 8rem);
+      }
+    }
   }
 </style>

@@ -17,32 +17,25 @@ import SectionWithAside from "../../components/article/section-with-aside.astro"
 </head>
 <ArticleLayout
   articleCategory="article 1 category"
-  articleTitle="Article 1 title"
-  articleSubtitle={(
-    <>
-      This is the <strong>subtitle.</strong> Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Dolor, ipsa.
-    </>
-  )}
+  articleTitle="Section and component showcase"
+  articleSubtitle="Here's a look at all the components you can use in an article."
 >
-  <SectionWithAside h2="title of section.">
+  <SectionWithAside h2="Section with aside">
     <Fragment slot="main-contents">
       <p class="lead">
-        Optional subtitle. This section is also responsively designed.
+        Optional subtitle. This section is responsively designed.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-        praesentium voluptates optio quaerat? Distinctio, ipsam alias, veniam
-        nobis magnam nisi voluptatem delectus, eos saepe quam ullam modi?
-        Dolores voluptatibus iure ipsum molestiae earum odio doloremque dolore
-        iusto, deleniti, sapiente nisi quae accusantium laboriosam minus
-        temporibus mollitia ut id consequuntur expedita.
+        This is the main part of this section. It also has an aside, or the part
+        to the right that contains the image.
       </p>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt,
-        velit aliquam. Exercitationem praesentium veritatis quaerat rem unde,
-        quam iure vel? Porro, ab, amet qui illum nihil nam ipsam placeat omnis
-        ipsa aut neque, provident necessitatibus ad quas eaque quibusdam est.
+        You can put anything in the main part. You can also put anything in the
+        aside. More text, a table, an image of an owl... whatever.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic labore sunt
+        rerum commodi minus nemo quas libero quam, esse autem.
       </p>
     </Fragment>
     <Fragment slot={"aside-contents"}>
@@ -50,45 +43,38 @@ import SectionWithAside from "../../components/article/section-with-aside.astro"
         figSrc={owl}
         figCaption={(
           <>
-            <strong>this is an owl.</strong>
+            this is an <strong>owl.</strong>
           </>
         )}
         figAlt="owl"
       />
+      <p>
+        This is the aside. On large screens, it's off to the right. On small
+        screens, it goes below the main part.
+      </p>
     </Fragment>
   </SectionWithAside>
-  <SectionBasic h2="section title">
+  <SectionBasic h2="Full-width section">
+    <p class="lead">Here's the subtitle.</p>
+    <p>This section takes up the full width of the screen.</p>
     <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-      consequatur pariatur porro perferendis deserunt. Ad, animi eligendi
-      doloribus distinctio facilis quo delectus aspernatur consectetur dolor,
-      illum ipsa. Odit, porro doloremque dolores cumque temporibus modi.
-      Deleniti laborum eligendi at ex! Vel, dignissimos est dolore magnam
-      consequuntur quia fuga adipisci eveniet perspiciatis velit nulla, totam
-      officiis obcaecati. Beatae minima asperiores tempore ipsa dicta
-      voluptates, debitis repellat dolorum velit nemo placeat corporis suscipit
-      voluptatum libero quis quia nam quisquam sit rem officiis delectus
-      adipisci quae aliquid non. Fugit deserunt nemo a aliquid placeat
-      laudantium, explicabo ipsa asperiores culpa iste minima nihil cupiditate
-      repellat.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, fugit
+      nulla aperiam itaque exercitationem blanditiis earum perspiciatis
+      cupiditate cum laboriosam quibusdam doloribus. Officiis omnis vitae,
+      laborum ab cumque quia aperiam.
     </p>
     <ArticleImage
       figSrc={owl}
       figCaption={(
         <>
-          <strong>this is an owl.</strong>
+          this caption is just <strong>like</strong> the other one.
         </>
       )}
       figAlt="owl"
     />
-    <p>
-      another paragraph. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Sunt eligendi voluptas, voluptatibus eos hic aspernatur accusamus
-      expedita ducimus omnis dolorum sit eaque commodi velit non provident
-      debitis quisquam facilis quod?
-    </p>
+    <p>Here's another paragraph.</p>
     <ArticleCallout>
-      <div>this is a callout.</div>
+      <div>This is a callout. Put something important here.</div>
     </ArticleCallout>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam nisi
@@ -100,6 +86,10 @@ import SectionWithAside from "../../components/article/section-with-aside.astro"
       explicabo hic cum illum illo tempore doloribus beatae quisquam laudantium
       reiciendis totam, animi velit. Quasi deserunt suscipit exercitationem
       totam necessitatibus ipsam cumque autem praesentium!
+    </p>
+    <p>
+      Below are cards. You can use these to list things out (such as links),
+      compare options, or describe multiple aspects of something.
     </p>
     <ArticleCards>
       <ArticleCard cardTitle="lorem ipsum">
@@ -119,38 +109,47 @@ import SectionWithAside from "../../components/article/section-with-aside.astro"
       </ArticleCard>
     </ArticleCards>
   </SectionBasic>
-  <SectionBasic h2="section 3">
+  <SectionBasic h2="Full-width section">
+    <p>You can include tables too. For experimental data, perhaps.</p>
     <ArticleFullsizeTable>
-      <tr slot="thead-contents"
-        ><th>table head cell 1</th><th>table head cell 2</th><th
-          >table head cell 3</th
-        ></tr
-      >
+      <Fragment slot="thead-contents">
+        <tr>
+          <th>table head cell 1</th>
+          <th>table head cell 2</th>
+          <th>table head cell 3</th>
+          <th>table head cell 4</th>
+          <th>table head cell 5</th>
+          <th>table head cell 6</th>
+          <th>table head cell 7</th>
+        </tr>
+      </Fragment>
       <Fragment slot="tbody-contents">
-        <tr
-          ><th>table body cell 1</th><td>table body cell 2</td><td
-            >table body cell 3</td
-          ></tr
-        >
-        <tr
-          ><th>table body cell 1</th><td>table body cell 2</td><td
-            >table body cell 3</td
-          ></tr
-        >
+        <tr>
+          <td>table body cell 1</td>
+          <td>table body cell 2</td>
+          <td>table body cell 3</td>
+          <td>table body cell 4</td>
+          <td>table body cell 5</td>
+          <td>table body cell 6</td>
+          <td>table body cell 7</td>
+        </tr>
+        <tr>
+          <td>table body cell 1</td>
+          <td>table body cell 2</td>
+          <td>table body cell 3</td>
+          <td>table body cell 4</td>
+          <td>table body cell 5</td>
+          <td>table body cell 6</td>
+          <td>table body cell 7</td>
+        </tr>
       </Fragment>
       <Fragment slot="figcaption-contents"
-        >contents of the <strong>fig</strong>caption</Fragment
+        ><strong>Table 1.</strong> An example table.</Fragment
       >
     </ArticleFullsizeTable>
-  </SectionBasic>
-  <SectionBasic h2="another section">
-    <p class="lead">A subtitle for this section, perhaps?</p>
+
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto neque
-      labore nisi est natus maiores explicabo commodi inventore, voluptas
-      dignissimos consequuntur exercitationem odio nulla esse vel dolor! Est
-      optio ut id voluptas. Incidunt tenetur odio, beatae id aperiam tempora
-      ratione!
+      Below is a call to action. It prompts the user to take action and acquire our business. Hence, call to action.
     </p>
     <ArticleCta title="Call to action title.">
       <p>This is the first paragraph in the call to action.</p>

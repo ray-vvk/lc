@@ -12,9 +12,9 @@ const { articleTitle, articleSubtitle, articleCategory } = Astro.props;
 
 <GlobalLayout>
   <ArticleHeader
-    category={articleTitle}
+    category={articleCategory}
     subtitle={articleSubtitle}
-    title={articleCategory}
+    title={articleTitle}
   />
   <main>
     <slot />
