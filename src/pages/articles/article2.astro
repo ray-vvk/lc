@@ -1,5 +1,4 @@
 ---
-import SectionBasicGraphicAside from "../../components/article/section-basic-graphic-aside.astro";
 import SectionBasic from "../../components/article/section-basic.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleLayout from "../../layouts/article-layout.astro";
@@ -9,46 +8,50 @@ import ArticleFullsizeImage from "../../components/article/article-fullsize-imag
 import ArticleCards from "../../components/article/article-cards.astro";
 import ArticleCard from "../../components/article/article-card.astro";
 import ArticleCta from "../../components/article/article-cta.astro";
-import ArticleFullsizeTable from "../../components/article/article-table.astro";
+import ArticleTable from "../../components/article/article-table.astro";
+import SectionWithAside from "../../components/article/section-with-aside.astro";
 ---
 
 <head>
-  <title>Article1 | Virovek Learning Center</title>
+  <title>Article2 | Virovek Learning Center</title>
 </head>
 <ArticleLayout
-  articleCategory="article 1 category"
-  articleTitle="Article 1 title"
+  articleCategory="article 2 category"
+  articleTitle="Article 2 title"
   articleSubtitle={(
     <>
-      This is the <strong>subtitle.</strong> Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Dolor, ipsa.
+      This is the <strong>subtitle.</strong> Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Dolor, ipsa.
     </>
   )}
 >
-  <SectionBasicGraphicAside
-    h2="title of section."
-    figSrc={owl}
-    figCaption="figure caption."
-    figAlt="owl."
-  >
-    <p class="lead">
-      Optional subtitle. This section is also responsively designed.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-      praesentium voluptates optio quaerat? Distinctio, ipsam alias, veniam
-      nobis magnam nisi voluptatem delectus, eos saepe quam ullam modi? Dolores
-      voluptatibus iure ipsum molestiae earum odio doloremque dolore iusto,
-      deleniti, sapiente nisi quae accusantium laboriosam minus temporibus
-      mollitia ut id consequuntur expedita.
-    </p>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, velit
-      aliquam. Exercitationem praesentium veritatis quaerat rem unde, quam iure
-      vel? Porro, ab, amet qui illum nihil nam ipsam placeat omnis ipsa aut
-      neque, provident necessitatibus ad quas eaque quibusdam est.
-    </p>
-  </SectionBasicGraphicAside>
+  <SectionWithAside h2="section with aside">
+    <div slot="main-contents">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero enim
+        soluta, esse ad consequatur rerum fuga aut placeat ab magni. Modi,
+        alias. Sed asperiores distinctio quam nulla ab cum recusandae cumque
+        quidem commodi eos, inventore reprehenderit eum nesciunt delectus alias
+        porro? Deserunt error illum quidem nobis maiores labore temporibus vitae
+        quae explicabo ut similique, illo doloremque repellendus corrupti
+        pariatur iure, animi cum sint. Quae ea numquam ipsum nulla eum iure?
+      </p>
+    </div>
+    <div slot="aside-contents">
+      <ArticleTable>
+        <tr slot="thead-contents"
+          ><th>table head cell 1</th><th>table head cell 2</th></tr
+        >
+        <Fragment slot="tbody-contents">
+          <tr><td>table body cell 1</td><td>table body cell 2</td></tr>
+          <tr><td>table body cell 1</td><td>table body cell 2</td></tr>
+        </Fragment>
+        <Fragment slot="figcaption-contents"
+          >contents of the <strong>fig</strong>caption</Fragment
+        >
+      </ArticleTable>
+    </div>
+  </SectionWithAside>
   <SectionBasic h2="section title">
     <p>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
@@ -112,7 +115,7 @@ import ArticleFullsizeTable from "../../components/article/article-table.astro";
     </ArticleCards>
   </SectionBasic>
   <SectionBasic h2="section 3">
-    <ArticleFullsizeTable>
+    <ArticleTable>
       <tr slot="thead-contents"
         ><th>table head cell 1</th><th>table head cell 2</th><th
           >table head cell 3</th
@@ -133,7 +136,7 @@ import ArticleFullsizeTable from "../../components/article/article-table.astro";
       <Fragment slot="figcaption-contents"
         >contents of the <strong>fig</strong>caption</Fragment
       >
-    </ArticleFullsizeTable>
+    </ArticleTable>
   </SectionBasic>
   <SectionBasic h2="another section">
     <p class="lead">A subtitle for this section, perhaps?</p>

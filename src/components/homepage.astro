@@ -1,3 +1,8 @@
+---
+import ArticleCard from "./article/article-card.astro";
+import ArticleCards from "./article/article-cards.astro";
+---
+
 <main>
   <section class="hero">
     <div class="wrap">
@@ -10,7 +15,14 @@
   <section class="beneath">
     <div class="wrap">
       <p>A list of articles and their categories will go here.</p>
-      <a href="/lc/articles/article1">Article 1</a>
+      <ArticleCards>
+        <ArticleCard cardTitle="Article 1">
+          <a href="/lc/articles/article1">Article 1</a>
+        </ArticleCard>
+        <ArticleCard cardTitle="Article 2">
+          <a href="/lc/articles/article2">Article 2</a>
+        </ArticleCard>
+      </ArticleCards>
     </div>
   </section>
   <section class="beneath">
