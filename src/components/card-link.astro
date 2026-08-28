@@ -1,0 +1,28 @@
+---
+interface Props {
+  cardTitle: string;
+  link: string;
+}
+const { cardTitle, link } = Astro.props;
+---
+
+<a href={link}>
+  <div class="card">
+    <h3>{cardTitle}</h3>
+    <slot />
+  </div>
+</a>
+
+<style>
+  a {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 300ms;
+    p {
+      color: var(--ink)
+    }
+  }
+  a:hover {
+    transform: scale(1.02);
+  }
+</style>

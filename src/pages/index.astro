@@ -4,6 +4,8 @@ import GlobalStyles from "../components/styles/global-styles.astro";
 import ArticleCard from "../components/article/article-card.astro";
 import ArticleCards from "../components/article/article-cards.astro";
 import { getCollection } from "astro:content";
+import CardsLinks from "../components/cards-links.astro";
+import CardLink from "../components/card-link.astro";
 const articleData = await getCollection("articleData");
 ---
 
@@ -18,18 +20,17 @@ const articleData = await getCollection("articleData");
           Browse a collection of articles authored, edited, organized, and
           produced by the team at Virovek.
         </p>
-        <ArticleCards>
+        <CardsLinks>
           {
             articleData.map((article) => {
               return (
-                <ArticleCard cardTitle={article.data.title}>
+                <CardLink cardTitle={article.data.title} link={article.data.slug}>
                   <p>Published: {article.data.pubDate}</p>
-                  <a href={article.data.slug}>{article.data.title}</a>
-                </ArticleCard>
+                </CardLink>
               );
             })
           }
-        </ArticleCards>
+        </CardsLinks>
       </div>
     </section>
     <section class="beneath">
@@ -66,6 +67,9 @@ const articleData = await getCollection("articleData");
     h1 {
       font-size: clamp(10rem, 9vw, 12rem);
     }
+  }
+  .wrap {
+    max-width: 100%;
   }
   .beneath {
     padding: 4rem;
