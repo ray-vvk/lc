@@ -4,7 +4,7 @@ import SectionReferences from "../../components/article/section-references.astro
 import ArticleLayout from "../../layouts/article-layout.astro";
 import owl from "../../images/placeholder_owl.jpg";
 import ArticleCallout from "../../components/article/article-callout.astro";
-import ArticleFullsizeImage from "../../components/article/article-fullsize-image.astro";
+import ArticleImage from "../../components/article/article-image.astro";
 import ArticleCards from "../../components/article/article-cards.astro";
 import ArticleCard from "../../components/article/article-card.astro";
 import ArticleCta from "../../components/article/article-cta.astro";
@@ -67,7 +67,7 @@ import SectionWithAside from "../../components/article/section-with-aside.astro"
       laudantium, explicabo ipsa asperiores culpa iste minima nihil cupiditate
       repellat.
     </p>
-    <ArticleFullsizeImage
+    <ArticleImage
       figSrc={owl}
       figCaption={(
         <>
@@ -147,31 +147,6 @@ import SectionWithAside from "../../components/article/section-with-aside.astro"
       optio ut id voluptas. Incidunt tenetur odio, beatae id aperiam tempora
       ratione!
     </p>
-    <ArticleCta title="Call to action title.">
-      <p>This is the first paragraph in the call to action.</p>
-      <p>There can also be a second.</p>
-      <div class="actions">
-        <a
-          class="btn secondary"
-          target="_blank"
-          rel="noreferrer"
-          href="https://store.virovek.com/">Browse Premade AAV Products</a
-        >
-        <a
-          class="btn secondary"
-          target="_blank"
-          rel="noreferrer"
-          href="https://store.virovek.com/forms/custom"
-          >Request a Custom AAV Quote</a
-        >
-        <a
-          class="btn secondary"
-          target="_blank"
-          rel="noreferrer"
-          href="mailto:info@virovek.com">Email the team</a
-        >
-      </div>
-    </ArticleCta>
   </SectionBasic>
 
   <SectionReferences>

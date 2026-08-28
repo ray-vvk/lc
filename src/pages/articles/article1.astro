@@ -1,15 +1,15 @@
 ---
-import SectionBasicGraphicAside from "../../components/article/section-basic-graphic-aside.astro";
 import SectionBasic from "../../components/article/section-basic.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleLayout from "../../layouts/article-layout.astro";
 import owl from "../../images/placeholder_owl.jpg";
 import ArticleCallout from "../../components/article/article-callout.astro";
-import ArticleFullsizeImage from "../../components/article/article-fullsize-image.astro";
+import ArticleImage from "../../components/article/article-image.astro";
 import ArticleCards from "../../components/article/article-cards.astro";
 import ArticleCard from "../../components/article/article-card.astro";
 import ArticleCta from "../../components/article/article-cta.astro";
 import ArticleFullsizeTable from "../../components/article/article-table.astro";
+import SectionWithAside from "../../components/article/section-with-aside.astro";
 ---
 
 <head>
@@ -20,35 +20,43 @@ import ArticleFullsizeTable from "../../components/article/article-table.astro";
   articleTitle="Article 1 title"
   articleSubtitle={(
     <>
-      This is the <strong>subtitle.</strong> Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Dolor, ipsa.
+      This is the <strong>subtitle.</strong> Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Dolor, ipsa.
     </>
   )}
 >
-  <SectionBasicGraphicAside
-    h2="title of section."
-    figSrc={owl}
-    figCaption="figure caption."
-    figAlt="owl."
-  >
-    <p class="lead">
-      Optional subtitle. This section is also responsively designed.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-      praesentium voluptates optio quaerat? Distinctio, ipsam alias, veniam
-      nobis magnam nisi voluptatem delectus, eos saepe quam ullam modi? Dolores
-      voluptatibus iure ipsum molestiae earum odio doloremque dolore iusto,
-      deleniti, sapiente nisi quae accusantium laboriosam minus temporibus
-      mollitia ut id consequuntur expedita.
-    </p>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, velit
-      aliquam. Exercitationem praesentium veritatis quaerat rem unde, quam iure
-      vel? Porro, ab, amet qui illum nihil nam ipsam placeat omnis ipsa aut
-      neque, provident necessitatibus ad quas eaque quibusdam est.
-    </p>
-  </SectionBasicGraphicAside>
+  <SectionWithAside h2="title of section.">
+    <Fragment slot="main-contents">
+      <p class="lead">
+        Optional subtitle. This section is also responsively designed.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+        praesentium voluptates optio quaerat? Distinctio, ipsam alias, veniam
+        nobis magnam nisi voluptatem delectus, eos saepe quam ullam modi?
+        Dolores voluptatibus iure ipsum molestiae earum odio doloremque dolore
+        iusto, deleniti, sapiente nisi quae accusantium laboriosam minus
+        temporibus mollitia ut id consequuntur expedita.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt,
+        velit aliquam. Exercitationem praesentium veritatis quaerat rem unde,
+        quam iure vel? Porro, ab, amet qui illum nihil nam ipsam placeat omnis
+        ipsa aut neque, provident necessitatibus ad quas eaque quibusdam est.
+      </p>
+    </Fragment>
+    <Fragment slot={"aside-contents"}>
+      <ArticleImage
+        figSrc={owl}
+        figCaption={(
+          <>
+            <strong>this is an owl.</strong>
+          </>
+        )}
+        figAlt="owl"
+      />
+    </Fragment>
+  </SectionWithAside>
   <SectionBasic h2="section title">
     <p>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
@@ -64,7 +72,7 @@ import ArticleFullsizeTable from "../../components/article/article-table.astro";
       laudantium, explicabo ipsa asperiores culpa iste minima nihil cupiditate
       repellat.
     </p>
-    <ArticleFullsizeImage
+    <ArticleImage
       figSrc={owl}
       figCaption={(
         <>
