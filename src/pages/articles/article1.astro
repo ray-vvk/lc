@@ -16,11 +16,11 @@ import ArticleFullsizeTable from "../../components/article/article-fullsize-tabl
   <title>Article1 | Virovek Learning Center</title>
 </head>
 <ArticleLayout
-  articleCategory={(<>article 1 category</>)}
-  articleTitle={(<>Article 1 title</>)}
+  articleCategory="article 1 category"
+  articleTitle="Article 1 title"
   articleSubtitle={(
     <>
-      This is the subtitle. Lorem ipsum dolor sit amet consectetur adipisicing
+      This is the <strong>subtitle.</strong> Lorem ipsum dolor sit amet consectetur adipisicing
       elit. Dolor, ipsa.
     </>
   )}
@@ -28,7 +28,7 @@ import ArticleFullsizeTable from "../../components/article/article-fullsize-tabl
   <SectionBasicGraphicAside
     h2="title of section."
     figSrc={owl}
-    figCaption={(<>figure caption.</>)}
+    figCaption="figure caption."
     figAlt="owl."
   >
     <p class="lead">
@@ -111,14 +111,24 @@ import ArticleFullsizeTable from "../../components/article/article-fullsize-tabl
       </ArticleCard>
     </ArticleCards>
   </SectionBasic>
-  <SectionBasic h2="section 2">
+  <SectionBasic h2="section 3">
     <ArticleFullsizeTable>
       <tr slot="thead-contents"
-        ><th>table head cell 1</th><th>table head cell 2</th><th>table head cell 3</th></tr
+        ><th>table head cell 1</th><th>table head cell 2</th><th
+          >table head cell 3</th
+        ></tr
       >
       <Fragment slot="tbody-contents">
-        <tr><th>table body cell 1</th><td>table body cell 2</td><td>table body cell 3</td></tr>
-        <tr><th>table body cell 1</th><td>table body cell 2</td><td>table body cell 3</td></tr>
+        <tr
+          ><th>table body cell 1</th><td>table body cell 2</td><td
+            >table body cell 3</td
+          ></tr
+        >
+        <tr
+          ><th>table body cell 1</th><td>table body cell 2</td><td
+            >table body cell 3</td
+          ></tr
+        >
       </Fragment>
       <Fragment slot="figcaption-contents"
         >contents of the <strong>fig</strong>caption</Fragment
@@ -161,5 +171,24 @@ import ArticleFullsizeTable from "../../components/article/article-fullsize-tabl
     </ArticleCta>
   </SectionBasic>
 
-  <SectionReferences />
+  <SectionReferences>
+    <ol>
+      <li id="123">
+        Athos E.A., Levinson B., Kistler A., Zemansky J., Bostrom A., Freimer
+        N., Gitschier J. (2007). Dichotomy and perceptual distortions in
+        absolute pitch ability. Proceedings of the National Academy of Sciences
+        of the United States of America, 104(37), 14795–14800.
+      </li>
+      <li>
+        Citation name university research institute date et al. names names etc.
+        journal conference etc.
+      </li>
+      <li>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quibusdam
+        libero molestiae voluptatem consequatur a ipsum hic facere provident
+        porro quas alias ullam, id veritatis deleniti obcaecati accusantium!
+        Deleniti, libero.
+      </li>
+    </ol>
+  </SectionReferences>
 </ArticleLayout>

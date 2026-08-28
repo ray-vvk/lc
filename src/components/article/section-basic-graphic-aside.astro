@@ -1,10 +1,9 @@
 ---
-import owl from "../../images/placeholder_owl.jpg";
 import { Image } from "astro:assets";
 interface Props {
   h2: string 
   figSrc: ImageMetadata
-  figCaption: HTMLElement
+  figCaption: HTMLElement | string 
   figAlt: string
 }
 const { h2, figSrc, figAlt, figCaption } = Astro.props;

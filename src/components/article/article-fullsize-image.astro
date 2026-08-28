@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 interface Props {
   figSrc: ImageMetadata;
-  figCaption: HTMLElement;
+  figCaption: HTMLElement | string;
   figAlt: string;
 }
 const { figSrc, figAlt, figCaption } = Astro.props;
