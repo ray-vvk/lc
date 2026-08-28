@@ -4,7 +4,7 @@
 	"url": "http://localhost:4321",
 	"urls": {
 		"local": [
-			"http://localhost:4321/lc-dist"
+			"http://localhost:4321/lc"
 		],
 		"network": [],
 		"networkInterfaceNames": []
