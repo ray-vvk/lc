@@ -3,6 +3,8 @@ import GlobalLayout from "../layouts/global-layout.astro";
 import GlobalStyles from "../components/styles/global-styles.astro";
 import ArticleCard from "../components/article/article-card.astro";
 import ArticleCards from "../components/article/article-cards.astro";
+import { getCollection } from "astro:content";
+const articleData = await getCollection("articleData");
 ---
 
 <GlobalLayout>
@@ -13,16 +15,20 @@ import ArticleCards from "../components/article/article-cards.astro";
     <section class="beneath">
       <div class="wrap">
         <p>
-          A list of articles and their categories will go here. For now, it's
-          just a couple cards linking to articles.
+          Browse a collection of articles authored, edited, organized, and
+          produced by the team at Virovek.
         </p>
         <ArticleCards>
-          <ArticleCard cardTitle="Article 1">
-            <a href="/lc/articles/article1">Article 1</a>
-          </ArticleCard>
-          <ArticleCard cardTitle="Article 2">
-            <a href="/lc/articles/article2">Article 2</a>
-          </ArticleCard>
+          {
+            articleData.map((article) => {
+              return (
+                <ArticleCard cardTitle={article.data.title}>
+                  <p>Published: {article.data.pubDate}</p>
+                  <a href={article.data.slug}>{article.data.title}</a>
+                </ArticleCard>
+              );
+            })
+          }
         </ArticleCards>
       </div>
     </section>

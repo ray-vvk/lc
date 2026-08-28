@@ -6,8 +6,9 @@ interface Props {
   articleTitle: HTMLElement | string;
   articleSubtitle: HTMLElement | string;
   articleCategory: HTMLElement | string;
+  articleTags: string[]
 }
-const { articleTitle, articleSubtitle, articleCategory } = Astro.props;
+const { articleTitle, articleSubtitle, articleCategory, articleTags } = Astro.props;
 ---
 
 <GlobalLayout>
@@ -15,6 +16,7 @@ const { articleTitle, articleSubtitle, articleCategory } = Astro.props;
     category={articleCategory}
     subtitle={articleSubtitle}
     title={articleTitle}
+    tags={articleTags}
   />
   <main>
     <slot />

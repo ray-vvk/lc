@@ -1,10 +1,11 @@
 ---
 interface Props {
-  title: HTMLElement | string
-  subtitle: HTMLElement | string
-  category: HTMLElement | string
+  title: HTMLElement | string;
+  subtitle: HTMLElement | string;
+  category: HTMLElement | string;
+  tags: string[];
 }
-const { title, subtitle, category } = Astro.props;
+const { title, subtitle, category, tags } = Astro.props;
 ---
 
 <header>
@@ -12,5 +13,34 @@ const { title, subtitle, category } = Astro.props;
     <div class="eyebrow">{category}</div>
     <h1>{title}</h1>
     <p class="dek">{subtitle}</p>
+    <div class="tags">
+      Tags: &nbsp;
+      {
+        tags.map((tag, i, tags) => {
+          if (i !== tags.length - 1) {
+            return (
+              <span>
+                <a href={`/lc/tags/${tag}`}>{tag}</a>,&nbsp;
+              </span>
+            );
+          }
+          return (
+            <span>
+              <a href={`/lc/tags/${tag}`}>{tag}</a>
+            </span>
+          );
+        })
+      }
+    </div>
   </div>
 </header>
+
+<style>
+  .tags {
+    font-size: 0.94rem;
+    font-weight: bold;
+    a {
+      text-transform: uppercase;
+    }
+  }
+</style>
