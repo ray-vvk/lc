@@ -1,0 +1,14 @@
+{
+	"pid": 17400,
+	"port": 4321,
+	"url": "http://localhost:4321",
+	"urls": {
+		"local": [
+			"http://localhost:4321/lc-dist"
+		],
+		"network": [],
+		"networkInterfaceNames": []
+	},
+	"background": false,
+	"startedAt": "2026-08-28T05:08:09.810Z"
+}
