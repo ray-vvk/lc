@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  h2: string 
+  figSrc: ImageMetadata
+  figCaption: HTMLElement | string 
+  figAlt: string
+}
+const { h2, figSrc, figAlt, figCaption } = Astro.props;
+---
+
+<section>
+  <div class="wrap grid">
+    <div>
+      <h2>{h2}</h2>
+      <slot />
+    </div>
+    <aside>
+      <figure>
+        <Image src={figSrc} loading="lazy" alt={figAlt} />
+        <figcaption>
+          {figCaption}
+        </figcaption>
+      </figure>
+    </aside>
+  </div>
+</section>
+<!-- <section>
+  <div class="wrap grid">
+    <div>
+      <h2>Section with graphic aside</h2>
+      <p class="lead">
+        Optional subtitle. This section is also responsively designed.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+        praesentium voluptates optio quaerat? Distinctio, ipsam alias, veniam
+        nobis magnam nisi voluptatem delectus, eos saepe quam ullam modi?
+        Dolores voluptatibus iure ipsum molestiae earum odio doloremque dolore
+        iusto, deleniti, sapiente nisi quae accusantium laboriosam minus
+        temporibus mollitia ut id consequuntur expedita.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt,
+        velit aliquam. Exercitationem praesentium veritatis quaerat rem unde,
+        quam iure vel? Porro, ab, amet qui illum nihil nam ipsam placeat omnis
+        ipsa aut neque, provident necessitatibus ad quas eaque quibusdam est.
+      </p>
+    </div>
+    <aside>
+      <figure>
+        <Image
+          src={owl}
+          loading="lazy"
+          alt="owl."
+        />
+        <figcaption>
+          <strong>Figure 3.</strong> Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Iusto delectus accusamus laudantium dolores natus, magnam minus distinctio
+          veritatis dicta quod?
+        </figcaption>
+      </figure>
+    </aside>
+  </div>
+</section> -->

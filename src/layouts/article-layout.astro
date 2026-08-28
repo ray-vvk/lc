@@ -1,0 +1,24 @@
+---
+import ArticleHeader from "../components/article/article-header.astro";
+import GlobalStyles from "../components/styles/global-styles.astro";
+import GlobalLayout from "./global-layout.astro";
+interface Props {
+  articleTitle: HTMLElement | string;
+  articleSubtitle: HTMLElement | string;
+  articleCategory: HTMLElement | string;
+}
+const { articleTitle, articleSubtitle, articleCategory } = Astro.props;
+---
+
+<GlobalLayout>
+  <ArticleHeader
+    category={articleTitle}
+    subtitle={articleSubtitle}
+    title={articleCategory}
+  />
+  <main>
+    <slot />
+  </main>
+</GlobalLayout>
+
+<GlobalStyles />

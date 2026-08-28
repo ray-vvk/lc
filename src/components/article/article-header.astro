@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: HTMLElement | string
+  subtitle: HTMLElement | string
+  category: HTMLElement | string
+}
+const { title, subtitle, category } = Astro.props;
+---
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">{category}</div>
+    <h1>{title}</h1>
+    <p class="dek">{subtitle}</p>
+  </div>
+</header>

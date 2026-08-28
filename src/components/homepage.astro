@@ -1,0 +1,42 @@
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p>
+        This will be the homepage. It'll look less ugly later. I haven't worked
+        on it at all yet.
+      </p>
+    </div>
+  </section>
+  <section class="beneath">
+    <div class="wrap">
+      <p>A list of articles and their categories will go here.</p>
+      <a href="/lc-dist/articles/article1">Article 1</a>
+    </div>
+  </section>
+  <section class="beneath">
+    <div class="wrap">
+      <p>Something else will go here. I haven't decided yet.</p>
+    </div>
+  </section>
+</main>
+
+<style>
+  main {
+    min-height: 80vh;
+  }
+  section {
+    height: 30rem;
+    border: none;
+  }
+  .hero {
+    background-color: var(--cyan);
+    padding: 4rem;
+  }
+  .beneath {
+    padding: 4rem;
+    background-color: var(--pale);
+  }
+  .beneath:nth-child(odd) {
+    background-color: var(--cyan);
+  }
+</style>

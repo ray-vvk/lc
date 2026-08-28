@@ -1,5 +1,5 @@
-import Navbar from "./components/navbar"
-import Footer from "./components/footer"
+import Navbar from "./components/navbar.astro"
+import ArticleFooter from "./components/article-footer.astro"
 // import ArticleHeader from "./components/article-header"
 import owl from ".././images/placeholder_owl.jpg"
 

@@ -1,0 +1,52 @@
+---
+interface Props {
+  h2: string;
+}
+const { h2 } = Astro.props;
+---
+
+<section>
+  <div class="wrap">
+    <h2>{h2}</h2>
+    <slot />
+  </div>
+</section>
+
+<!-- <section>
+  <div class="wrap">
+    <h2>Section with some paragraphs</h2>
+    <p class="lead">
+      Optional subtitle. Lorem ipsum dolor sit, amet consectetur adipisicing
+      elit. Commodi, repellendus?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+      praesentium voluptates optio quaerat? Distinctio, ipsam alias, veniam
+      nobis magnam nisi voluptatem delectus, eos saepe quam ullam modi? Dolores
+      voluptatibus iure ipsum molestiae earum odio doloremque dolore iusto,
+      deleniti, sapiente nisi quae accusantium laboriosam minus temporibus
+      mollitia ut id consequuntur expedita.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, velit!
+      If you're citing the literature, that can be done too (<a href="#123"
+        >Athos et al</a
+      >). Like so. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Fugit earum eius hic quasi, possimus laboriosam. Quos dolor perspiciatis
+      inventore recusandae?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vero velit
+      qui similique quo ipsum modi quos, explicabo cupiditate, aliquid nesciunt
+      facere sapiente repellendus asperiores et. Illum quos nulla, earum
+      architecto odit qui aliquid mollitia atque saepe voluptatem! Nihil
+      voluptate pariatur, vero quam ratione praesentium, nesciunt eos, nulla a
+      id repellendus quaerat laboriosam consequuntur! Rem assumenda numquam
+      animi, dolorum ea maiores minus odit. Quod quas provident nisi inventore.
+      Id, porro! Facilis beatae totam soluta, optio aspernatur, quis earum
+      temporibus tempora doloremque, labore officia cumque. Suscipit minima,
+      ducimus quod culpa harum, voluptates debitis soluta aperiam assumenda
+      inventore tempora? Quibusdam, amet provident!
+    </p>
+  </div>
+</section> -->
