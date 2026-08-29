@@ -9,8 +9,16 @@ const articleData = defineCollection({
     slug: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date(),
-    
+    tags: z.array(z.string()),
   })
 });
 
-export const collections = { articleData };
+const tagData = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/data/tag-data" }),
+  schema: z.object({
+    description: z.optional(z.string())
+  })
+})
+
+
+export const collections = { articleData, tagData };

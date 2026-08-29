@@ -1,12 +1,26 @@
 ---
 import GlobalLayout from "../layouts/global-layout.astro";
 import GlobalStyles from "../components/styles/global-styles.astro";
-import ArticleCard from "../components/article/article-card.astro";
-import ArticleCards from "../components/article/article-cards.astro";
 import { getCollection } from "astro:content";
 import CardsLinks from "../components/cards-links.astro";
 import CardLink from "../components/card-link.astro";
 const articleData = await getCollection("articleData");
+const tagData = await getCollection("tagData");
+
+let articlesByTag: Record<string, object[]> = {}
+articleData.map((article) => {
+  const tags = article.data.tags
+  for (let tag of tags) {
+    if (Object.keys(articlesByTag).includes(tag)) {
+      articlesByTag[tag].push(article)
+    } else {
+      articlesByTag[tag] = [article]
+    }
+  }
+})
+
+console.log(tagData)
+
 ---
 
 <GlobalLayout>
@@ -22,10 +36,13 @@ const articleData = await getCollection("articleData");
         </p>
         <CardsLinks>
           {
-            articleData.map((article) => {
+            Object.entries(articlesByTag).map((x, i) => {
+              const [tag, articles] = x
+              const tagObject = tagData.find((tagObject) => tagObject.id === tag)
+              const tagDescription = tagObject?.data.description
               return (
-                <CardLink cardTitle={article.data.title} link={article.data.slug}>
-                  <p>Published: {article.data.pubDate}</p>
+                <CardLink cardTitle={tag} link={`/articles/tags/${tag}`}>
+                  {tagDescription ? tagDescription : "Tag description goes here eventually."}
                 </CardLink>
               );
             })
