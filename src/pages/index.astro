@@ -7,20 +7,19 @@ import CardLink from "../components/card-link.astro";
 const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
 
-let articlesByTag: Record<string, object[]> = {}
+let articlesByTag: Record<string, object[]> = {};
 articleData.map((article) => {
-  const tags = article.data.tags
+  const tags = article.data.tags;
   for (let tag of tags) {
     if (Object.keys(articlesByTag).includes(tag)) {
-      articlesByTag[tag].push(article)
+      articlesByTag[tag].push(article);
     } else {
-      articlesByTag[tag] = [article]
+      articlesByTag[tag] = [article];
     }
   }
-})
+});
 
-console.log(tagData)
-
+import _ from "lodash";
 ---
 
 <GlobalLayout>
@@ -37,12 +36,21 @@ console.log(tagData)
         <CardsLinks>
           {
             Object.entries(articlesByTag).map((x, i) => {
-              const [tag, articles] = x
-              const tagObject = tagData.find((tagObject) => tagObject.id === tag)
-              const tagDescription = tagObject?.data.description
+              const [tag, articles] = x;
+              const tagObject = tagData.find(
+                (tagObject) => tagObject.id === tag,
+              );
+              const tagDescription = tagObject?.data.description;
+              // process the tag name
+              const tagNamePretty = tag.replaceAll("-", " ");
               return (
-                <CardLink cardTitle={tag} link={`/articles/tags/${tag}`}>
-                  {tagDescription ? tagDescription : "Tag description goes here eventually."}
+                <CardLink
+                  cardTitle={<span class="capitalize">{tagNamePretty}</span>}
+                  link={`/articles/tags/${tag}`}
+                >
+                  {tagDescription
+                    ? tagDescription
+                    : "Tag description goes here eventually."}
                 </CardLink>
               );
             })
@@ -94,6 +102,9 @@ console.log(tagData)
   }
   .beneath:nth-child(odd) {
     background-color: var(--cyan);
+  }
+  .capitalize {
+    text-transform: capitalize;
   }
   @media (max-width: 1000px) {
     .hero {
