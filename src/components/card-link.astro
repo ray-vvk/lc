@@ -1,14 +1,20 @@
 ---
 interface Props {
-  cardTitle: HTMLElement | string;
+  cardTitle: HTMLElement | (() => HTMLElement) | string;
   link: string;
 }
 const { cardTitle, link } = Astro.props;
+let cardTitle_;
+if (typeof cardTitle === "function") {
+  cardTitle_ = cardTitle();
+} else {
+  cardTitle_ = cardTitle;
+}
 ---
 
 <a href={link}>
   <div class="card">
-    <h3>{cardTitle}</h3>
+    <h3>{cardTitle_}</h3>
     <slot />
   </div>
 </a>

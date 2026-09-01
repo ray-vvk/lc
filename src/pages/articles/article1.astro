@@ -42,11 +42,7 @@ import SectionWithAside from "../../components/article/section-with-aside.astro"
     <Fragment slot={"aside-contents"}>
       <ArticleImage
         figSrc={owl}
-        figCaption={(
-          <>
-            this is an <strong>owl.</strong>
-          </>
-        )}
+        figCaption={<span>this is an <strong>owl.</strong></span>}
         figAlt="owl"
       />
       <p>
