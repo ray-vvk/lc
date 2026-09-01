@@ -16,7 +16,7 @@ import ArticleImage from "../../components/article/article-image.astro";
 <ArticleLayout 
 articleCategory="category"
   articleTitle="MDX test"
-  articleSubtitle="subtitle"
+  articleSubtitle="subtitle."
   articleTags={["tag1","manufacturing"]}>
 
 <SectionBasic h2="basic section">
@@ -59,7 +59,7 @@ ok, so components work great!
     <Fragment slot={"aside-contents"}>
       <ArticleImage
         figSrc={owl}
-        figCaption={"this is an *owl*."} 
+        figCaption={() => <span>hello??? <strong>please</strong> work.</span>} 
         figAlt="owl"
       />
       {/* need to figure out how to get the figcaption to display correctly. */}
