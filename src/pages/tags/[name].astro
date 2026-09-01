@@ -1,0 +1,17 @@
+---
+import { getCollection, render } from "astro:content";
+export async function getStaticPaths() {
+  const tags = await getCollection("tagData");
+  return tags.map((tag) => {
+    return {
+      params: { name: tag.id },
+      props: { tag },
+    };
+  });
+}
+// 2. For your template, you can get the entry directly from the prop
+const { tag } = Astro.props;
+const { Content } = await render(tag);
+---
+
+<Content />
