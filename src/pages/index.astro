@@ -61,8 +61,13 @@ articleData.map((article) => {
       <div class="wrap">
         <p>
           Something else will go here. Probably a call to action. I haven't
-          decided.
+          decided. For now, it's just a list of articles for easy access. 
         </p>
+        {
+          articleData.map((article) => {
+            return <div><a href={`lc/articles/${article.id}`}>{article.data.title}</a></div>
+          })
+        }
       </div>
     </section>
   </main>
