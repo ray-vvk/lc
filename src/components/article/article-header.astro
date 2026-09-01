@@ -1,36 +1,18 @@
 ---
 interface Props {
-  title: (() => HTMLElement) | string;
-  subtitle: (() => HTMLElement) | string;
-  category: (() => HTMLElement) | string;
+  title: string;
+  subtitle: string;
+  category: string;
   tags: string[];
 }
 const { title, subtitle, category, tags } = Astro.props;
-let title_;
-let subtitle_;
-let category_;
-if (typeof title === "function") {
-  title_ = title()
-} else {
-  title_ = title 
-}
-if (typeof subtitle === "function") {
-  subtitle_ = subtitle()
-} else {
-  subtitle_ = subtitle 
-}
-if (typeof category === "function") {
-  category_ = category()
-} else {
-  category_ = category 
-}
 ---
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">{category_}</div>
-    <h1>{title_}</h1>
-    <p class="dek">{subtitle_}</p>
+    <div class="eyebrow">{category}</div>
+    <h1>{title}</h1>
+    <p class="dek">{subtitle}</p>
     <div class="tags">
       Tags: &nbsp;
       {

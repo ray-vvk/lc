@@ -12,6 +12,8 @@ import SectionBasic from "../../components/article/section-basic.astro";
 import SectionWithAside from "../../components/article/section-with-aside.astro";
 import owl from "../../images/placeholder_owl.jpg"
 import ArticleImage from "../../components/article/article-image.astro";
+import SectionReferences from "../../components/article/section-references.astro";
+import ArticleCallout from "../../components/article/article-callout.astro";
 
 <ArticleLayout 
 articleCategory="category"
@@ -36,7 +38,8 @@ This section takes up the full width of the screen.
     
 </SectionBasic>
 <SectionBasic h2="another section">
-ok, so components work great!
+ok, so my components work great!
+<ArticleCallout>this is callout text.</ArticleCallout>
 </SectionBasic>
 <SectionWithAside h2="Section with aside">
     <Fragment slot="main-contents">
@@ -59,7 +62,7 @@ ok, so components work great!
     <Fragment slot={"aside-contents"}>
       <ArticleImage
         figSrc={owl}
-        figCaption={() => <span>hello??? <strong>please</strong> work.</span>} 
+        figCaptionComponent={() => <span>hello??? <strong>please</strong> work.</span>} 
         figAlt="owl"
       />
       {/* need to figure out how to get the figcaption to display correctly. */}
@@ -69,6 +72,56 @@ ok, so components work great!
       </p>
     </Fragment>
   </SectionWithAside>
+<SectionBasic h2="another basic section">
+<ArticleTable>
+<Fragment slot="thead-contents">
+<tr>
+<th>abc</th>
+<th>abc</th>
+<th>abc</th>
+<th>abc</th>
+<th>abc</th>
+<th>abc</th>
+</tr>
+</Fragment>
+<Fragment slot="tbody-contents">
+<tr>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+</tr>
+<tr>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+</tr>
+<tr>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+</tr>
+<tr>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+<td>hi</td>
+</tr>
+</Fragment>
+</ArticleTable>
+</SectionBasic>
+<SectionReferences>
+</SectionReferences>
 
 
 </ArticleLayout>

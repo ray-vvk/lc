@@ -3,9 +3,9 @@ import ArticleHeader from "../components/article/article-header.astro";
 import GlobalStyles from "../components/styles/global-styles.astro";
 import GlobalLayout from "./global-layout.astro";
 interface Props {
-  articleTitle: (() => HTMLElement) | string;
-  articleSubtitle: (() => HTMLElement) | string;
-  articleCategory: (() => HTMLElement) | string;
+  articleTitle: string;
+  articleSubtitle: string;
+  articleCategory: string;
   articleTags: string[]
 }
 const { articleTitle, articleSubtitle, articleCategory, articleTags } = Astro.props;

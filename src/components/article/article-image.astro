@@ -2,23 +2,26 @@
 import { Image } from "astro:assets";
 interface Props {
   figSrc: ImageMetadata;
-  figCaption: (() => HTMLElement) | string; // because mdx can't seem to pass a straight-up HTML element to an astro component as props and have it get rendered correctly in the astro component, i've changed the props type here + wherever I'd like to pass an html element TO a function that returns an HTML element. either you pass in a string if you wanna keep it simple, or you pass in a function that returns an html element, and it gets brought all the way to the place it belongs inside the astro component, escaping the mdx parser which would've destroyed it, and then gets called and rendered as it should be.
+  figCaption?: string;
+  figCaptionComponent?: () => HTMLElement; // because mdx can't seem to pass a straight-up HTML element to an astro component as props and have it get rendered correctly in the astro component, i've changed the props type here + wherever I'd like to pass an html element TO a function that returns an HTML element. either you pass in a string if you wanna keep it simple, or you pass in a function that returns an html element, and it gets brought all the way to the place it belongs inside the astro component, escaping the mdx parser which would've destroyed it, and then gets called and rendered as it should be.
   figAlt: string;
 }
-const { figSrc, figAlt, figCaption } = Astro.props;
+const { figSrc, figAlt, figCaption, figCaptionComponent } = Astro.props;
 ---
 
 <figure>
   <Image src={figSrc} loading="lazy" alt={figAlt} />
   <figcaption>
-    {(() => {
-      // figure caption can be an astro component (or html element?) or a string. differentiate between them and render them differently.
-      if (typeof figCaption === "function") {
-        const Caption = figCaption
-        return <Caption />
-      } else {
-        return figCaption
-      }
-    })()}
+    {
+      (() => {
+        if (figCaptionComponent) {
+          const CaptionFr = figCaptionComponent;
+          return <CaptionFr />;
+        }
+        if (figCaption) {
+          return figCaption;
+        }
+      })()
+    }
   </figcaption>
 </figure>
