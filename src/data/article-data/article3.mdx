@@ -15,113 +15,114 @@ import ArticleImage from "../../components/article/article-image.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
 
-<ArticleLayout 
-articleCategory="category"
-  articleTitle="MDX test"
-  articleSubtitle="subtitle."
-  articleTags={["tag1","manufacturing"]}>
+<ArticleLayout articleCategory="category" articleTitle="MDX test" articleSubtitle="subtitle." articleTags={["tag1","manufacturing"]}>
+  <SectionBasic h2="basic section">
+    MDX seems great after a cursory look at the docs. I hope to make all articles MDX and embed my components and page structure stuff (asides, tables, cards, images, etc.) into them.
 
-<SectionBasic h2="basic section">
-MDX seems great after a cursory look at the docs. I hope to make all articles MDX and embed my components and page structure stuff (asides, tables, cards, images, etc.) into them.
+    Here's a test.
+  </SectionBasic>
 
-Here\'s a test. 
-</SectionBasic>
+  <SectionBasic h2="a section">
+    <p class="lead">Here's the subtitle.</p>
+    This section takes up the full width of the screen.
 
-<SectionBasic h2="a section">
-<p class="lead">Here's the subtitle.</p>
-This section takes up the full width of the screen.
-    
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, fugit
-      nulla aperiam itaque exercitationem blanditiis earum perspiciatis
-      cupiditate cum laboriosam quibusdam doloribus. Officiis omnis vitae,
-      laborum ab cumque quia aperiam.
-    
-</SectionBasic>
-<SectionBasic h2="another section">
-ok, so my components work great!
-<ArticleCallout>this is callout text.</ArticleCallout>
-</SectionBasic>
-<SectionWithAside h2="Section with aside">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, fugit
+    nulla aperiam itaque exercitationem blanditiis earum perspiciatis
+    cupiditate cum laboriosam quibusdam doloribus. Officiis omnis vitae,
+    laborum ab cumque quia aperiam.
+  </SectionBasic>
+
+  <SectionBasic h2="another section">
+    ok, so my components work great!
+    <ArticleCallout>this is callout text.</ArticleCallout>
+  </SectionBasic>
+
+  <SectionWithAside h2="Section with aside">
     <Fragment slot="main-contents">
       <p class="lead">
         Optional subtitle. This section is responsively designed.
       </p>
+
       <p>
         This is the main part of this section. It also has an aside, or the part
         to the right that contains the image.
       </p>
+
       <p>
         You can put anything in the main part. You can also put anything in the
         aside. More text, a table, an image of an owl... whatever.
       </p>
+
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic labore sunt
         rerum commodi minus nemo quas libero quam, esse autem.
       </p>
     </Fragment>
+
     <Fragment slot={"aside-contents"}>
-      <ArticleImage
-        figSrc={owl}
-        figCaptionComponent={() => <span>hello??? <strong>please</strong> work.</span>} 
-        figAlt="owl"
-      />
+      <ArticleImage figSrc={owl} figCaptionComponent={() => <span>hello??? <strong>please</strong> work.</span>} figAlt="owl" />
+
       {/* need to figure out how to get the figcaption to display correctly. */}
+
       <p>
         This is the aside. On large screens, it's off to the right. On small
         screens, it goes below the main part.
       </p>
     </Fragment>
   </SectionWithAside>
-<SectionBasic h2="another basic section">
-<ArticleTable>
-<Fragment slot="thead-contents">
-<tr>
-<th>abc</th>
-<th>abc</th>
-<th>abc</th>
-<th>abc</th>
-<th>abc</th>
-<th>abc</th>
-</tr>
-</Fragment>
-<Fragment slot="tbody-contents">
-<tr>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-</tr>
-<tr>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-</tr>
-<tr>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-</tr>
-<tr>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-<td>hi</td>
-</tr>
-</Fragment>
-</ArticleTable>
-</SectionBasic>
-<SectionReferences>
-</SectionReferences>
 
+  <SectionBasic h2="another basic section">
+    <ArticleTable>
+      <Fragment slot="thead-contents">
+        <tr>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+        </tr>
+      </Fragment>
 
+      <Fragment slot="tbody-contents">
+        <tr>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+        </tr>
+
+        <tr>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+        </tr>
+
+        <tr>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+        </tr>
+
+        <tr>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+        </tr>
+      </Fragment>
+    </ArticleTable>
+  </SectionBasic>
+
+  <SectionReferences />
 </ArticleLayout>

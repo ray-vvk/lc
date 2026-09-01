@@ -18,8 +18,10 @@
     "@tanstack/react-router": "^1.170.32",
     "@tanstack/react-router-devtools": "^1.167.1",
     "astro": "^7.2.8",
+    "mdxlint": "^1.0.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "remark-frontmatter": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
