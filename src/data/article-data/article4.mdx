@@ -1,0 +1,88 @@
+---
+title: Alphabetical sort!
+subtitle: 12345678
+pubDate: 2026-07-07
+updatedDate: 2026-07-09
+category: protocols
+tags: [engineering, test-tag-1]
+---
+
+import ArticleTable from "../../components/article/article-table.astro"
+import ArticleLayout from "../../layouts/article-layout.astro"
+import SectionBasic from "../../components/article/section-basic.astro";
+import SectionWithAside from "../../components/article/section-with-aside.astro";
+import owl from "../../images/placeholder_owl.jpg"
+import ArticleImage from "../../components/article/article-image.astro";
+import SectionReferences from "../../components/article/section-references.astro";
+import ArticleCallout from "../../components/article/article-callout.astro";
+
+<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags} articlePubDate={frontmatter.pubDate} articleUpdateDate={frontmatter.updatedDate}>
+  <SectionWithAside h2="Section with aside">
+    <Fragment slot="main-contents">
+      <p class="lead">
+        Optional subtitle. This section is responsively designed.
+      </p>
+
+      <p>
+        This is the main part of this section. It also has an aside, or the part
+        to the right that contains the image.
+      </p>
+
+      <p>
+        You can put anything in the main part. You can also put anything in the
+        aside. More text, a table, an image of an owl... whatever.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic labore sunt
+        rerum commodi minus nemo quas libero quam, esse autem.
+      </p>
+    </Fragment>
+
+    <Fragment slot={"aside-contents"}>
+      <ArticleImage figSrc={owl} figCaptionComponent={() => <span>hello??? <strong>please</strong> work.</span>} figAlt="owl" />
+
+      <p>
+        This is the aside. On large screens, it's off to the right. On small
+        screens, it goes below the main part.
+      </p>
+    </Fragment>
+  </SectionWithAside>
+
+  <SectionBasic h2="another basic section">
+    <ArticleTable>
+      <Fragment slot="thead-contents">
+        <tr>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+          <th>abc</th>
+        </tr>
+      </Fragment>
+
+      <Fragment slot="tbody-contents">
+        <tr>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+        </tr>
+
+        <tr>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+          <td>hi</td>
+        </tr>
+      </Fragment>
+    </ArticleTable>
+  </SectionBasic>
+
+  <SectionReferences />
+</ArticleLayout>

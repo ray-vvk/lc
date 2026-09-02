@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import ArticleOfTagList from "./article-of-tag-list";
 interface Props {
   tag: string
 }
@@ -13,10 +14,6 @@ const articlesOfTag = articleData.map((article) => {
 ---
 
 <div>
-  { 
-articlesOfTag 
-? articlesOfTag.map(article => <div><a href={`/lc/articles/${article?.id}`}>{article?.data.title}</a></div>)
-: "There are no articles associated with this tag."
-}
+  <ArticleOfTagList client:load articlesOfTag={articlesOfTag} />
 </div>
 

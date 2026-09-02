@@ -14,15 +14,23 @@ const { h2 } = Astro.props;
       <div>
         <label for="sort-articles"></label>
         <select name="articles" id="sort-articles">
-          <option value="none">Sort articles...</option>
-          <option value="alphabetical">Alphabetical</option>
-          <option value="pubdate">Date published</option>
+          <option value="alphabetical" selected>Alphabetical</option>
+          <option value="pubDate">Date published</option>
         </select>
       </div>
     </div>
     <slot />
   </div>
 </section>
+
+<script>
+import { articleSortType } from "../../store"
+  document.getElementById("sort-articles")?.addEventListener('change', (e) => {
+    // @ts-ignore
+    articleSortType.set(e.target.value)
+  })
+
+</script>
 
 <style>
   h2 {

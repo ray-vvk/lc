@@ -14,11 +14,12 @@ import SectionBasic from "../../components/tags/section-basic.astro";
 import SectionWithAside from "../../components/article/section-with-aside.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
-import ArticleOfTagList from "../../components/tags/article-of-tag-list.astro"
+import ArticleOfTagList from "../../components/tags/article-of-tag-list.tsx"
+import ArticleOfTagListWrapper from "../../components/tags/article-of-tag-list-wrapper.astro"
 
 <TagLayout>
   <SectionBasic h2={frontmatter.name}>
     <p>{frontmatter.description}</p>
-    <ArticleOfTagList tag={frontmatter.name}/>
+    <ArticleOfTagListWrapper tag={frontmatter.name} />
   </SectionBasic>
 </TagLayout>
