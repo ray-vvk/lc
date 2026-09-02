@@ -1,7 +1,9 @@
 ---
 title: MDX check
+subtitle: Section and component showcase.
 pubDate: 2026-03-06
 updatedDate: 2026-03-06
+category: protocols
 tags: [engineering, full-stack-development]
 ---
 
@@ -14,7 +16,7 @@ import ArticleImage from "../../components/article/article-image.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
 
-<ArticleLayout articleCategory="category" articleTitle="MDX test" articleSubtitle="subtitle." articleTags={["tag1","manufacturing"]}>
+<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags}>
   <SectionBasic h2="basic section">
     MDX seems great after a cursory look at the docs. I hope to make all articles MDX and embed my components and page structure stuff (asides, tables, cards, images, etc.) into them.
 
@@ -60,8 +62,6 @@ import ArticleCallout from "../../components/article/article-callout.astro";
 
     <Fragment slot={"aside-contents"}>
       <ArticleImage figSrc={owl} figCaptionComponent={() => <span>hello??? <strong>please</strong> work.</span>} figAlt="owl" />
-
-      {/* need to figure out how to get the figcaption to display correctly. */}
 
       <p>
         This is the aside. On large screens, it's off to the right. On small

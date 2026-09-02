@@ -1,0 +1,23 @@
+---
+title: The first article
+subtitle: this is a subtitle.
+pubDate: 2026-01-01
+updatedDate: 2026-02-02
+category: protocols
+tags: [test-tag-1, manufacturing, engineering, full-stack-development]
+---
+
+import ArticleTable from "../../components/article/article-table.astro"
+import ArticleLayout from "../../layouts/article-layout.astro"
+import SectionBasic from "../../components/article/section-basic.astro";
+import SectionWithAside from "../../components/article/section-with-aside.astro";
+import owl from "../../images/placeholder_owl.jpg"
+import ArticleImage from "../../components/article/article-image.astro";
+import SectionReferences from "../../components/article/section-references.astro";
+import ArticleCallout from "../../components/article/article-callout.astro";
+
+<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags}>
+  <SectionBasic h2="title of section">
+    sample text.
+  </SectionBasic>
+</ArticleLayout>
