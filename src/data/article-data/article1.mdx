@@ -16,7 +16,7 @@ import ArticleImage from "../../components/article/article-image.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
 
-<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags}>
+<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags} articlePubDate={frontmatter.pubDate} articleUpdateDate={frontmatter.updatedDate}>
   <SectionBasic h2="title of section">
     sample text.
   </SectionBasic>

@@ -16,7 +16,7 @@ import ArticleImage from "../../components/article/article-image.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
 
-<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags}>
+<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags} articlePubDate={frontmatter.pubDate} articleUpdateDate={frontmatter.updatedDate}>
   <SectionBasic h2="basic section">
     MDX seems great after a cursory look at the docs. I hope to make all articles MDX and embed my components and page structure stuff (asides, tables, cards, images, etc.) into them.
 

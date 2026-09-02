@@ -12,8 +12,14 @@
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.0",
     "@astrojs/mdx": "^8.0.0",
+    "@astrojs/react": "^6.0.5",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
     "astro": "^7.2.10",
     "mdxlint": "^1.0.0",
+    "nanostores": "^1.5.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "remark-frontmatter": "^5.0.0"
   }
 }

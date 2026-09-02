@@ -7,8 +7,10 @@ interface Props {
   articleSubtitle: string;
   articleCategory: string;
   articleTags: string[]
+  articlePubDate: string; 
+  articleUpdateDate: string 
 }
-const { articleTitle, articleSubtitle, articleCategory, articleTags } = Astro.props;
+const { articleTitle, articleSubtitle, articleCategory, articleTags, articlePubDate, articleUpdateDate } = Astro.props;
 ---
 
 <GlobalLayout>
@@ -17,6 +19,8 @@ const { articleTitle, articleSubtitle, articleCategory, articleTags } = Astro.pr
     subtitle={articleSubtitle}
     title={articleTitle}
     tags={articleTags}
+    pubDate={articlePubDate}
+    updatedDate={articleUpdateDate}
   />
   <main>
     <slot />

@@ -4,8 +4,10 @@ interface Props {
   subtitle: string;
   category: string;
   tags: string[];
+  pubDate: string;
+  updatedDate: string;
 }
-const { title, subtitle, category, tags } = Astro.props;
+const { title, subtitle, category, tags, pubDate, updatedDate } = Astro.props;
 ---
 
 <header>
@@ -13,6 +15,10 @@ const { title, subtitle, category, tags } = Astro.props;
     <div class="eyebrow">{category}</div>
     <h1>{title}</h1>
     <p class="dek">{subtitle}</p>
+    <p class="dates">
+      Date published: {pubDate.slice(0, 10)}
+      <br />Date updated: {updatedDate.slice(0, 10)}
+    </p>
     <div class="tags">
       Tags: &nbsp;
       {
@@ -42,5 +48,8 @@ const { title, subtitle, category, tags } = Astro.props;
     a {
       text-transform: uppercase;
     }
+  }
+  .dates {
+    font-size: 0.96rem;
   }
 </style>
