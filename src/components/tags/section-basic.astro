@@ -7,7 +7,19 @@ const { h2 } = Astro.props;
 
 <section>
   <div class="wrap">
-    <h2>{h2}</h2>
+    <div class="h2-and-sort">
+      <div>
+        <h2>{h2}</h2>
+      </div>
+      <div>
+        <label for="sort-articles"></label>
+        <select name="articles" id="sort-articles">
+          <option value="none">Sort articles...</option>
+          <option value="alphabetical">Alphabetical</option>
+          <option value="pubdate">Date published</option>
+        </select>
+      </div>
+    </div>
     <slot />
   </div>
 </section>
@@ -15,5 +27,19 @@ const { h2 } = Astro.props;
 <style>
   h2 {
     text-transform: capitalize;
+    display: inline-block;
+  }
+  .h2-and-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  select {
+    padding: 0.4rem;
+  }
+  @media (max-width: 850px) {
+    .h2-and-sort {
+      display: inline-block;
+    }
   }
 </style>

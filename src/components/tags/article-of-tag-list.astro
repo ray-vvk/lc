@@ -7,7 +7,6 @@ const {tag} = Astro.props
 const articleData = await getCollection("articleData")
 const articlesOfTag = articleData.map((article) => {
   if (article.data.tags.includes(tag.toLowerCase())) {
-    console.log(article)
     return article
   }
 });
