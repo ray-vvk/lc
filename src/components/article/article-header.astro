@@ -2,17 +2,17 @@
 interface Props {
   title: string;
   subtitle: string;
-  category: string;
+  // category: string;
   tags: string[];
   pubDate: string;
   updatedDate: string;
 }
-const { title, subtitle, category, tags, pubDate, updatedDate } = Astro.props;
+const { title, subtitle, tags, pubDate, updatedDate } = Astro.props;
 ---
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">{category}</div>
+    <!-- <div class="eyebrow">{category}</div> -->
     <h1>{title}</h1>
     <p class="dek">{subtitle}</p>
     <p class="dates">

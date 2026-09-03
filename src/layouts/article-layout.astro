@@ -5,17 +5,22 @@ import GlobalLayout from "./global-layout.astro";
 interface Props {
   articleTitle: string;
   articleSubtitle: string;
-  articleCategory: string;
-  articleTags: string[]
-  articlePubDate: string; 
-  articleUpdateDate: string 
+  // articleCategory: string;
+  articleTags: string[];
+  articlePubDate: string;
+  articleUpdateDate: string;
 }
-const { articleTitle, articleSubtitle, articleCategory, articleTags, articlePubDate, articleUpdateDate } = Astro.props;
+const {
+  articleTitle,
+  articleSubtitle,
+  articleTags,
+  articlePubDate,
+  articleUpdateDate,
+} = Astro.props;
 ---
 
 <GlobalLayout>
   <ArticleHeader
-    category={articleCategory}
     subtitle={articleSubtitle}
     title={articleTitle}
     tags={articleTags}
@@ -28,3 +33,28 @@ const { articleTitle, articleSubtitle, articleCategory, articleTags, articlePubD
 </GlobalLayout>
 
 <GlobalStyles />
+
+<style>
+  .cta {
+    background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+    color: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .cta h2,
+  .cta h3 {
+    color: #fff;
+  }
+
+  .cta a {
+    color: #fff;
+  }
+
+  .cta .btn.secondary {
+    border-color: #fff;
+    background: #fff;
+    color: var(--dark-blue);
+  }
+</style>

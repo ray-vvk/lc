@@ -8,9 +8,6 @@
     "subtitle": {
       "type": "string"
     },
-    "category": {
-      "type": "string"
-    },
     "pubDate": {
       "type": "string",
       "format": "date-time"
@@ -31,7 +28,6 @@
   },
   "required": [
     "title",
-    "category",
     "pubDate",
     "updatedDate",
     "tags"

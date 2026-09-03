@@ -4,6 +4,7 @@ import GlobalStyles from "../components/styles/global-styles.astro";
 import { getCollection } from "astro:content";
 import CardsLinks from "../components/cards-links.astro";
 import CardLink from "../components/card-link.astro";
+import HomepageCta from "../components/homepage-cta.astro";
 const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
 
@@ -70,6 +71,9 @@ articleData.map((article) => {
         }
       </div>
     </section>
+    <section class="beneath full">
+      <HomepageCta />
+    </section>
   </main>
 </GlobalLayout>
 <GlobalStyles />
@@ -106,6 +110,9 @@ articleData.map((article) => {
   }
   .beneath:nth-child(odd) {
     background-color: var(--cyan);
+  }
+  .beneath.full {
+    padding: 0rem; 
   }
   .capitalize {
     text-transform: capitalize;
