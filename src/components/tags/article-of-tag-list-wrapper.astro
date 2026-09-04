@@ -5,9 +5,12 @@ interface Props {
   tag: string
 }
 const {tag} = Astro.props
+// i was passed the tag from the mdx page, it was the page's name. "full-stack development"
+// i need to turn all spaces into hyphens.
+const tagHyphenated = tag.replaceAll(" ", "-")
 const articleData = await getCollection("articleData")
 const articlesOfTag = articleData.map((article) => {
-  if (article.data.tags.includes(tag.toLowerCase())) {
+  if (article.data.tags.includes(tagHyphenated.toLowerCase())) {
     return article
   }
 });

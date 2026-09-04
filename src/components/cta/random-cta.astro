@@ -11,6 +11,7 @@ import Cta3 from "./cta3.astro";
 </div>
 
 <script>
+  // render all CTAs but remove all but the one that's selected
   const ctaGoesHere = document.getElementById("cta-goes-here");
   const lower = 1;
   const upper = 3; // change this to be the number of CTAs you got
@@ -18,9 +19,6 @@ import Cta3 from "./cta3.astro";
   const ctaList = ctaGoesHere?.querySelectorAll('.cta')
   if (ctaList){ 
     ctaList.forEach((cta, i) => {
-      console.log(cta)
-      console.log(i)
-      console.log(selection)
       if (i+1 !== selection) {
         cta.remove()
       }

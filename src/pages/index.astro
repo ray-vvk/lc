@@ -62,24 +62,30 @@ articleData.map((article) => {
     </section>
     <section class="beneath">
       <div class="wrap">
-        <p>
-          Something else will go here. Probably a call to action. I haven't
-          decided. For now, it's just a list of articles for easy access.
-        </p>
-        {
-          articleData.map((article) => {
-            return (
-              <div>
-                <a href={`lc/articles/${article.id}`}>{article.data.title}</a>
-              </div>
-            );
-          })
-        }
+        <RandomCta />
       </div>
     </section>
     <section class="beneath">
       <div class="wrap">
-        <RandomCta />
+        <p>Recent articles:</p>
+        <ul>
+          {
+            // sort by recent pubDate first. so oldest pubDate last.
+            articleData
+            .sort((a, b) => {
+              if (a.data.pubDate < b.data.pubDate) return 1;
+              if (a.data.pubDate > b.data.pubDate) return -1;
+              return 0;
+            })
+            .map((article) => {
+              return (
+                <li>
+                  <a href={`lc/articles/${article.id}`}>{article.data.title}</a>
+                </li>
+              );
+            })
+          }
+          </ul>
       </div>
     </section>
   </main>
@@ -124,6 +130,10 @@ articleData.map((article) => {
   }
   .capitalize {
     text-transform: capitalize;
+  }
+  ul {
+    list-style-type: "—  ";
+    padding-left: 2rem;
   }
   @media (max-width: 1000px) {
     .hero {
