@@ -1,0 +1,32 @@
+---
+import Cta1 from "./cta1.astro";
+import Cta2 from "./cta2.astro";
+import Cta3 from "./cta3.astro";
+---
+
+<div id="cta-goes-here">
+  <Cta1/>
+  <Cta2/>
+  <Cta3/>
+</div>
+
+<script>
+  const ctaGoesHere = document.getElementById("cta-goes-here");
+  const lower = 1;
+  const upper = 3; // change this to be the number of CTAs you got
+  const selection = Math.floor(Math.random() * upper) + lower;
+  const ctaList = ctaGoesHere?.querySelectorAll('.cta')
+  if (ctaList){ 
+    ctaList.forEach((cta, i) => {
+      console.log(cta)
+      console.log(i)
+      console.log(selection)
+      if (i+1 !== selection) {
+        cta.remove()
+      }
+    })
+  }
+
+  // AAAAAAAAAHHHHHH ASTRO COMPONENT PURE TS THE FUNCTIONALITY THAT I WANTED RAAAAAAAAAAAAAAHHHH
+
+</script>

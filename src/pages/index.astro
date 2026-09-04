@@ -4,7 +4,10 @@ import GlobalStyles from "../components/styles/global-styles.astro";
 import { getCollection } from "astro:content";
 import CardsLinks from "../components/cards-links.astro";
 import CardLink from "../components/card-link.astro";
-import HomepageCta from "../components/homepage-cta.astro";
+import Cta1 from "../components/cta/cta1.astro";
+import Cta2 from "../components/cta/cta2.astro";
+import Cta3 from "../components/cta/cta3.astro";
+import RandomCta from "../components/cta/random-cta.astro";
 const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
 
@@ -19,7 +22,6 @@ articleData.map((article) => {
     }
   }
 });
-
 ---
 
 <GlobalLayout>
@@ -62,17 +64,23 @@ articleData.map((article) => {
       <div class="wrap">
         <p>
           Something else will go here. Probably a call to action. I haven't
-          decided. For now, it's just a list of articles for easy access. 
+          decided. For now, it's just a list of articles for easy access.
         </p>
         {
           articleData.map((article) => {
-            return <div><a href={`lc/articles/${article.id}`}>{article.data.title}</a></div>
+            return (
+              <div>
+                <a href={`lc/articles/${article.id}`}>{article.data.title}</a>
+              </div>
+            );
           })
         }
       </div>
     </section>
-    <section class="beneath full">
-      <HomepageCta />
+    <section class="beneath">
+      <div class="wrap">
+        <RandomCta />
+      </div>
     </section>
   </main>
 </GlobalLayout>
@@ -112,7 +120,7 @@ articleData.map((article) => {
     background-color: var(--cyan);
   }
   .beneath.full {
-    padding: 0rem; 
+    padding: 0rem;
   }
   .capitalize {
     text-transform: capitalize;
