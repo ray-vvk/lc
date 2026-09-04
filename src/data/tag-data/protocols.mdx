@@ -1,0 +1,19 @@
+---
+name: Protocols
+description: Instructions, conventions, and procedures recommended by us.
+---
+
+import TagLayout from "../../layouts/tag-layout.astro"
+import SectionBasic from "../../components/tags/section-basic.astro";
+import SectionWithAside from "../../components/article/section-with-aside.astro";
+import SectionReferences from "../../components/article/section-references.astro";
+import ArticleCallout from "../../components/article/article-callout.astro";
+import ArticleOfTagList from "../../components/tags/article-of-tag-list.tsx"
+import ArticleOfTagListWrapper from "../../components/tags/article-of-tag-list-wrapper.astro"
+
+<TagLayout>
+  <SectionBasic h2={frontmatter.name}>
+    <p>{frontmatter.description}</p>
+    <ArticleOfTagListWrapper tag={frontmatter.name} />
+  </SectionBasic>
+</TagLayout>
