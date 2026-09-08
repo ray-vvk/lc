@@ -4,24 +4,9 @@ import GlobalStyles from "../components/styles/global-styles.astro";
 import { getCollection } from "astro:content";
 import CardsLinks from "../components/cards-links.astro";
 import CardLink from "../components/card-link.astro";
-import Cta1 from "../components/cta/cta1.astro";
-import Cta2 from "../components/cta/cta2.astro";
-import Cta3 from "../components/cta/cta3.astro";
 import RandomCta from "../components/cta/random-cta.astro";
 const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
-
-let articlesByTag: Record<string, object[]> = {};
-articleData.map((article) => {
-  const tags = article.data.tags;
-  for (let tag of tags) {
-    if (Object.keys(articlesByTag).includes(tag)) {
-      articlesByTag[tag].push(article);
-    } else {
-      articlesByTag[tag] = [article];
-    }
-  }
-});
 ---
 
 <GlobalLayout>
@@ -37,21 +22,15 @@ articleData.map((article) => {
         </p>
         <CardsLinks>
           {
-            Object.entries(articlesByTag).map((x, i) => {
-              const [tag, articles] = x;
-              const tagObject = tagData.find(
-                (tagObject) => tagObject.id === tag,
-              );
-              const tagDescription = tagObject?.data.description;
-              // process the tag name
-              const tagNamePretty = tag.replaceAll("-", " ");
+            tagData.map((tag) => {
+              const tagNamePretty = tag.data.name.replaceAll("-", " ");
               return (
                 <CardLink
                   cardTitle={<span class="capitalize">{tagNamePretty}</span>}
-                  link={`/lc/tags/${tag}`}
+                  link={`/lc/tags/${tag.id}`}
                 >
-                  {tagDescription
-                    ? tagDescription
+                  {tag.data.description
+                    ? tag.data.description
                     : "Tag description goes here eventually."}
                 </CardLink>
               );
@@ -72,20 +51,22 @@ articleData.map((article) => {
           {
             // sort by recent pubDate first. so oldest pubDate last.
             articleData
-            .sort((a, b) => {
-              if (a.data.pubDate < b.data.pubDate) return 1;
-              if (a.data.pubDate > b.data.pubDate) return -1;
-              return 0;
-            })
-            .map((article) => {
-              return (
-                <li>
-                  <a href={`lc/articles/${article.id}`}>{article.data.title}</a>
-                </li>
-              );
-            })
+              .sort((a, b) => {
+                if (a.data.pubDate < b.data.pubDate) return 1;
+                if (a.data.pubDate > b.data.pubDate) return -1;
+                return 0;
+              })
+              .map((article) => {
+                return (
+                  <li>
+                    <a href={`/lc/articles/${article.id}`}>
+                      {article.data.title}
+                    </a>
+                  </li>
+                );
+              })
           }
-          </ul>
+        </ul>
       </div>
     </section>
   </main>
@@ -140,6 +121,11 @@ articleData.map((article) => {
       h1 {
         font-size: clamp(3.5rem, 15vw, 8rem);
       }
+    }
+  }
+  @media (max-width: 850px) {
+    section {
+      min-height: 20rem;
     }
   }
 </style>

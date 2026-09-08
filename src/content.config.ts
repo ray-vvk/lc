@@ -16,6 +16,7 @@ const articleData = defineCollection({
 const tagData = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/data/tag-data" }),
   schema: z.object({
+    name: z.string(),
     description: z.optional(z.string())
   })
 })

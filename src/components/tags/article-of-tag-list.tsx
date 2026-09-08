@@ -1,4 +1,4 @@
-import type { CollectionEntry, InferEntrySchema, RenderedContent } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { articleSortType } from "../../store";
 import { useStore } from "@nanostores/react";
 
@@ -7,6 +7,10 @@ export default function ArticleOfTagList({ articlesOfTag }: {
 }) {
   const $articleSortType = useStore(articleSortType)
   let articlesToBeShown = articlesOfTag
+
+  if (articlesToBeShown.length === 0) {
+    return <div><p style={{color: "var(--muted)"}}>There are no articles associated with this tag.</p></div>
+  }
 
   if ($articleSortType === "pubDate") {
     articlesToBeShown.sort((a, b) => {
