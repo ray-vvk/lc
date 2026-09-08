@@ -13,13 +13,14 @@ const tagData = await getCollection("tagData");
   <main>
     <section class="hero">
       <h1>Knowledge Center</h1>
+      <p>
+        Browse a collection of articles authored, edited, organized, and
+        produced by the team at Virovek.
+      </p>
     </section>
     <section class="beneath">
       <div class="wrap">
-        <p>
-          Browse a collection of articles authored, edited, organized, and
-          produced by the team at Virovek.
-        </p>
+        <h2>Tags:</h2>
         <CardsLinks>
           {
             tagData.map((tag) => {
@@ -88,12 +89,19 @@ const tagData = await getCollection("tagData");
   .hero {
     background-color: var(--cyan);
     padding: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
     text-align: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    clip-path: ellipse(2000px 340px at 50% 33%);
+    clip-path: ellipse(2000px 400px at 50% 20%);
     h1 {
-      font-size: clamp(10rem, 9vw, 12rem);
+      font-size: clamp(8rem, 9vw, 9rem);
+    }
+    p {
+      color: var(--dark-blue);
+      width: 100%;
     }
   }
   .wrap {
@@ -121,15 +129,18 @@ const tagData = await getCollection("tagData");
       h1 {
         font-size: clamp(3.5rem, 15vw, 8rem);
       }
-      clip-path: ellipse(1200px 300px at 50% 30%);
+      clip-path: ellipse(1200px 340px at 50% 30%);
     }
   }
   @media (max-width: 850px) {
     .hero {
-      clip-path: ellipse(1000px 40vw at 50% 20%);
+      padding: 2rem;
+      padding-bottom: 3rem;
+      clip-path: ellipse(1000px 46vw at 50% 20%);
     }
     section {
       min-height: 20rem;
+      padding: 2rem;
     }
     .beneath {
       padding: 2rem;
@@ -137,8 +148,8 @@ const tagData = await getCollection("tagData");
   }
   @media (max-width: 600px) {
     .hero {
-      clip-path: ellipse(500px 45vw at 50% 30%);
-
+      padding-bottom: 3rem;
+      clip-path: ellipse(500px 50vw at 50% 40%);
     }
   }
 </style>
