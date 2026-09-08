@@ -91,7 +91,7 @@ const tagData = await getCollection("tagData");
     text-align: center;
     display: flex;
     justify-content: center;
-    clip-path: ellipse(2000px 350px at 50% 30%);
+    clip-path: ellipse(2000px 340px at 50% 33%);
     h1 {
       font-size: clamp(10rem, 9vw, 12rem);
     }
@@ -121,11 +121,24 @@ const tagData = await getCollection("tagData");
       h1 {
         font-size: clamp(3.5rem, 15vw, 8rem);
       }
+      clip-path: ellipse(1200px 300px at 50% 30%);
     }
   }
   @media (max-width: 850px) {
+    .hero {
+      clip-path: ellipse(1000px 40vw at 50% 20%);
+    }
     section {
       min-height: 20rem;
+    }
+    .beneath {
+      padding: 2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .hero {
+      clip-path: ellipse(500px 45vw at 50% 30%);
+
     }
   }
 </style>
