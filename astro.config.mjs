@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   base: '/lc',
-  site: 'https://ray-vvk.github.io/lc',
+  site: 'https://ray-vvk.github.io',
   integrations: [mdx(), react()],
   markdown: { processor: satteri() }
 });
