@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+
+const articleData = await getCollection("articleData");
+interface Props {
+  maxArticles: number
+}
+const { maxArticles } = Astro.props;
+---
+
+<div>
+  <p>Recent articles:</p>
+  <ul>
+    {
+      // sort by recent pubDate first. so oldest pubDate last.
+      articleData
+        .sort((a, b) => {
+          if (a.data.pubDate < b.data.pubDate) return 1;
+          if (a.data.pubDate > b.data.pubDate) return -1;
+          return 0;
+        })
+        .map((article) => {
+          return (
+            <li>
+              <a href={`/lc/articles/${article.id}`}>{article.data.title}</a>
+            </li>
+          );
+        })
+        .slice(0, maxArticles)
+    }
+  </ul>
+</div>
+
+<style>
+  ul {
+    list-style-type: "—  ";
+    padding-left: 2rem;
+  }
+</style>

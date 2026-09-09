@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import CardsLinks from "../components/cards-links.astro";
 import CardLink from "../components/card-link.astro";
 import RandomCta from "../components/cta/random-cta.astro";
+import RecentArticles from "../components/recent-articles.astro";
 const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
 ---
@@ -59,27 +60,7 @@ const tagData = await getCollection("tagData");
     </section>
     <section class="beneath">
       <div class="wrap">
-        <p>Recent articles:</p>
-        <ul>
-          {
-            // sort by recent pubDate first. so oldest pubDate last.
-            articleData
-              .sort((a, b) => {
-                if (a.data.pubDate < b.data.pubDate) return 1;
-                if (a.data.pubDate > b.data.pubDate) return -1;
-                return 0;
-              })
-              .map((article) => {
-                return (
-                  <li>
-                    <a href={`/lc/articles/${article.id}`}>
-                      {article.data.title}
-                    </a>
-                  </li>
-                );
-              })
-          }
-        </ul>
+        <RecentArticles maxArticles={10} />
       </div>
     </section>
   </main>
@@ -131,6 +112,8 @@ const tagData = await getCollection("tagData");
     margin-bottom: 4rem;
     transition: all 400ms;
     cursor: pointer;
+    font-size: 1.1rem;
+    padding: 1.1rem 1.6rem;
   }
   .browse-articles-btn:hover {
     transform: scale(1.02);
@@ -156,10 +139,6 @@ const tagData = await getCollection("tagData");
   }
   .capitalize {
     text-transform: capitalize;
-  }
-  ul {
-    list-style-type: "—  ";
-    padding-left: 2rem;
   }
   @media (max-width: 1000px) {
     .hero {
