@@ -27,8 +27,11 @@ import HamburgerStyles from "../styles/hamburger-styles.astro";
     {/* links when desktop (on the navbar) */}
     <div class="links">
       <div>
+        <a href="/lc/articles"> Articles</a>
+      </div>
+      <div>
         <a href="https://store.virovek.com/" target="_blank" rel="noreferrer"
-          >Products</a
+          >Premade Products</a
         >
       </div>
       <div>
@@ -43,6 +46,9 @@ import HamburgerStyles from "../styles/hamburger-styles.astro";
     {/* links when mobile (a menu that appears below the navbar) */}
     <div id="mobile-menu" class:list={["links mobile-menu-hidden"]}>
       <div class="wrap">
+        <div>
+          <a href="/lc/articles"> Articles </a>
+        </div>
         <div>
           <a href="https://store.virovek.com/" target="_blank" rel="noreferrer">
             Product Catalog
@@ -114,3 +120,77 @@ import HamburgerStyles from "../styles/hamburger-styles.astro";
   ro.observe(navTopbar);
 </script>
 <HamburgerStyles />
+
+<style>
+  .topbar {
+    background: var(--dark-blue);
+    color: #fff;
+    padding: 0.65rem 0;
+    font-size: 0.93rem;
+    height: 4rem;
+
+    .logo-and-name {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .virovek-logo-div {
+      width: 7rem;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      height: 100%;
+
+      .links {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+
+    .links.mobile-menu-hidden {
+      display: none;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .topbar {
+      position: relative;
+    }
+
+    .topbar .wrap {
+      .links {
+        display: none;
+      }
+
+      .links.mobile-menu {
+        display: block;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        background-color: var(--dark-blue);
+        width: 100%;
+        padding-bottom: 2rem;
+        text-align: right;
+        z-index: 1;
+
+        .wrap {
+          display: block;
+        }
+      }
+
+      .links.mobile-menu-hidden {
+        display: none;
+      }
+    }
+  }
+</style>

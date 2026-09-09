@@ -49,46 +49,6 @@
     margin: auto;
   }
 
-  .topbar {
-    background: var(--dark-blue);
-    color: #fff;
-    padding: 0.65rem 0;
-    font-size: 0.93rem;
-    height: 4rem;
-
-    .logo-and-name {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .virovek-logo-div {
-      width: 7rem;
-    }
-
-    .wrap {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: center;
-      height: 100%;
-
-      .links {
-        display: flex;
-        gap: 2rem;
-      }
-    }
-
-    .links.mobile-menu-hidden {
-      display: none;
-    }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-
   .hamburger .hamburger-box {
     display: none;
   }
@@ -150,11 +110,13 @@
     font-weight: 700;
     text-decoration: none;
     border: 2px solid var(--light-blue);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
   }
 
   .btn.primary {
     background: var(--light-blue);
     color: #fff;
+    font-size: 1.05rem;
   }
 
   .btn.secondary {
@@ -324,35 +286,6 @@
   @media (max-width: 850px) {
     .hamburger .hamburger-box {
       display: block;
-    }
-
-    .topbar {
-      position: relative;
-    }
-
-    .topbar .wrap {
-      .links {
-        display: none;
-      }
-
-      .links.mobile-menu {
-        display: block;
-        position: absolute;
-        top: 4rem;
-        left: 0;
-        background-color: var(--dark-blue);
-        width: 100%;
-        padding-bottom: 2rem;
-        text-align: right;
-
-        .wrap {
-          display: block;
-        }
-      }
-
-      .links.mobile-menu-hidden {
-        display: none;
-      }
     }
 
     .grid {
