@@ -88,7 +88,7 @@ yarn-error.log*
 /.changelog
 lib/
 out/
-public/
+# public/
 spec-reports
 template/src/__tests__/__snapshots__/
 
@@ -145,6 +145,3 @@ testng-results.xml
 # 2. No need to add common/security.gitignore separately
 # 3. Test with `git status --ignored` to ensure proper coverage
 
-
-# and more.
-lc 
