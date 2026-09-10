@@ -17,6 +17,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "astro": "^7.3.2",
+    "fuse.js": "^7.5.0",
     "mdxlint": "^1.0.0",
     "nanostores": "^1.5.3",
     "react": "^19.2.8",

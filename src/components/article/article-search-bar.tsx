@@ -9,7 +9,7 @@ export default function ArticleSearchBar() {
     }} 
     style={{
       padding: '0.3rem',
-      width: '20rem',
+      width: '18rem',
     }}
     />
   )

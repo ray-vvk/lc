@@ -1,16 +1,25 @@
 ---
 import { getCollection } from "astro:content";
-import ArticleSearch from "./article-search";
+import ArticleSearchList from "./article-search-list";
 import ArticleSearchBar from "./article-search-bar";
 
 const articleData = await getCollection("articleData");
 ---
 
-<div>
-  <ArticleSearchBar client:load />
-  <ArticleSearch client:load articleData={articleData} />
+<div class="all-holder">
+  <div class="search-bar-holder">
+    Search for an article: &nbsp;<ArticleSearchBar client:load />
+  </div>
+  <div class="list-holder">
+    <ArticleSearchList client:load articleData={articleData} />
+  </div>
 </div>
 
 <style>
-
+  .search-bar-holder {
+    padding: 1rem 0;
+  }
+  .list-holder {
+    padding: 1rem 0;
+  }
 </style>
