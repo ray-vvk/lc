@@ -9,14 +9,41 @@ export default function ArticleOfTagList({ articlesOfTag }: {
   let articlesToBeShown = articlesOfTag
 
   if (articlesToBeShown.length === 0) {
-    return <div><p style={{color: "var(--muted)"}}>There are no articles associated with this tag.</p></div>
+    return <div><p style={{ color: "var(--muted)" }}>There are no articles associated with this tag.</p></div>
   }
 
-  if ($articleSortType === "pubDate") {
+  if ($articleSortType === "pubDate-a") {
     articlesToBeShown.sort((a, b) => {
       if (a && b) {
         if (a.data.pubDate < b.data.pubDate) return -1
         if (a.data.pubDate > b.data.pubDate) return 1
+        return 0
+      }
+      return -1
+    })
+  } else if ($articleSortType === "pubDate-d") {
+    articlesToBeShown.sort((a, b) => {
+      if (a && b) {
+        if (a.data.pubDate < b.data.pubDate) return 1
+        if (a.data.pubDate > b.data.pubDate) return -1
+        return 0
+      }
+      return -1
+    })
+  } else if ($articleSortType === "updatedDate-a") {
+    articlesToBeShown.sort((a, b) => {
+      if (a && b) {
+        if (a.data.updatedDate < b.data.updatedDate) return -1
+        if (a.data.updatedDate > b.data.updatedDate) return 1
+        return 0
+      }
+      return -1
+    })
+  } else if ($articleSortType === "updatedDate-d") {
+    articlesToBeShown.sort((a, b) => {
+      if (a && b) {
+        if (a.data.updatedDate < b.data.updatedDate) return 1
+        if (a.data.updatedDate > b.data.updatedDate) return -1
         return 0
       }
       return -1
@@ -31,34 +58,6 @@ export default function ArticleOfTagList({ articlesOfTag }: {
       return -1
     })
   }
-
-
-  // articleSortType.subscribe(sort => {
-  //   switch (sort) {
-  //     case "alphabetical":
-  //       articlesToBeShown.sort((a, b) => {
-  //         if (a && b) {
-  //           if (a.data.title < b.data.title) return -1
-  //           if (a.data.title > b.data.title) return 1
-  //           return 0
-  //         }
-  //         return -1
-  //       })
-  //       break;
-  //     case "pubDate":
-  //       articlesToBeShown.sort((a, b) => {
-  //         if (a && b) {
-  //           if (a.data.pubDate < b.data.pubDate) return -1
-  //           if (a.data.pubDate > b.data.pubDate) return 1
-  //           return 0
-  //         }
-  //         return -1
-  //       })
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // })
 
   return (
     <div>

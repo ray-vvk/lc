@@ -15,7 +15,10 @@ const { h2 } = Astro.props;
         <label for="sort-articles"></label>
         <select name="articles" id="sort-articles">
           <option value="alphabetical" selected>Alphabetical</option>
-          <option value="pubDate">Date published</option>
+          <option value="pubDate-a">Date published (ascending)</option>
+          <option value="pubDate-d">Date published (descending)</option>
+          <option value="updatedDate-a">Date updated (ascending)</option>
+          <option value="updatedDate-d">Date updated (descending)</option>
         </select>
       </div>
     </div>
