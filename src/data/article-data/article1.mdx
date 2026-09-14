@@ -7,7 +7,6 @@ tags: [manufacturing, engineering, full-stack-development, protocols]
 ---
 
 import ArticleTable from "../../components/article/article-table.astro"
-import ArticleLayout from "../../layouts/article-layout.astro"
 import SectionBasic from "../../components/article/section-basic.astro";
 import SectionWithAside from "../../components/article/section-with-aside.astro";
 import owl from "../../images/placeholder_owl.jpg"
@@ -15,8 +14,6 @@ import ArticleImage from "../../components/article/article-image.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
 
-<ArticleLayout articleCategory={frontmatter.category} articleTitle={frontmatter.title} articleSubtitle={frontmatter.subtitle} articleTags={frontmatter.tags} articlePubDate={frontmatter.pubDate} articleUpdateDate={frontmatter.updatedDate}>
-  <SectionBasic h2="title of section">
-    sample text.
-  </SectionBasic>
-</ArticleLayout>
+<SectionBasic h2="title of section">
+  sample text.
+</SectionBasic>
