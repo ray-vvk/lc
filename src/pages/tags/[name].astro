@@ -1,5 +1,8 @@
 ---
 import { getCollection, render } from "astro:content";
+import TagLayout from "../../layouts/tag-layout.astro";
+import SectionBasic from "../../components/tags/section-basic.astro";
+import ArticleOfTagListWrapper from "../../components/tags/article-of-tag-list-wrapper.astro";
 export async function getStaticPaths() {
   const tags = await getCollection("tagData");
   return tags.map((tag) => {
@@ -11,7 +14,12 @@ export async function getStaticPaths() {
 }
 // 2. For your template, you can get the entry directly from the prop
 const { tag } = Astro.props;
-const { Content } = await render(tag);
+// const { Content } = await render(tag);
 ---
 
-<Content />
+<TagLayout titlePart={`${tag.data.name} Articles`}>
+  <SectionBasic h2={tag.data.name}>
+    <p>{tag.data.description}</p>
+    <ArticleOfTagListWrapper tag={tag.data.name} />
+  </SectionBasic>
+</TagLayout>

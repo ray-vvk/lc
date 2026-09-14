@@ -19,6 +19,26 @@ const {
 } = Astro.props;
 ---
 
+<Fragment>
+  <title>{articleTitle} | Virovek Knowledge Center</title>
+  <meta name="description" content="description text goes here!!!!" />
+
+  <!-- Replace with the final production URL before publishing -->
+  <link
+    rel="canonical"
+    href="https://virovek.com/resources/fluorescent-capsid-labeled-aav-vs-gfp/"
+  />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="article title goes here!!!! " />
+  <meta property="og:description" content="description text goes here!!!!" />
+  <meta property="og:url" content="article's real url goes here!!!!" />
+  <!-- <meta
+  property="og:image"
+  content="hero image url goes here!!!! if it exists."
+  /> -->
+</Fragment>
+
 <GlobalLayout>
   <ArticleHeader
     subtitle={articleSubtitle}

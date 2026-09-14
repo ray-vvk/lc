@@ -1,0 +1,21 @@
+---
+interface Props {
+  titlePart: string;
+}
+const { titlePart } = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{titlePart} | Virovek Knowledge Center</title>
+  <meta
+    name="description"
+    content="Virovek's Knowledge Center contains protocols, documentation, reports, scientific review articles, and more."
+  />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- these meta tags will need to be specific to each page probably and specific to each article especially -->
+
+  <link rel="icon" type="image/png" href="/lc/virovek-favicon.png" />
+</head>
