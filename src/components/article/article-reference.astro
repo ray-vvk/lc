@@ -1,0 +1,25 @@
+---
+// @ts-ignore
+import { Cite } from "@citation-js/core";
+import "@citation-js/plugin-doi";
+import "@citation-js/plugin-csl";
+// take citation pasted from article as string, search for doi, if doi found generate a properly formatted citation, if not don't do anything and just output citation
+interface Props {
+  refContent: string;
+}
+const { refContent } = Astro.props;
+let output = refContent;
+if (refContent.includes(". doi:")) {
+  const doi = refContent.substring(refContent.indexOf(". doi") + 6, );
+  output = doi;
+  console.log(doi)
+  const cite = new Cite(doi);
+  output = cite.format("bibliography", {
+    format: "html",
+    style: "apa",
+    lang: "en-US",
+  });
+}
+---
+
+<li>{output}</li>

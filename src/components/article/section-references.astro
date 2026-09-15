@@ -1,17 +1,6 @@
----
-// take a ol with many li's in the slot
-// examine the li's, extract the doi from them, store the li's id and the doi
-// 
----
 <section class="references">
   <div class="wrap">
     <h2>References</h2>
     <slot />
   </div>
 </section>
-<script src="/lc/citation-js/bundle.js" is:inline defer ></script>
-<script>
-  const ol = document.querySelector('.references ol')
-  const referencesListItems = ol?.children
-  console.log(referencesListItems)
-</script>
