@@ -412,8 +412,8 @@ var _default = exports.default = logger;
 "use strict";
 
 var plugins = _interopRequireWildcard(require("../plugins"));
-var _input = require("./input/index.js");
-var _output = _interopRequireDefault(require("./output/index.js"));
+var _input = require("./input/");
+var _output = _interopRequireDefault(require("./output/"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
 plugins.add(_input.ref, {
@@ -1353,7 +1353,7 @@ var dataType = _interopRequireWildcard(require("./dataType.js"));
 var graph = _interopRequireWildcard(require("./graph.js"));
 var parser = _interopRequireWildcard(require("./parser.js"));
 var csl = _interopRequireWildcard(require("./csl.js"));
-var _register = require("./register.js");
+var _register = require("./register");
 Object.keys(_register).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
@@ -1365,7 +1365,7 @@ Object.keys(_register).forEach(function (key) {
     }
   });
 });
-var _chain = require("./chain.js");
+var _chain = require("./chain");
 Object.keys(_chain).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
@@ -1377,7 +1377,7 @@ Object.keys(_chain).forEach(function (key) {
     }
   });
 });
-var _type = require("./type.js");
+var _type = require("./type");
 Object.keys(_type).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
@@ -1389,7 +1389,7 @@ Object.keys(_type).forEach(function (key) {
     }
   });
 });
-var _data = require("./data.js");
+var _data = require("./data");
 Object.keys(_data).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
@@ -2449,9 +2449,9 @@ Object.defineProperty(exports, "parse", {
   }
 });
 
-var _input = _interopRequireDefault(require("./input.js"));
+var _input = _interopRequireDefault(require("./input"));
 
-var _output = _interopRequireDefault(require("./output.js"));
+var _output = _interopRequireDefault(require("./output"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 },{"./input":44,"./output":45}],44:[function(require,module,exports){
@@ -2761,9 +2761,9 @@ Object.defineProperty(exports, "format", {
   }
 });
 
-var _input = _interopRequireDefault(require("./input.js"));
+var _input = _interopRequireDefault(require("./input"));
 
-var _output = _interopRequireDefault(require("./output.js"));
+var _output = _interopRequireDefault(require("./output"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 },{"./input":47,"./output":48}],47:[function(require,module,exports){
@@ -6717,7 +6717,7 @@ function fetchDoiType(value, data) {
 "use strict";
 
 var _core = require("@citation-js/core");
-var _input = require("./input.js");
+var _input = require("./input");
 _core.plugins.add(_input.ref, {
   input: _input.formats
 });
