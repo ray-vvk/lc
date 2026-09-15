@@ -14,8 +14,10 @@ export async function getStaticPaths() {
 // 2. For your template, you can get the entry directly from the prop
 const { article } = Astro.props;
 const { Content } = await render(article);
+// the script below 
 ---
 
 <ArticleLayout articleTitle={article.data.title} articleSubtitle={article.data.subtitle ?? ""} articleTags={article.data.tags} articlePubDate={article.data.pubDate.toISOString()} articleUpdateDate={article.data.updatedDate.toISOString()}>  
   <Content />
+  <script src="/lc/citation-js/bundle.js" defer is:inline></script>
 </ArticleLayout>
