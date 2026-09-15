@@ -1,0 +1,38 @@
+---
+interface Props {
+  nums: string;
+}
+const { nums } = Astro.props;
+// the idea: take a string of numbers and commas. 1,2,5,9 or a single number. break it down and render links to the references section below to each li with id reference-#
+let numsList: string[];
+if (nums.includes(",")) {
+  numsList = nums.split(",");
+} else {
+  numsList = [nums];
+}
+const superscriptSymbols = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"];
+const outputList: [number, string][] = []; // [number, superscript symbol of number]
+for (let i = 0; i < numsList.length; i++) {
+  outputList.push([
+    Number(numsList[i]),
+    superscriptSymbols[Number(numsList[i])],
+  ]);
+}
+---
+
+<span>
+  {
+    outputList.map(([num, symbol], i) => {
+      if (i < outputList.length - 1) {
+        return <Fragment><a href={`#reference-${num}`}>{symbol}</a><sup>,</sup></Fragment>
+      } 
+      return <Fragment><a href={`#reference-${num}`}>{symbol}</a></Fragment>
+    })
+  }
+</span>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
