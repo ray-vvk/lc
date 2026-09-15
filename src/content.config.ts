@@ -10,6 +10,7 @@ const articleData = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date(),
     tags: z.array(z.string()),
+    keywords: z.optional(z.string()),
   })
 });
 

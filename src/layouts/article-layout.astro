@@ -1,6 +1,5 @@
 ---
 import ArticleHeader from "../components/article/article-header.astro";
-import GlobalStyles from "../components/styles/global-styles.astro";
 import GlobalLayout from "./global-layout.astro";
 interface Props {
   articleTitle: string;
@@ -9,6 +8,7 @@ interface Props {
   articleTags: string[];
   articlePubDate: string;
   articleUpdateDate: string;
+  articleKeywords: string;
 }
 const {
   articleTitle,
@@ -16,6 +16,7 @@ const {
   articleTags,
   articlePubDate,
   articleUpdateDate,
+  articleKeywords,
 } = Astro.props;
 ---
 
@@ -46,6 +47,7 @@ const {
     tags={articleTags}
     pubDate={articlePubDate}
     updatedDate={articleUpdateDate}
+    keywords={articleKeywords}
   />
   <main>
     <slot />
