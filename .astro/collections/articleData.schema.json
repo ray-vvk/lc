@@ -23,7 +23,10 @@
       }
     },
     "keywords": {
-      "type": "string"
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "$schema": {
       "type": "string"

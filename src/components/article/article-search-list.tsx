@@ -11,7 +11,6 @@ export default function ArticleSearch({ articleData }: {
   const fuse = useMemo(() => {
     return new Fuse(articleData, {
       keys: ['id', 'data.title', 'data.keywords'],
-      // get keywords search to work TODO
       threshold: 0.4
     })
   }, [])
