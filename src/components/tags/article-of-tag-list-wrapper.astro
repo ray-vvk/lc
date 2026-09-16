@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import ArticleOfTagList from "./article-of-tag-list";
+import { articleSearchDisplaySimple } from "../../store";
+import ArticleSimpleTogglerScript from "./article-simple-toggler-script.astro"
 interface Props {
   tag: string;
 }
@@ -15,5 +17,27 @@ const articlesOfTag = articleData.filter((article) =>
 ---
 
 <div>
-  <ArticleOfTagList client:load articlesOfTag={articlesOfTag} />
+  <div class="toggle-holder">
+    <label
+      >Toggle simple view: <input
+        type="checkbox"
+        id="toggler"
+        checked={articleSearchDisplaySimple.get()}
+      /></label
+    >
+  </div>
+  <div class="list-holder">
+    <ArticleOfTagList client:load articlesOfTag={articlesOfTag} />
+  </div>
 </div>
+
+<ArticleSimpleTogglerScript />
+
+<style>
+  .toggle-holder {
+    font-size: 0.9rem;
+  }
+  .list-holder {
+    padding: 1rem 0;
+  }
+</style>

@@ -1,0 +1,12 @@
+---
+// this script handles the toggling the checkbox between simple view and normal view on the articles of tag pages and browse articles page
+---
+<script>
+  import { articleSearchDisplaySimple } from "../../store";
+  const toggler = document.getElementById("toggler") as HTMLInputElement;
+  toggler.checked = false; // reset it when page loads
+  toggler?.addEventListener("change", (e) => {
+    const target = e.target as HTMLInputElement;
+    articleSearchDisplaySimple.set(target.checked);
+  });
+</script>
