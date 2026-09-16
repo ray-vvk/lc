@@ -5,6 +5,7 @@ interface Props {
   articleTitle: string;
   articleSubtitle: string;
   // articleCategory: string;
+  articleAuthor: string;
   articleTags: string[];
   articlePubDate: string;
   articleUpdateDate: string;
@@ -13,6 +14,7 @@ interface Props {
 const {
   articleTitle,
   articleSubtitle,
+  articleAuthor,
   articleTags,
   articlePubDate,
   articleUpdateDate,
@@ -42,8 +44,9 @@ const {
 
 <GlobalLayout>
   <ArticleHeader
-    subtitle={articleSubtitle}
     title={articleTitle}
+    subtitle={articleSubtitle}
+    author={articleAuthor}
     tags={articleTags}
     pubDate={articlePubDate}
     updatedDate={articleUpdateDate}
@@ -83,6 +86,5 @@ const {
     font-size: clamp(1.6rem, 3.7vw, 2.2rem);
   }
   .cite-link {
-    
   }
 </style>

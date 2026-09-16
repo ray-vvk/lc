@@ -2,24 +2,56 @@
 import { getCollection } from "astro:content";
 import ArticleSearchList from "./article-search-list";
 import ArticleSearchBar from "./article-search-bar";
+import { articleSearchDisplaySimple } from "../../store";
 
 const articleData = await getCollection("articleData");
 
-// TODO eventually: another page where articles are grouped by tag or sorted by date, list of all articles. 
+// TODO eventually: another page where articles are grouped by tag or sorted by date, list of all articles.
 ---
 
 <div class="all-holder">
   <div class="search-bar-holder">
-    Search for an article: &nbsp;<ArticleSearchBar client:load />
+    Search for an article by title, url, or keywords: <ArticleSearchBar
+      client:load
+    />
+  </div>
+  <div class="toggle-holder">
+    <label
+      >Toggle simple view: <input
+        type="checkbox"
+        id="toggler"
+        checked={articleSearchDisplaySimple.get()}
+      /></label
+    >
   </div>
   <div class="list-holder">
     <ArticleSearchList client:load articleData={articleData} />
   </div>
 </div>
 
+<script>
+  import { articleSearchDisplaySimple } from "../../store";
+  const toggler = document.getElementById("toggler") as HTMLInputElement;
+  toggler.checked = false; // reset it when page loads
+  toggler?.addEventListener("change", (e) => {
+    const target = e.target as HTMLInputElement;
+    articleSearchDisplaySimple.set(target.checked);
+  });
+  const searchBar = document.getElementById("article-search-bar") as HTMLInputElement
+  searchBar.value = "" // reset it/clear it when page loads
+</script>
+
 <style>
   .search-bar-holder {
     padding: 1rem 0;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+  .toggle-holder {
+    font-size: 0.9rem;
   }
   .list-holder {
     padding: 1rem 0;

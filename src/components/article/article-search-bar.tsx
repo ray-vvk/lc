@@ -4,7 +4,7 @@ import { useStore } from "@nanostores/react"
 export default function ArticleSearchBar() {
   const search = useStore(articleSearchBarContents)
   return(
-    <input type="text" value={search} onChange={(e) => {
+    <input id="article-search-bar" type="text" value={search} onChange={(e) => {
       articleSearchBarContents.set(e.target.value)
     }} 
     style={{

@@ -2,13 +2,14 @@
 interface Props {
   title: string;
   subtitle: string;
+  author: string;
   // category: string;
   tags: string[];
   pubDate: string;
   updatedDate: string;
   keywords?: string[];
 }
-const { title, subtitle, tags, pubDate, updatedDate, keywords } = Astro.props;
+const { title, subtitle, author, tags, pubDate, updatedDate, keywords } = Astro.props;
 ---
 
 <header>
