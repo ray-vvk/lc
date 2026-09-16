@@ -9,25 +9,6 @@ interface Props {
   keywords?: string[];
 }
 const { title, subtitle, tags, pubDate, updatedDate, keywords } = Astro.props;
-
-/**
- * output keywords nicely
- * @param keywords 
- */
-function keywordsFunction(keywords: string[] | undefined) {
-  let k = "Keywords: ";
-  if (keywords) {
-    for (let i = 0; i < keywords.length; i++) {
-      if (i === keywords.length - 1) {
-        k += keywords[i];
-      } else {
-        k += keywords[i] + ", ";
-      }
-    }
-    return k;
-  }
-  return null;
-}
 ---
 
 <header>
@@ -59,14 +40,14 @@ function keywordsFunction(keywords: string[] | undefined) {
       }
     </div>
     <div class="keywords">
-      {keywordsFunction(keywords)}
-      <div></div>
+      {keywords ? "Keywords: " : null}
       {
-        keywords ? 
-        keywords.map((keyword, i, keywords) => {
-          return i === keywords.length-1 ? keyword : `${keyword}, `
-        })
-        : null
+        // write keywords with commas until the last one
+        keywords
+          ? keywords.map((keyword, i, keywords) => {
+              return i === keywords.length - 1 ? keyword : `${keyword}, `;
+            })
+          : null
       }
     </div>
   </div>
