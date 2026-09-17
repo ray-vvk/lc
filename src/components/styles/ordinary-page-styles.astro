@@ -1,0 +1,43 @@
+<style is:global>
+  /* default page styles for pages that aren't articles or tags or related. copy and paste these from place to place.  */
+  body {
+    background-color: var(--pale);
+  }
+  main {
+    min-height: 80vh;
+  }
+  section {
+    min-height: 30rem;
+    border: none;
+  }
+  main section {
+    border: none;
+  }
+  .wrap {
+    max-width: 100%;
+  }
+  hr {
+    border: none;
+    border-top: 2px solid var(--line);
+    /* padding: 2rem 0; */
+  }
+  .beneath {
+    padding: 4rem;
+    background-color: var(--pale);
+  }
+  .beneath:nth-child(odd) {
+    background-color: var(--cyan);
+  }
+  .beneath.full {
+    padding: 0rem;
+  }
+  @media (max-width: 850px) {
+    section {
+      min-height: 20rem;
+      padding: 2rem;
+    }
+    .beneath {
+      padding: 2rem;
+    }
+  }
+</style>

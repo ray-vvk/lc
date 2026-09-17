@@ -6,6 +6,7 @@ import CardsLinks from "../components/cards-links.astro";
 import CardLink from "../components/card-link.astro";
 import RandomCta from "../components/cta/random-cta.astro";
 import RecentArticles from "../components/recent-articles.astro";
+import OrdinaryPageStyles from "../components/styles/ordinary-page-styles.astro";
 const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
 ---
@@ -75,19 +76,9 @@ const tagData = await getCollection("tagData");
   </main>
 </GlobalLayout>
 <GlobalStyles />
+<OrdinaryPageStyles />
 
 <style>
-  body {
-    background-color: var(--pale);
-  }
-  main {
-    min-height: 80vh;
-  }
-  section {
-    min-height: 30rem;
-    border: none;
-    background-color: var(--pale);
-  }
   .hero {
     background-color: var(--cyan);
     padding: 4rem;
@@ -114,9 +105,6 @@ const tagData = await getCollection("tagData");
       width: 100%;
     }
   }
-  .wrap {
-    max-width: 100%;
-  }
   .browse-articles-btn {
     transition: all 400ms;
     cursor: pointer;
@@ -138,21 +126,7 @@ const tagData = await getCollection("tagData");
     }
     padding-bottom: 4rem;
   }
-  hr {
-    border: none;
-    border-top: 2px solid var(--line);
-    /* padding: 2rem 0; */
-  }
-  .beneath {
-    padding: 4rem;
-    background-color: var(--pale);
-  }
-  .beneath:nth-child(odd) {
-    background-color: var(--cyan);
-  }
-  .beneath.full {
-    padding: 0rem;
-  }
+
   .capitalize {
     text-transform: capitalize;
   }

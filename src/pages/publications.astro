@@ -1,0 +1,38 @@
+---
+import GlobalStyles from "../components/styles/global-styles.astro";
+import GlobalLayout from "../layouts/global-layout.astro";
+import RandomCta from "../components/cta/random-cta.astro";
+import OrdinaryPageStyles from "../components/styles/ordinary-page-styles.astro";
+import Publications from "../components/publications/publications.astro";
+---
+
+<GlobalLayout titlePart="Publications">
+  <main>
+    <section class="">
+      <div class="wrap">
+        <h1>Publications</h1>
+        <p class="lead">Virovek is cited in nearly 400 studies, journal articles, and conference presentations across 15 years.</p>
+        <h2>Selected works</h2>
+        <div>
+          <Publications />
+        </div>
+      </div>
+    </section>
+    <section class="beneath cta-section">
+      <div class="wrap">
+        <RandomCta />
+      </div>
+    </section>
+  </main>
+</GlobalLayout>
+<GlobalStyles />
+<OrdinaryPageStyles />
+
+<style>
+  h2 {
+    padding-top: 2rem;
+  }
+  .cta-section {
+    background-color: var(--cyan);
+  }
+</style>

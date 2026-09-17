@@ -1,0 +1,61 @@
+---
+import Papa from "papaparse";
+import fs from "fs/promises";
+// const file = fs.createReadStream('src/components/publications/publications-2026-09-17.csv')
+const file = await fs.readFile(
+  "src/components/publications/publications-2026-09-17.csv",
+  "utf-8",
+);
+const fileString = file.toString();
+const parseResult = Papa.parse(fileString, {
+  header: true,
+});
+const data: {
+  "Article:": string;
+  "Link:": string;
+  "Year Published:": string;
+  "Lot Number:": string;
+  "Summary:": string;
+}[] = parseResult.data;
+const dataSortedMostRecent = data.sort((a1, a2) => {
+  if (!a1["Year Published:"] || !a2["Year Published:"]) return 1;
+  if (a1["Year Published:"] < a2["Year Published:"]) return -1;
+  if (a1["Year Published:"] > a2["Year Published:"]) return 1;
+  return 0;
+});
+---
+
+<div>
+  {
+    dataSortedMostRecent.map((c) => {
+      const articleTitle = c["Article:"];
+      const articleLink = c["Link:"];
+      const articleYear = c["Year Published:"];
+      if (articleLink.includes("https")) {
+        return (
+          <div class="publication publication-link">
+            <a href={articleLink}>{articleTitle}</a>
+          </div>
+        );
+      }
+      return (
+        <div class="publication">
+          <span>{articleTitle}</span>
+        </div>
+      );
+    })
+  }
+</div>
+
+<style>
+  .publication {
+    padding: 0.2rem 0;
+    font-family: serif;
+  }
+  .publication-link {
+    transition-duration: 300ms;
+  }
+  .publication-link:hover {
+    transform: scale(1.005);
+  }
+</style>
