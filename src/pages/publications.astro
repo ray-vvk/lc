@@ -11,8 +11,11 @@ import Publications from "../components/publications/publications.astro";
     <section class="">
       <div class="wrap">
         <h1>Publications</h1>
-        <p class="lead">Virovek is cited in nearly 400 studies, journal articles, and conference presentations across 15 years.</p>
-        <h2>Selected works</h2>
+        <p class="lead">
+          Virovek is cited in nearly 400 studies, journal articles, and
+          conference presentations across 15 years.
+        </p>
+        <h2>Selected works</h2><button id="refresh">↻</button>
         <div>
           <Publications count={30} />
         </div>
@@ -28,10 +31,29 @@ import Publications from "../components/publications/publications.astro";
 <GlobalStyles />
 <OrdinaryPageStyles />
 
+<script>
+  const refreshBtn = document.getElementById("refresh") as HTMLButtonElement;
+  refreshBtn.addEventListener("click", (e) => {
+    window.location.reload();
+  });
+</script>
+
 <style>
   h2 {
-    padding-top: 2rem;
+    padding: 2rem 0 1rem 0;
+    display: inline-block;
   }
+  #refresh {
+    /* border: none; */
+    border-radius: 0.3rem;
+    background-color: var(--pale);
+    margin-left: 2rem;
+    font-size: 2rem;
+    transition-duration: 200ms;
+  }
+  /* #refresh:hover {
+    color: #4f4f4f;
+  } */
   .cta-section {
     background-color: var(--cyan);
   }

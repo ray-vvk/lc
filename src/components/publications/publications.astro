@@ -25,18 +25,18 @@ const dataSortedMostRecent = data.sort((a1, a2) => {
   return 0;
 });
 interface Props {
-  count: number
+  count: number;
 }
-const {count} = Astro.props
+const { count } = Astro.props;
 // if count is present, randomly select count # of articles to display by removing others.
 if (count) {
-  const length = dataSortedMostRecent.length
-  const removeNumber = length-count
+  const removeNumber = dataSortedMostRecent.length - count;
   for (let i = 0; i < removeNumber; i++) {
-    const r = Math.floor(Math.random() * length)
-    dataSortedMostRecent.splice(r, 1)
+    const length = dataSortedMostRecent.length;
+    const r = Math.floor(Math.random() * length);
+    dataSortedMostRecent.splice(r, 1);
   }
-} 
+}
 ---
 
 <div class="table-overflower">
