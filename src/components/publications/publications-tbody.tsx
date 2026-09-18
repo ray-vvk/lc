@@ -32,7 +32,7 @@ export default function PublicationsTBody({ count, publicationData }: {
           <tr key={i}>
             <td>
               {articleLink.includes("https") ? (
-                <div className="publication publication-link">
+                <div className={`${styles.publication} ${styles.publicationLink}`}>
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -42,7 +42,7 @@ export default function PublicationsTBody({ count, publicationData }: {
                   </a>
                 </div>
               ) : (
-                <div className="publication">
+                <div className={styles.publication}>
                   <span>{articleTitle}</span>
                 </div>
               )}
