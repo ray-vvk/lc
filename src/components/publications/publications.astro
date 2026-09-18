@@ -32,6 +32,11 @@ const { count } = Astro.props;
 ---
 
 <div class="table-overflower">
-  <PublicationsTable client:only="react" count={count} publicationData={dataSortedMostRecent} />
-  <div slot="fallback">Loading...</div>
+  <PublicationsTable
+    client:only="react"
+    count={count}
+    publicationData={dataSortedMostRecent}
+  >
+    <div slot="fallback">Loading...</div>
+  </PublicationsTable>
 </div>
