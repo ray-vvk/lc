@@ -2,8 +2,7 @@
 // @ts-ignore
 import Papa from "papaparse";
 import fs from "fs/promises";
-import PublicationsTBody from "./publications-tbody";
-// const file = fs.createReadStream('src/components/publications/publications-2026-09-17.csv')
+import PublicationsTable from "./publications-table";
 const file = await fs.readFile(
   "src/components/publications/publications-2026-09-17.csv",
   "utf-8",
@@ -33,21 +32,6 @@ const { count } = Astro.props;
 ---
 
 <div class="table-overflower">
-  <table class="comparison">
-    <thead>
-      <tr>
-        <th>Publication title</th>
-        <th class="year-published">Year published</th>
-      </tr>
-    </thead>
-    <tbody>
-      <PublicationsTBody count={count} publicationData={data} />
-    </tbody>
-  </table>
+  <PublicationsTable client:only="react" count={count} publicationData={dataSortedMostRecent} />
+  <div slot="fallback">Loading...</div>
 </div>
-
-<style>
-  th.year-published {
-    min-width: 11rem;
-  }
-</style>

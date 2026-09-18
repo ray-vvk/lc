@@ -9,3 +9,7 @@ tr {
 .publicationLink:hover {
   transform: scale(1.01);
 }
+
+th {
+  min-width: 11rem;
+}
