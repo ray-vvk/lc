@@ -30,8 +30,10 @@ import HamburgerStyles from "../../styles/hamburger-styles.astro";
         <a href="/lc/articles"> Articles</a>
       </div>
       <div>
-        <a href="https://store.virovek.com/" target="_blank" rel="noopener noreferrer"
-          >Premade Products</a
+        <a
+          href="https://store.virovek.com/"
+          target="_blank"
+          rel="noopener noreferrer">Premade Products</a
         >
       </div>
       <div>
@@ -50,7 +52,11 @@ import HamburgerStyles from "../../styles/hamburger-styles.astro";
           <a href="/lc/articles"> Articles </a>
         </div>
         <div>
-          <a href="https://store.virovek.com/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://store.virovek.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Product Catalog
           </a>
         </div>
@@ -139,6 +145,10 @@ import HamburgerStyles from "../../styles/hamburger-styles.astro";
       width: 7rem;
     }
 
+    #hamburger-button {
+      display: none;
+    }
+
     .wrap {
       display: flex;
       justify-content: space-between;
@@ -165,6 +175,12 @@ import HamburgerStyles from "../../styles/hamburger-styles.astro";
   @media (max-width: 850px) {
     .topbar {
       position: relative;
+      #hamburger-button {
+        display: inline-block;
+      }
+      .hamburger .hamburger-box {
+        display: inline-block;
+      }
     }
 
     .topbar .wrap {
