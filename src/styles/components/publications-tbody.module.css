@@ -1,0 +1,11 @@
+  .publication {
+    font-family: serif;
+  }
+
+  .publication-link {
+    transition-duration: 500ms;
+  }
+
+  .publication-link:hover {
+    transform: scale(1.01);
+  }

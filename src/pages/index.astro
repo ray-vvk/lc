@@ -1,12 +1,12 @@
 ---
 import GlobalLayout from "../layouts/global-layout.astro";
-import GlobalStyles from "../components/styles/global-styles.astro";
+import GlobalStyles from "../styles/global-styles.astro";
 import { getCollection } from "astro:content";
 import CardsLinks from "../components/cards-links.astro";
 import CardLink from "../components/card-link.astro";
 import RandomCta from "../components/cta/random-cta.astro";
 import RecentArticles from "../components/recent-articles.astro";
-import OrdinaryPageStyles from "../components/styles/ordinary-page-styles.astro";
+import OrdinaryPageStyles from "../styles/ordinary-page-styles.astro";
 const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
 ---

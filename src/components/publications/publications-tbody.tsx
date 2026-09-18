@@ -1,0 +1,56 @@
+import styles from "../../styles/components/publications-tbody.module.css"
+
+export default function PublicationsTBody({ count, publicationData }: {
+  count: number
+  publicationData: {
+    "Article:": string;
+    "Link:": string;
+    "Year Published:": string;
+    "Lot Number:": string;
+    "Summary:": string;
+  }[]
+}) {
+  const dataToDisplay = publicationData
+  if (count > 0) {
+    const removeNumber = dataToDisplay.length - count;
+    for (let i = 0; i < removeNumber; i++) {
+      const length = dataToDisplay.length;
+      const r = Math.floor(Math.random() * length);
+      dataToDisplay.splice(r, 1)
+    }
+  }
+  return (<>
+    {
+      dataToDisplay.map((pub, i) => {
+        const articleTitle = pub["Article:"];
+        const articleLink = pub["Link:"];
+        const articleYear = pub["Year Published:"]
+          ? pub["Year Published:"]
+          : "N/A";
+
+        return (
+          <tr key={i}>
+            <td>
+              {articleLink.includes("https") ? (
+                <div className="publication publication-link">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={articleLink}
+                  >
+                    {articleTitle}
+                  </a>
+                </div>
+              ) : (
+                <div className="publication">
+                  <span>{articleTitle}</span>
+                </div>
+              )}
+            </td>
+            <td>{articleYear}</td>
+          </tr>
+        );
+      })
+    }
+  </>)
+}

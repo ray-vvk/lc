@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content"
-import styles from "../styles/components/article-single-listing-wrapper.module.css"
+import styles from "../../styles/components/article-single-listing-wrapper.module.css"
 
 export default function ArticleSingleListing({ article }: {
   article: CollectionEntry<"articleData">

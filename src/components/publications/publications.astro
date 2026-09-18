@@ -2,6 +2,7 @@
 // @ts-ignore
 import Papa from "papaparse";
 import fs from "fs/promises";
+import PublicationsTBody from "./publications-tbody";
 // const file = fs.createReadStream('src/components/publications/publications-2026-09-17.csv')
 const file = await fs.readFile(
   "src/components/publications/publications-2026-09-17.csv",
@@ -29,14 +30,6 @@ interface Props {
 }
 const { count } = Astro.props;
 // if count is present, randomly select count # of articles to display by removing others.
-if (count) {
-  const removeNumber = dataSortedMostRecent.length - count;
-  for (let i = 0; i < removeNumber; i++) {
-    const length = dataSortedMostRecent.length;
-    const r = Math.floor(Math.random() * length);
-    dataSortedMostRecent.splice(r, 1);
-  }
-}
 ---
 
 <div class="table-overflower">
@@ -48,52 +41,12 @@ if (count) {
       </tr>
     </thead>
     <tbody>
-      {
-        dataSortedMostRecent.map((c) => {
-          const articleTitle = c["Article:"];
-          const articleLink = c["Link:"];
-          const articleYear = c["Year Published:"]
-            ? c["Year Published:"]
-            : "N/A";
-
-          return (
-            <tr>
-              <td>
-                {articleLink.includes("https") ? (
-                  <div class="publication publication-link">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={articleLink}
-                    >
-                      {articleTitle}
-                    </a>
-                  </div>
-                ) : (
-                  <div class="publication">
-                    <span>{articleTitle}</span>
-                  </div>
-                )}
-              </td>
-              <td>{articleYear}</td>
-            </tr>
-          );
-        })
-      }
+      <PublicationsTBody count={count} publicationData={data} />
     </tbody>
   </table>
 </div>
 
 <style>
-  .publication {
-    font-family: serif;
-  }
-  .publication-link {
-    transition-duration: 500ms;
-  }
-  .publication-link:hover {
-    transform: scale(1.01);
-  }
   th.year-published {
     min-width: 11rem;
   }
