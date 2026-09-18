@@ -12,7 +12,7 @@ export default function ArticleSearch({ articleData }: {
   const search = useStore(articleSearchBarContents)
   const fuse = useMemo(() => {
     return new Fuse(articleData, {
-      keys: ['id', 'data.title', 'data.keywords'],
+      keys: ['id', 'data.title', 'data.keywords', 'data.tags'],
       threshold: 0.4
     })
   }, [])

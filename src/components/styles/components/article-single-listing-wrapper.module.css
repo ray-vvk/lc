@@ -6,7 +6,7 @@
 .card {
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 1.2rem;
+  padding: 1.1rem;
   background: #fff;
   height: 100%;
   margin-bottom: 0.4rem;
@@ -32,10 +32,21 @@
 
 .author {
   font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .pubDate {
   font-size: 0.9rem;
+}
+
+.tags {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+}
+
+.keywords {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
 }
 
 /* .card h3 {

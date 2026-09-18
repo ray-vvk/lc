@@ -17,6 +17,13 @@ export default function ArticleSingleListing({ article }: {
               day: "numeric",
               year: "numeric"
             })}</div>
+            <div className={styles.tags}>Tags: {article.data.tags.map((tag, i, tags) => i === tags.length - 1 ? tag : `${tag}, `)}</div>
+            <div className={styles.keywords}>
+              {article.data.keywords ? "Keywords: " : null}
+              {article.data.keywords
+                ? article.data.keywords.map((kw, i, kws) => i === kws.length - 1 ? kw : `${kw}, `)
+                : null}
+            </div>
           </div>
         </div>
       </a>
