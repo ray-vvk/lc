@@ -1,5 +1,5 @@
 ---
-import vvkLogo from "../images/Virovek-Logo-Web-300x103.png"
+import vvkLogo from "../images/Virovek-Logo-Web-300x103.png";
 import { Image } from "astro:assets";
 ---
 
@@ -22,11 +22,94 @@ import { Image } from "astro:assets";
       has been written and edited by team members at Virovek, because we care enough
       to put in the effort ourselves and deliver real value to our customers.
     </p>
+    <div class="columns">
+      <div>
+        <div class="footer-heading">Knowledge center</div>
+        <div><a href="/lc/articles">Search all articles</a></div>
+        <div><a href="/lc/publications">Publications</a></div>
+      </div>
+      <div>
+        <div class="footer-heading">Store</div>
+        <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://store.virovek.com/">Order premade products</a
+          >
+        </div>
+        <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://store.virovek.com/catalog">Premade product catalog</a
+          >
+        </div>
+        <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://store.virovek.com/forms/custom">Custom orders</a
+          >
+        </div>
+        <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://store.virovek.com/forms/general">General inquiries</a
+          >
+        </div>
+        <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://store.virovek.com/resources">Purchasing resources</a
+          >
+        </div>
+        <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://store.virovek.com/purchasing-guidelines"
+            >Additional purchasing info</a
+          >
+        </div>
+      </div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </footer>
 
 <style>
   a:visited {
-    color: white;
+    color: var(--pale);
+  }
+  .columns {
+    .footer-heading {
+      font-weight: bold;
+    }
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1rem 0 2rem 0;
+    color: var(--pale);
+    font-size: 0.96rem;
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  @media (max-width: 850px) {
+    .columns {
+      grid-template-columns: repeat(3, 1fr);
+      font-size: 0.86rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .columns {
+      grid-template-columns: repeat(2, 1fr);
+      font-size: 0.86rem;
+    }
   }
 </style>
