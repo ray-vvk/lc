@@ -1,0 +1,144 @@
+---
+title: Welcome to the knowledge center
+author: ray
+pubDate: 2026-09-01
+updatedDate: 2026-09-01
+tags: [miscellaneous]
+---
+
+import ArticleTable from "../../components/article/article-table.astro"
+import SectionBasic from "../../components/article/section-basic.astro";
+import SectionWithAside from "../../components/article/section-with-aside.astro";
+import owl from "../../images/placeholder_owl.jpg"
+import ArticleImage from "../../components/article/article-image.astro";
+import SectionReferences from "../../components/article/section-references.astro";
+import ArticleCallout from "../../components/article/article-callout.astro";
+
+<SectionBasic h2="basic section">
+  MDX seems great after a cursory look at the docs. I hope to make all articles MDX and embed my components and page structure stuff (asides, tables, cards, images, etc.) into them.
+
+  Here's a test.
+</SectionBasic>
+
+<SectionBasic h2="a section">
+  <p class="lead">Here's the subtitle.</p>
+  This section takes up the full width of the screen.
+
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, fugit
+  nulla aperiam itaque exercitationem blanditiis earum perspiciatis
+  cupiditate cum laboriosam quibusdam doloribus. Officiis omnis vitae,
+  laborum ab cumque quia aperiam.
+</SectionBasic>
+
+<SectionBasic h2="another section">
+  ok, so my components work great!
+  <ArticleCallout>this is callout text.</ArticleCallout>
+</SectionBasic>
+
+<SectionWithAside h2="Section with aside">
+  <Fragment slot="main-contents">
+    <p class="lead">
+      Optional subtitle. This section is responsively designed.
+    </p>
+
+    <p>
+      This is the main part of this section. It also has an aside, or the part
+      to the right that contains the image.
+    </p>
+
+    <p>
+      You can put anything in the main part. You can also put anything in the
+      aside. More text, a table, an image of an owl... whatever.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic labore sunt
+      rerum commodi minus nemo quas libero quam, esse autem.
+    </p>
+  </Fragment>
+
+  <Fragment slot={"aside-contents"}>
+    <ArticleImage figSrc={owl} figCaptionComponent={() => <span>hello??? <strong>please</strong> work.</span>} figAlt="owl" />
+
+    <p>
+      This is the aside. On large screens, it's off to the right. On small
+      screens, it goes below the main part.
+    </p>
+  </Fragment>
+</SectionWithAside>
+
+<SectionBasic h2="another basic section">
+  <ArticleTable>
+    <Fragment slot="thead-contents">
+      <tr>
+        <th>abc</th>
+        <th>abc</th>
+        <th>abc</th>
+        <th>abc</th>
+        <th>abc</th>
+        <th>abc</th>
+      </tr>
+    </Fragment>
+
+    <Fragment slot="tbody-contents">
+      <tr>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+      </tr>
+
+      <tr>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+      </tr>
+
+      <tr>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+      </tr>
+
+      <tr>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+      </tr>
+    </Fragment>
+  </ArticleTable>
+</SectionBasic>
+
+<SectionReferences>
+  <ol>
+    <li id="123">
+      Athos E.A., Levinson B., Kistler A., Zemansky J., Bostrom A., Freimer
+      N., Gitschier J. (2007). Dichotomy and perceptual distortions in
+      absolute pitch ability. Proceedings of the National Academy of Sciences
+      of the United States of America, 104(37), 14795–14800.
+    </li>
+
+    <li>
+      Citation name university research institute date et al. names names etc.
+      journal conference etc.
+    </li>
+
+    <li>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quibusdam
+      libero molestiae voluptatem consequatur a ipsum hic facere provident
+      porro quas alias ullam, id veritatis deleniti obcaecati accusantium!
+      Deleniti, libero.
+    </li>
+  </ol>
+</SectionReferences>
