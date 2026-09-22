@@ -1,17 +1,19 @@
 import type { CollectionEntry } from "astro:content"
 import { articleSearchBarContents, articleSearchDisplaySimple } from "../../store"
-import { useLoadingStore, useStore } from "@nanostores/react"
+import { useStore } from "@nanostores/react"
 import Fuse from "fuse.js"
-import { useMemo, useState } from "react"
+import { useMemo, } from "react"
 import ArticleSingleListing from "./article-single-listing"
 
-export default function ArticleSearch({ articleData }: {
-  articleData: CollectionEntry<"articleData">[]
+export default function ArticleSearch({ articleData, maxArticles }: {
+  articleData: CollectionEntry<"articleData">[],
+  maxArticles: number
 }) {
   const simple = useStore(articleSearchDisplaySimple)
   const search = useStore(articleSearchBarContents)
   const fuse = useMemo(() => {
     return new Fuse(articleData, {
+      useTokenSearch: true,
       keys: ['id', 'data.title', 'data.keywords', 'data.tags'],
       threshold: 0.4
     })
@@ -25,7 +27,8 @@ export default function ArticleSearch({ articleData }: {
       if (searchResults.length > 0) { // if there are search results
         return (
           <div>
-            {searchResults.map(searchResult => <div key={searchResult.item.id}><a href={`/lc/articles/${searchResult.item.id}`}>{searchResult.item.data.title}</a></div>)}
+            {searchResults.map(searchResult => <div key={searchResult.item.id}><a href={`/lc/articles/${searchResult.item.id}`}>{searchResult.item.data.title}</a></div>)
+              .slice(0, maxArticles)}
           </div>
         )
       } else { // no results
@@ -39,7 +42,8 @@ export default function ArticleSearch({ articleData }: {
     // if user is not searching for anything
     return ( // show all articles
       <div>
-        {articleData.map(article => <div key={article.id}><a href={`/lc/articles/${article.id}`}>{article.data.title}</a></div>)}
+        {articleData.map(article => <div key={article.id}><a href={`/lc/articles/${article.id}`}>{article.data.title}</a></div>)
+          .slice(0, maxArticles)}
       </div>
     )
   }
@@ -50,7 +54,8 @@ export default function ArticleSearch({ articleData }: {
     if (searchResults.length > 0) { // if there are search results
       return (
         <div>
-          {searchResults.map(searchResult => <ArticleSingleListing key={searchResult.item.id} article={searchResult.item} />)}
+          {searchResults.map(searchResult => <ArticleSingleListing key={searchResult.item.id} article={searchResult.item} />)
+            .slice(0, maxArticles)}
         </div>
       )
     } else { // no results
@@ -64,7 +69,8 @@ export default function ArticleSearch({ articleData }: {
   // if user is not searching for anything
   return ( // show all articles
     <div>
-      {articleData.map(article => <ArticleSingleListing key={article.id} article={article} />)}
+      {articleData.map(article => <ArticleSingleListing key={article.id} article={article} />)
+        .slice(0, maxArticles)}
     </div>
   )
 }

@@ -4,8 +4,9 @@ import ArticleSearchList from "./article-search-list";
 import ArticleSearchBar from "./article-search-bar";
 import { articleSearchDisplaySimple } from "../../store";
 import ArticleSimpleTogglerScript from "../tags/article-simple-toggler-script.astro";
+import { sortRecentFirst } from "../../lib/article/article-helper-functions";
 
-const articleData = await getCollection("articleData");
+const articleData = sortRecentFirst(await getCollection("articleData"));
 
 // TODO eventually: another page where articles are grouped by tag or sorted by date, list of all articles.
 ---
@@ -16,6 +17,7 @@ const articleData = await getCollection("articleData");
       client:load
     />
   </div>
+  <div class="describing-limits">Search results are limited to a maximum of 30 articles.</div>
   <div class="toggle-holder">
     <label
       >Toggle simple view: <input
@@ -26,15 +28,17 @@ const articleData = await getCollection("articleData");
     >
   </div>
   <div class="list-holder">
-    <ArticleSearchList client:load articleData={articleData} />
+    <ArticleSearchList client:load articleData={articleData} maxArticles={30} />
   </div>
 </div>
 
 <ArticleSimpleTogglerScript />
 
 <script>
-  const searchBar = document.getElementById("article-search-bar") as HTMLInputElement
-  searchBar.value = "" // reset it/clear it when page loads
+  const searchBar = document.getElementById(
+    "article-search-bar",
+  ) as HTMLInputElement;
+  searchBar.value = ""; // reset it/clear it when page loads
 </script>
 
 <style>
@@ -45,6 +49,10 @@ const articleData = await getCollection("articleData");
     width: 100%;
     gap: 0.7rem;
     flex-wrap: wrap;
+  }
+  .describing-limits {
+    padding: 0 0 1rem 0;
+    font-size: 0.9rem;
   }
   .toggle-holder {
     font-size: 0.9rem;
