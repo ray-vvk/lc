@@ -7,8 +7,6 @@ import ArticleSimpleTogglerScript from "../tags/article-simple-toggler-script.as
 import { sortRecentFirst } from "../../lib/article/article-helper-functions";
 
 const articleData = sortRecentFirst(await getCollection("articleData"));
-
-// TODO eventually: another page where articles are grouped by tag or sorted by date, list of all articles.
 ---
 
 <div class="all-holder">
@@ -17,7 +15,9 @@ const articleData = sortRecentFirst(await getCollection("articleData"));
       client:load
     />
   </div>
-  <div class="describing-limits">Search results are limited to a maximum of 30 articles.</div>
+  <div class="describing-limits">
+    Search results are limited to a maximum of 30 articles.
+  </div>
   <div class="toggle-holder">
     <label
       >Toggle simple view: <input
