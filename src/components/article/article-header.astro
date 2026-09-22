@@ -17,6 +17,7 @@ const { title, subtitle, author, tags, pubDate, updatedDate, keywords } = Astro.
     <!-- <div class="eyebrow">{category}</div> -->
     <h1>{title}</h1>
     <p class="dek">{subtitle}</p>
+    <p class="author">By {author}</p>
     <p class="dates">
       Date published: {pubDate.slice(0, 10)}
       <br />Date updated: {updatedDate.slice(0, 10)}
@@ -55,6 +56,9 @@ const { title, subtitle, author, tags, pubDate, updatedDate, keywords } = Astro.
 </header>
 
 <style>
+  .author {
+    font-weight: bold;
+  }
   .tags {
     font-size: 0.94rem;
     font-weight: bold;
