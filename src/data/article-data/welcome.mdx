@@ -10,6 +10,7 @@ import ArticleTable from "../../components/article/article-table.astro"
 import SectionBasic from "../../components/article/section-basic.astro";
 import SectionWithAside from "../../components/article/section-with-aside.astro";
 import owl from "../../images/owl_close.jpg"
+import port from "../../images/DSC_6044.jpg"
 import ArticleImage from "../../components/article/article-image.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
@@ -32,5 +33,6 @@ import ArticleCallout from "../../components/article/article-callout.astro";
 
   <Fragment slot={"aside-contents"}>
     <ArticleImage figSrc={owl} figCaptionComponent={() => <span>A great horned owl. I shot this photo last July.</span>} figAlt="owl" />
+    <ArticleImage figSrc={port} figCaptionComponent={() => <span>One more photo. Scene at Port of Oakland. July 2024.</span>} figAlt="port of oakland" />
   </Fragment>
 </SectionWithAside>
