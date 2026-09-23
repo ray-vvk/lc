@@ -17,6 +17,11 @@ const { tag } = Astro.props;
 // const { Content } = await render(tag);
 ---
 
+<meta
+  name="description"
+  content={`${tag.data.description} Browse articles labeled with the tag '${tag.data.name}' in the Virovek Knowledge Center.`}
+/>
+
 <TagLayout titlePart={`${tag.data.name} Articles`}>
   <SectionBasic h2={tag.data.name}>
     <p>{tag.data.description}</p>

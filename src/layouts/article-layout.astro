@@ -22,7 +22,6 @@ const {
   articleKeywords,
   articleId,
 } = Astro.props;
-// STILL TODO: SEO the heck out of these articles. the head meta tags gotta be automatically individualized per article.
 let categoriesStringForMetaDescription = "";
 articleTags.forEach((tag, i, tags) =>
   i === tags.length - 1
