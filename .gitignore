@@ -86,7 +86,7 @@ yarn-error.log*
 
 .my-app*
 /.changelog
-lib/
+# lib/
 out/
 # public/
 spec-reports
