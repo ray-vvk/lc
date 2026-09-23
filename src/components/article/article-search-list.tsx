@@ -14,7 +14,7 @@ export default function ArticleSearch({ articleData, maxArticles }: {
   const fuse = useMemo(() => {
     return new Fuse(articleData, {
       useTokenSearch: true,
-      keys: ['id', 'data.title', 'data.keywords', 'data.tags'],
+      keys: ['id', 'data.title', 'data.author', 'data.keywords', 'data.tags'],
       threshold: 0.4
     })
   }, [])
@@ -27,7 +27,7 @@ export default function ArticleSearch({ articleData, maxArticles }: {
       if (searchResults.length > 0) { // if there are search results
         return (
           <div>
-            {searchResults.map(searchResult => <div key={searchResult.item.id}><a href={`/lc/articles/${searchResult.item.id}`}>{searchResult.item.data.title}</a></div>)
+            {searchResults.map(searchResult => <div key={searchResult.item.id}><a href={`/lc/articles/${searchResult.item.id}`}>{searchResult.item.data.title} - {searchResult.item.data.pubDate.toISOString().slice(0, 10)}</a></div>)
               .slice(0, maxArticles)}
           </div>
         )
@@ -42,7 +42,7 @@ export default function ArticleSearch({ articleData, maxArticles }: {
     // if user is not searching for anything
     return ( // show all articles
       <div>
-        {articleData.map(article => <div key={article.id}><a href={`/lc/articles/${article.id}`}>{article.data.title}</a></div>)
+        {articleData.map(article => <div key={article.id}><a href={`/lc/articles/${article.id}`}>{article.data.title} - {article.data.pubDate.toISOString().slice(0, 10)}</a></div>)
           .slice(0, maxArticles)}
       </div>
     )
