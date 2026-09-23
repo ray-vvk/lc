@@ -7,7 +7,6 @@ import CardLink from "../components/card-link.astro";
 import RandomCta from "../components/cta/random-cta.astro";
 import RecentArticles from "../components/recent-articles.astro";
 import OrdinaryPageStyles from "../styles/ordinary-page-styles.astro";
-const articleData = await getCollection("articleData");
 const tagData = await getCollection("tagData");
 ---
 
@@ -26,14 +25,10 @@ const tagData = await getCollection("tagData");
       <div class="wrap">
         <div class="btn-shelf">
           <a href="/lc/articles">
-            <button class="btn primary"
-              >Browse all articles →</button
-            >
+            <button class="btn primary">Browse all articles →</button>
           </a>
           <a href="/lc/publications">
-            <button class="btn primary"
-              >View publications →</button
-            >
+            <button class="btn primary">View publications →</button>
           </a>
         </div>
 

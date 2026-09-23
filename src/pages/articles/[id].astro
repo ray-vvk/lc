@@ -16,6 +16,6 @@ const { article } = Astro.props;
 const { Content } = await render(article);
 ---
 
-<ArticleLayout articleTitle={article.data.title} articleSubtitle={article.data.subtitle ?? ""} articleAuthor={article.data.author} articleTags={article.data.tags} articlePubDate={article.data.pubDate.toISOString()} articleUpdateDate={article.data.updatedDate.toISOString()} articleKeywords={article.data.keywords}>  
+<ArticleLayout articleTitle={article.data.title} articleSubtitle={article.data.subtitle ?? ""} articleAuthor={article.data.author} articleTags={article.data.tags} articlePubDate={article.data.pubDate.toISOString()} articleUpdateDate={article.data.updatedDate.toISOString()} articleKeywords={article.data.keywords} articleId={article.id}>  
   <Content />
 </ArticleLayout>
