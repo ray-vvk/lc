@@ -70,7 +70,7 @@ export default function ArticleOfTagList({ articlesOfTag }: {
               if (article) {
                 return (
                   <div key={i}>
-                    <a href={`/lc/articles/${article?.id}`}>{article?.data.title}</a>
+                    <a href={`/lc/articles/${article?.id}`}>{article.data.title} - {article.data.pubDate.toISOString().slice(0, 10)}</a>
                   </div>
                 )
               }
