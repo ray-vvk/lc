@@ -4,3 +4,22 @@
     <slot />
   </div>
 </section>
+
+<script>
+  // find any occurrence of "doi:____/_____." in this section and replace that text with an <a></a> linking to crossref, get rid of the trailing period, change the forward slash into a %2F, or rather encodeURIcomponent the doi.
+  // then search for that doi using search.crossref.org
+  const doiRegex = /doi:.+\/.+\./;
+  const referencesListItems = document.querySelectorAll(".references li");
+  // document.querySelectorAll('li[id|="reference"]')
+  referencesListItems.forEach((li) => {
+    const text = li.innerHTML;
+    if (text.match(doiRegex)) {
+      const doiMatchArray = text.match(doiRegex) as RegExpMatchArray;
+      const doi = doiMatchArray[0];
+      const doiReal = doi.slice(4, doi.length - 1);
+      const doiRealURIComponent = encodeURIComponent(doiReal)
+      li.innerHTML = text.replace(doiRegex, `<a target="_blank" rel="noopener noreferrer" href="https://search.crossref.org/search/works?q=${doiRealURIComponent}&from_ui=yes">${doiReal}</a>`);
+    }
+  });
+  // it works!
+</script>
