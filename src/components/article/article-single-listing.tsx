@@ -13,7 +13,7 @@ export default function ArticleSingleListing({ article }: {
   })
   return (
     <>
-      <a className={styles.link} href={`/lc/articles/${article.id}`}>
+      <a className={styles.link} href={`/articles/${article.id}`}>
         <div className={styles.card}>
           <div className={styles.title}>{article.data.title}</div>
           <div className={styles.notTitle}>

@@ -29,13 +29,13 @@ const { title, subtitle, author, tags, pubDate, updatedDate, keywords } = Astro.
           if (i !== tags.length - 1) {
             return (
               <span>
-                <a href={`/lc/tags/${tag}`}>{tag}</a>,&nbsp;
+                <a href={`/tags/${tag}`}>{tag}</a>,&nbsp;
               </span>
             );
           }
           return (
             <span>
-              <a href={`/lc/tags/${tag}`}>{tag}</a>
+              <a href={`/tags/${tag}`}>{tag}</a>
             </span>
           );
         })

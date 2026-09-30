@@ -27,7 +27,7 @@ export default function ArticleSearch({ articleData, maxArticles }: {
       if (searchResults.length > 0) { // if there are search results
         return (
           <div>
-            {searchResults.map(searchResult => <div key={searchResult.item.id}><a href={`/lc/articles/${searchResult.item.id}`}>{searchResult.item.data.title} - {searchResult.item.data.pubDate.toISOString().slice(0, 10)}</a></div>)
+            {searchResults.map(searchResult => <div key={searchResult.item.id}><a href={`/articles/${searchResult.item.id}`}>{searchResult.item.data.title} - {searchResult.item.data.pubDate.toISOString().slice(0, 10)}</a></div>)
               .slice(0, maxArticles)}
           </div>
         )
@@ -42,7 +42,7 @@ export default function ArticleSearch({ articleData, maxArticles }: {
     // if user is not searching for anything
     return ( // show all articles
       <div>
-        {articleData.map(article => <div key={article.id}><a href={`/lc/articles/${article.id}`}>{article.data.title} - {article.data.pubDate.toISOString().slice(0, 10)}</a></div>)
+        {articleData.map(article => <div key={article.id}><a href={`/articles/${article.id}`}>{article.data.title} - {article.data.pubDate.toISOString().slice(0, 10)}</a></div>)
           .slice(0, maxArticles)}
       </div>
     )

@@ -24,10 +24,10 @@ const tagData = await getCollection("tagData");
     <section class="beneath">
       <div class="wrap">
         <div class="btn-shelf">
-          <a href="/lc/articles">
+          <a href="/articles">
             <button class="btn primary">Browse all articles →</button>
           </a>
-          <a href="/lc/publications">
+          <a href="/publications">
             <button class="btn primary">View publications →</button>
           </a>
         </div>
@@ -51,7 +51,7 @@ const tagData = await getCollection("tagData");
               return (
                 <CardLink
                   cardTitle={<span class="capitalize">{tagNamePretty}</span>}
-                  link={`/lc/tags/${tag.id}`}
+                  link={`/tags/${tag.id}`}
                 >
                   {tag.data.description
                     ? tag.data.description
@@ -90,7 +90,7 @@ const tagData = await getCollection("tagData");
     justify-content: center;
     clip-path: ellipse(2000px 400px at 50% 20%);
     .background-holder {
-      background-image: url("/lc/liquid5.jpg");
+      background-image: url("/liquid5.jpg");
       background-repeat: no-repeat;
       background-position: 10% 0%;
       background-clip: text;

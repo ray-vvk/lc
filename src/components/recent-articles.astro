@@ -18,7 +18,7 @@ const { maxArticles } = Astro.props;
         .map((article) => {
           return (
             <li>
-              <a href={`/lc/articles/${article.id}`}>{article.data.title}</a>
+              <a href={`/articles/${article.id}`}>{article.data.title}</a>
             </li>
           );
         })
