@@ -20,7 +20,10 @@ import Publications from "../components/publications/publications.astro";
           Virovek is cited in nearly 400 studies, journal articles, and
           conference presentations across 15 years.
         </p>
-        <h2>Selected works</h2><button id="refresh">↻</button>
+        <h2>Selected works</h2>
+        <div id="refresh-button-holder">
+          <button id="refresh"><div id="arrow">↻</div></button>
+        </div>
         <div>
           <Publications count={30} />
         </div>
@@ -48,6 +51,10 @@ import Publications from "../components/publications/publications.astro";
     padding: 2rem 0 1rem 0;
     display: inline-block;
   }
+  #refresh-button-holder {
+    display: inline-block;
+    vertical-align: central;
+  }
   #refresh {
     /* border: none; */
     border-radius: 0.3rem;
@@ -55,11 +62,28 @@ import Publications from "../components/publications/publications.astro";
     margin-left: 2rem;
     font-size: 2rem;
     transition-duration: 200ms;
+    color: var(--ink);
+    height: 3rem;
+    width: 3rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #arrow {
+    font-size: 1.5rem;
+    height: 2rem;
+    width: 2rem;
   }
   /* #refresh:hover {
     color: #4f4f4f;
   } */
   .cta-section {
     background-color: var(--cyan);
+  }
+  @media (max-width: 850px) {
+    #refresh-button-holder {
+      vertical-align: unset;
+    }
   }
 </style>
