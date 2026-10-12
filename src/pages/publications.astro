@@ -20,9 +20,11 @@ import Publications from "../components/publications/publications.astro";
           Virovek is cited in nearly 400 studies, journal articles, and
           conference presentations across 15 years.
         </p>
-        <h2>Selected works</h2>
-        <div id="refresh-button-holder">
-          <button id="refresh"><div id="arrow">↻</div></button>
+        <div id="top-shelf">
+          <h2>Selected works</h2>
+          <button id="refresh" class="btn primary"
+            ><div id="arrow">Reload ↻</div></button
+          >
         </div>
         <div>
           <Publications count={30} />
@@ -50,40 +52,31 @@ import Publications from "../components/publications/publications.astro";
   h2 {
     padding: 2rem 0 1rem 0;
     display: inline-block;
+    padding-right: 2rem;
   }
-  #refresh-button-holder {
-    display: inline-block;
-    vertical-align: central;
-  }
-  #refresh {
-    /* border: none; */
-    border-radius: 0.3rem;
-    background-color: var(--pale);
-    margin-left: 2rem;
-    font-size: 2rem;
-    transition-duration: 200ms;
-    color: var(--ink);
-    height: 3rem;
-    width: 3rem;
-    padding: 0;
+  #top-shelf {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
   }
+  #refresh {
+    transition: all;
+    transition-duration: 150ms;
+    font-size: 1rem;
+    height: min-content;
+  }
+  #refresh:hover {
+    transform: scale(1.02);
+  }
   #arrow {
-    font-size: 1.5rem;
-    height: 2rem;
-    width: 2rem;
+    font-family: Roboto, sans-serif;
+    font-size: 1.1rem;
   }
   /* #refresh:hover {
     color: #4f4f4f;
   } */
   .cta-section {
     background-color: var(--cyan);
-  }
-  @media (max-width: 850px) {
-    #refresh-button-holder {
-      vertical-align: unset;
-    }
   }
 </style>
