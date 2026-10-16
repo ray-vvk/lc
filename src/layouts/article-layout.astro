@@ -1,5 +1,6 @@
 ---
 import ArticleHeader from "../components/article/article-header.astro";
+import RandomCta from "../components/cta/random-cta.astro";
 import GlobalLayout from "./global-layout.astro";
 interface Props {
   articleTitle: string;
@@ -76,7 +77,18 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
   <main>
     <slot />
   </main>
+  <section class="cta-section">
+    <div class="wrap">
+      <RandomCta />
+    </div>
+  </section>
 </GlobalLayout>
+
+<style>
+.cta-section {
+  padding: 0 4rem 8rem 4rem;
+}
+</style>
 
 <style is:global>
   h2 {
