@@ -40,11 +40,12 @@ export default function PublicationsTable({ count, publicationData }: {
               <tr key={i}>
                 <td>
                   {articleLink.includes("https") ? (
-                    <div className={`${styles.publication} ${styles.publicationLink}`}>
+                    <div className={``}>
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href={articleLink}
+                        className={styles.publicationLink}
                       >
                         {articleTitle}
                       </a>
