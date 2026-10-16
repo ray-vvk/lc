@@ -2,14 +2,6 @@ tr {
   font-family: Vollkorn, serif;
 }
 
-.publicationLink {
-  transition-duration: 500ms;
-}
-
-.publicationLink:hover {
-  transform: scale(1.01);
-}
-
 th {
   min-width: 11rem;
 }
