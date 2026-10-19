@@ -91,6 +91,12 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
   .wrap {
     max-width: 100%;
   }
+  main {
+    h2 {
+      font-size: clamp(1.5rem, 3.4vw, 2rem);
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+    }
+  }
   @media (max-width: 850px) {
     .cta-section {
       padding: 0 2rem 4rem 2rem;
@@ -102,13 +108,5 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
         font-size: 1rem;
       }
     }
-  }
-</style>
-<style is:global>
-  /* q: why does this h2 rule only get applied when this style block is made global with the is:global attribute? */
-  /* a: if it's not global, it will only get applied to h2's that have a [data-astro-cid-abcdexyz] attribute or similar (scoped to this component!), and none of the h2's in the article have that because they're being pasted in as children from elsewhere (the article data). */
-  h2 {
-    font-size: clamp(1.5rem, 3.4vw, 2rem);
-    font-family: Roboto, Helvetica, Arial, sans-serif;
   }
 </style>
