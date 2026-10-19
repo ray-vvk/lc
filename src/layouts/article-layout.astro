@@ -85,15 +85,24 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
 </GlobalLayout>
 
 <style>
-.cta-section {
-  padding: 0 4rem 8rem 4rem;
-}
+  .cta-section {
+    padding: 0 4rem 8rem 4rem;
+  }
 </style>
 
 <style is:global>
+  /* small style modifications just for articles. */
   h2 {
     font-size: clamp(1.5rem, 3.4vw, 2rem);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
   }
   .cite-link {
+  }
+  @media (max-width: 600px) {
+    main {
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 </style>
