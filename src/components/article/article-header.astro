@@ -9,7 +9,9 @@ interface Props {
   updatedDate: string;
   keywords?: string[];
 }
-const { title, subtitle, author, tags, pubDate, updatedDate, keywords } = Astro.props;
+const { title, subtitle, author, tags, pubDate, updatedDate, keywords } =
+  Astro.props;
+import AuthorImage from "../authors/author-image.astro";
 ---
 
 <header>
@@ -17,7 +19,11 @@ const { title, subtitle, author, tags, pubDate, updatedDate, keywords } = Astro.
     <!-- <div class="eyebrow">{category}</div> -->
     <h1>{title}</h1>
     <p class="dek">{subtitle}</p>
-    <p class="author">By {author}</p>
+    <div class="author-stuff">
+      <p class="author">By</p>
+      <AuthorImage authorName={author.toLowerCase()} />
+      <p class="author">{author}</p>
+    </div>
     <p class="dates">
       Date published: {pubDate.slice(0, 10)}
       <br />Date updated: {updatedDate.slice(0, 10)}
@@ -56,8 +62,13 @@ const { title, subtitle, author, tags, pubDate, updatedDate, keywords } = Astro.
 </header>
 
 <style>
-  .author {
-    font-weight: bold;
+  .author-stuff {
+    .author {
+      font-weight: bold;
+    }
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   .tags {
     font-size: 0.94rem;
