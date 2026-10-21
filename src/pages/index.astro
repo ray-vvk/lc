@@ -22,7 +22,7 @@ const tagData = await getCollection("tagData");
         produced by the team at Virovek.
       </p>
     </section>
-    <section class="beneath">
+    <section class="beneath" id="section-primary">
       <div class="wrap">
         <div class="btn-shelf">
           <a href="/articles">
@@ -33,35 +33,42 @@ const tagData = await getCollection("tagData");
           </a>
         </div>
 
-        <div class="small-blurb">
+        <div class="small-blurb part">
           <hr />
           <p>
             Welcome to Virovek's knowledge center. This is a repository of
             articles produced by the Virovek team. Here, you'll be able to find
-            application notes, documentation, scientific reviews, production service
-            descriptions, technical specifications, and more.
+            application notes, documentation, scientific reviews, production
+            service descriptions, technical specifications, and more.
           </p>
           <hr />
         </div>
 
-        <h2>Tags:</h2>
-        <CardsLinks>
-          {
-            tagData.map((tag) => {
-              const tagNamePretty = tag.data.name.replaceAll("-", " ");
-              return (
-                <CardLink
-                  cardTitle={<span class="capitalize">{tagNamePretty}</span>}
-                  link={`/tags/${tag.id}`}
-                >
-                  {tag.data.description
-                    ? tag.data.description
-                    : "Tag description goes here eventually."}
-                </CardLink>
-              );
-            })
-          }
-        </CardsLinks>
+        <div class="part">
+          <h2>Featured article:</h2>
+          <div>something goes here.</div>
+        </div>
+
+        <div class="part">
+          <h2>Tags:</h2>
+          <CardsLinks>
+            {
+              tagData.map((tag) => {
+                const tagNamePretty = tag.data.name.replaceAll("-", " ");
+                return (
+                  <CardLink
+                    cardTitle={<span class="capitalize">{tagNamePretty}</span>}
+                    link={`/tags/${tag.id}`}
+                  >
+                    {tag.data.description
+                      ? tag.data.description
+                      : "Tag description goes here eventually."}
+                  </CardLink>
+                );
+              })
+            }
+          </CardsLinks>
+        </div>
       </div>
     </section>
     <section class="beneath">
@@ -127,7 +134,11 @@ const tagData = await getCollection("tagData");
       padding: 2rem 0;
       text-align: center;
     }
-    padding-bottom: 4rem;
+  }
+  #section-primary {
+    .part {
+      padding-bottom: 4rem;
+    }
   }
 
   .capitalize {
