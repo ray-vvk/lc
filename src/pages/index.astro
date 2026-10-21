@@ -7,6 +7,7 @@ import CardLink from "../components/card-link.astro";
 import RandomCta from "../components/cta/random-cta.astro";
 import RecentArticles from "../components/recent-articles.astro";
 import OrdinaryPageStyles from "../styles/ordinary-page-styles.astro";
+import FeaturedArticle from "../components/featured-article.astro";
 const tagData = await getCollection("tagData");
 ---
 
@@ -46,7 +47,7 @@ const tagData = await getCollection("tagData");
 
         <div class="part">
           <h2>Featured article:</h2>
-          <div>something goes here.</div>
+          <FeaturedArticle />
         </div>
 
         <div class="part">

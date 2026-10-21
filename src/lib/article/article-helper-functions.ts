@@ -12,3 +12,11 @@ export function sortRecentFirst(articleData: CollectionEntry<"articleData">[]) {
   })
   return sortedArticleData
 }
+
+export const dateFormatLongNumeric = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric"
+})
+
+export const adjustPubDate = (date: Date) => new Date(date.getTime() + 10 * 60 * 60 * 1000)
