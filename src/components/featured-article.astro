@@ -4,6 +4,7 @@ import {
   adjustPubDate,
 } from "../lib/article/article-helper-functions";
 import { getCollection } from "astro:content";
+import AuthorImage from "./authors/author-image.astro";
 const articles = await getCollection("articleData");
 // specify an article by id.
 const id =
@@ -22,9 +23,15 @@ const featuredArticle = articles.find((a) => {
           <h4>{featuredArticle.data.subtitle}</h4>
         </a>
         <div />
-        <div>{featuredArticle.data.author}</div>
+        <div class="author-stuff">
+          <AuthorImage authorName={featuredArticle.data.author.toLowerCase()} />{" "}
+          <div>{featuredArticle.data.author}</div>
+        </div>
         <div>
-          Published {dateFormatLongNumeric.format(adjustPubDate(featuredArticle.data.pubDate))}{" "}
+          Published{" "}
+          {dateFormatLongNumeric.format(
+            adjustPubDate(featuredArticle.data.pubDate),
+          )}{" "}
           in {featuredArticle.data.tags}
         </div>
       </div>
@@ -51,6 +58,12 @@ const featuredArticle = articles.find((a) => {
     display: block;
   }
   .clickable-stuff {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .author-stuff {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
   }
 </style>
