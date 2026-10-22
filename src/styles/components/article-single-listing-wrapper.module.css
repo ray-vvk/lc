@@ -53,3 +53,26 @@
   margin: 0.1rem 0 0.5rem;
   font-size: 1.12rem;
 } */
+
+/* then the author image stuff */
+
+.authorStuff {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.4rem 0;
+}
+
+.authorImage {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999rem;
+  overflow: hidden;
+  border: 1px solid var(--ink);
+}
+
+@media (max-width: 600px) {
+  .authorStuff {
+    gap: 0.4rem;
+  }
+}

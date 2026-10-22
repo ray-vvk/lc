@@ -1,24 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import haifeng from "./images/haifeng.jpg";
-import ray from "./images/ray.jpg";
-import unknown from "./images/unknown.jpg";
+import { determineImgSrc } from "./author-image-functions";
 interface Props {
   authorName: string;
 }
 const { authorName } = Astro.props;
 let imgSrc = null;
-switch (authorName) {
-  case "haifeng chen":
-    imgSrc = haifeng;
-    break;
-  case "ray":
-    imgSrc = ray;
-    break;
-  default:
-    imgSrc = unknown;
-    break;
-}
+imgSrc = determineImgSrc(authorName)
 ---
 
 <div class="image-holder"><Image src={imgSrc} alt={`image of author: ${authorName}`} /></div>
