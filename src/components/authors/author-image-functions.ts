@@ -1,6 +1,6 @@
-import haifeng from "./images/haifeng.jpg"
-import ray from "./images/ray.jpg"
-import unknown from "./images/unknown.jpg"
+import haifeng from "../../images/authors/haifeng.jpg"
+import ray from "../../images/authors/ray.jpg"
+import unknown from "../../images/authors/unknown.jpg"
 
 export const determineImgSrc = (authorName: string) => {
   switch (authorName) {
