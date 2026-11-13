@@ -30,11 +30,11 @@ const { title, tags, keywords, metadata } =
     </div>
     <hr />
     <div>
-      Description goes here. for now it's: Research use only. Public research protocol aligned by subject with internal Virovek-SOP-019; independently maintained and not a controlled GLP SOP.
+      {metadata?.description || "Description not provided."}
     </div>
     <hr />
     <div class="cells-wells">
-      HEK293T · HEK293 · HepG2 · RC32  |  96-well plate format
+      {metadata?.cells_wells || "N/A"}
     </div>
     
     <div class="tags">
