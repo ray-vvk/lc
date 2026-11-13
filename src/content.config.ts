@@ -12,6 +12,7 @@ const articleData = defineCollection({
     updatedDate: z.coerce.date(),
     tags: z.array(z.string()),
     keywords: z.optional(z.array(z.string())),
+    metadata: z.optional(z.record(z.string(), z.union([z.string(), z.array(z.string())])))
   })
 });
 

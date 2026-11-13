@@ -13,6 +13,7 @@ interface Props {
   articleUpdateDate: string;
   articleKeywords?: string[];
   articleId: string;
+  metadata?: Record<string, string | string[]>
 }
 const {
   articleTitle,
@@ -23,6 +24,7 @@ const {
   articleUpdateDate,
   articleKeywords,
   articleId,
+  metadata
 } = Astro.props;
 let categoriesStringForMetaDescription = "";
 articleTags.forEach((tag, i, tags) =>
@@ -80,10 +82,9 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
     ) : articleTags.includes("protocols") ? (
       <ProtocolHeader
         title={articleTitle}
-        subtitle={articleSubtitle}
-        author={articleAuthor}
         tags={articleTags}
         keywords={articleKeywords}
+        metadata={metadata}
       />
     ) : null
   }

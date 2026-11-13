@@ -1,12 +1,11 @@
 ---
 interface Props {
   title: string;
-  subtitle: string;
-  author: string;
   tags: string[];
   keywords?: string[];
+  metadata?: Record<string, string | string[]>
 }
-const { title, subtitle, author, tags, keywords } =
+const { title, tags, keywords, metadata } =
   Astro.props;
 ---
 
@@ -18,15 +17,15 @@ const { title, subtitle, author, tags, keywords } =
     <div class="top-info-table">
       <div class="row">
         <div><strong>Document number: </strong></div>
-        <div>ABCXYZ12897393 </div>
+        <div>{metadata?.document_number || "N/A"}</div>
       </div>
       <div class="row">
         <div><strong>Version: </strong></div>
-        <div>1.0</div>
+        <div>{metadata?.version || "N/A"}</div>
       </div>
       <div class="row">
         <div><strong>Status: </strong></div>
-        <div>Established research laboratory protocol </div>
+        <div>{metadata?.status || "N/A"}</div>
       </div>
     </div>
     <hr />
