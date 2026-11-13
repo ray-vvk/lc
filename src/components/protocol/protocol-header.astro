@@ -3,10 +3,9 @@ interface Props {
   title: string;
   tags: string[];
   keywords?: string[];
-  metadata?: Record<string, string | string[]>
+  metadata?: Record<string, string | string[]>;
 }
-const { title, tags, keywords, metadata } =
-  Astro.props;
+const { title, tags, keywords, metadata } = Astro.props;
 ---
 
 <header>
@@ -29,14 +28,14 @@ const { title, tags, keywords, metadata } =
       </div>
     </div>
     <hr />
-    <div>
+    <div class="description">
       {metadata?.description || "Description not provided."}
     </div>
     <hr />
     <div class="cells-wells">
       {metadata?.cells_wells || "N/A"}
     </div>
-    
+
     <div class="tags">
       Tags: &nbsp;
       {
@@ -86,6 +85,13 @@ const { title, tags, keywords, metadata } =
       text-align: right;
     }
   }
+  .description {
+    font-size: 1rem;
+  }
+  .cells-wells {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
   .tags {
     font-size: 0.94rem;
     font-weight: bold;
@@ -93,16 +99,18 @@ const { title, tags, keywords, metadata } =
       text-transform: uppercase;
     }
   }
-  .cells-wells {
-    margin-bottom: 2rem;
-  }
   .keywords {
     padding-top: 1rem;
     font-style: italic;
     font-size: 0.93rem;
     color: var(--muted);
   }
-  @media(max-width: 600px) {
+  hr {
+    height: 1px;
+    border: 0;
+    background: #999;
+  }
+  @media (max-width: 600px) {
     .top-info-table {
       .row {
         display: block;
