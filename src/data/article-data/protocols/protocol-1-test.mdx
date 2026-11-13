@@ -10,6 +10,7 @@ metadata:
   status: Established research laboratory protocol
   description: "Research use only. Public research protocol aligned by subject with internal Virovek-SOP-019; independently maintained and not a controlled GLP SOP."
   cells_wells: "HEK293T · HEK293 · HepG2 · RC32  |  96-well plate format"
+keywords: ["AAV transduction","transduction efficiency","AAV serotypes","GFP","HEK293T","HEK293","HepG2","RC32","AAV infectivity assay","etoposide-enhanced AAV transduction","protocol"]
 
 ---
 
@@ -20,9 +21,38 @@ import ArticleImage from "../../../components/article/article-image.astro";
 import SectionReferences from "../../../components/article/section-references.astro";
 import ArticleCallout from "../../../components/article/article-callout.astro";
 
-<SectionBasic h2="Test protocol">
-  <p class="lead">Test protocol.</p>
-  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas distinctio ab magni. In error necessitatibus soluta maxime. Harum reprehenderit eligendi perspiciatis unde tempora dignissimos quod debitis, laborum corrupti hic autem non impedit earum provident eos accusamus deleniti quo obcaecati qui quibusdam nisi ipsum ex molestias! Aliquid itaque, voluptates tenetur modi similique, maxime adipisci tempore consectetur eius temporibus quidem! Harum recusandae saepe consequatur veritatis! Velit animi vel, praesentium facilis beatae asperiores vero exercitationem, porro ipsa alias rem ullam maiores quis, fuga impedit quas officia adipisci sunt. Est fuga aperiam possimus odit voluptate. Enim dicta, beatae iste nihil doloribus ad explicabo error?
+<SectionBasic h2="1. Purpose and scope">
+  This protocol describes a 96-well reporter-based assay for assessing functional transduction of mammalian cells by AAV vectors. It is applicable to AAV2 and other AAV serotypes. The supported cell lines are HEK293T, HEK293, HepG2, and RC32. Reporter expression is assessed by fluorescence microscopy or an appropriate antigen-specific detection method. Results reflect the specified cell line and assay conditions.
+</SectionBasic>
 
+<SectionBasic h2="2. Assay principle">
+  Cells are plated one day before AAV exposure. AAV vectors are applied in serum-free DMEM using a five-point, tenfold dilution series. HEK293T, HEK293, and HepG2 assays use 20 µM etoposide as an expression-enhancing condition; RC32 assays use the laboratory-established wild-type adenovirus 5 (wtAd5) helper condition. After overnight exposure, an equal volume of DMEM containing 20% FBS is added, restoring a nominal final FBS concentration of 10%.
 
+  The helper-virus-assisted RC32 assay and etoposide-enhanced assays represent different biological conditions; their readouts should not be interpreted as directly equivalent measures of intrinsic AAV infectivity.
+</SectionBasic>
+
+<SectionBasic h2="3. Materials and reagents">
+  HEK293T, HEK293, HepG2, or RC32 cells; DMEM; fetal bovine serum (FBS); AAV reporter vector samples; trypsin or validated cell dissociation reagent; tissue-culture-treated 96-well plates; round-bottom 96-well dilution plates; sterile microcentrifuge tubes; single- and multichannel pipettes; fluorescence microscope or equivalent reporter assay equipment. For applicable assays: etoposide stock (20 mM in DMSO) or laboratory-approved wtAd5 helper preparation.
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Medium</th>
+      <th>Preparation/Use</th>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Routine maintenance</th>
+      <td>DMEM + 10% FBS (all four cell lines).</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>Serum-free transduction medium</th>
+      <td>DMEM without FBS; supplement according to the applicable assay condition.</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>DMEM + 20% FBS</th>
+      <td>Combine 40 mL DMEM with 10 mL FBS (50 mL total); used for next-day supplementation.</td>
+    </tr>
+  </ArticleTable>
 </SectionBasic>

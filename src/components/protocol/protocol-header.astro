@@ -16,16 +16,16 @@ const { title, tags, keywords, metadata } =
     <hr />
     <div class="top-info-table">
       <div class="row">
-        <div><strong>Document number: </strong></div>
-        <div>{metadata?.document_number || "N/A"}</div>
+        <div class="left-cell"><strong>Document number: </strong></div>
+        <div class="right-cell">{metadata?.document_number || "N/A"}</div>
       </div>
       <div class="row">
-        <div><strong>Version: </strong></div>
-        <div>{metadata?.version || "N/A"}</div>
+        <div class="left-cell"><strong>Version: </strong></div>
+        <div class="right-cell">{metadata?.version || "N/A"}</div>
       </div>
       <div class="row">
-        <div><strong>Status: </strong></div>
-        <div>{metadata?.status || "N/A"}</div>
+        <div class="left-cell"><strong>Status: </strong></div>
+        <div class="right-cell">{metadata?.status || "N/A"}</div>
       </div>
     </div>
     <hr />
@@ -82,6 +82,9 @@ const { title, tags, keywords, metadata } =
       gap: 1rem;
       min-height: max-content;
     }
+    .right-cell {
+      text-align: right;
+    }
   }
   .tags {
     font-size: 0.94rem;
@@ -103,6 +106,9 @@ const { title, tags, keywords, metadata } =
     .top-info-table {
       .row {
         display: block;
+      }
+      .right-cell {
+        text-align: left;
       }
     }
   }

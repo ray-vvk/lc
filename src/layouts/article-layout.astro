@@ -3,6 +3,7 @@ import ReviewHeader from "../components/article/review-header.astro";
 import ProtocolHeader from "../components/protocol/protocol-header.astro";
 import RandomCta from "../components/cta/random-cta.astro";
 import GlobalLayout from "./global-layout.astro";
+import ProtocolStyles from "../styles/protocol-styles.astro";
 interface Props {
   articleTitle: string;
   articleSubtitle: string;
@@ -68,6 +69,7 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
 </Fragment>
 
 <GlobalLayout>
+  <!-- this part here controls what kind of header appears at the top. it's differs based on the type of article. reviews will get different headers than protocols. -->
   {
     articleTags.includes("reviews") ? (
       <ReviewHeader
@@ -98,6 +100,7 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
   </section>
 </GlobalLayout>
 
+<!-- this part is for styles that are applied to articles of all kinds. -->
 <style>
   .cta-section {
     padding: 0 4rem 8rem 4rem;
@@ -129,3 +132,8 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
     }
   }
 </style>
+
+{
+  // this part adds protocol styles when the article is a protocol. 
+  articleTags.includes("protocols") ? <ProtocolStyles /> : null
+}
