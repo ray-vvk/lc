@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  author: string;
+  tags: string[];
+  pubDate: string;
+  updatedDate: string;
+  keywords?: string[];
+}
+const { title, subtitle, author, tags, pubDate, updatedDate, keywords } =
+  Astro.props;
+---
+
+<header>
+  <div class="wrap">
+    <!-- <div class="eyebrow">{category}</div> -->
+    <h1>{title}</h1>
+    <p class="dek">{subtitle}</p>
+    <p class="dates">
+      Date published: {pubDate.slice(0, 10)}
+      <br />Date updated: {updatedDate.slice(0, 10)}
+    </p>
+    <div class="tags">
+      Tags: &nbsp;
+      {
+        tags.map((tag, i, tags) => {
+          if (i !== tags.length - 1) {
+            return (
+              <span>
+                <a href={`/tags/${tag}`}>{tag}</a>,&nbsp;
+              </span>
+            );
+          }
+          return (
+            <span>
+              <a href={`/tags/${tag}`}>{tag}</a>
+            </span>
+          );
+        })
+      }
+    </div>
+    <div class="keywords">
+      {keywords ? "Keywords: " : null}
+      {
+        // write keywords with commas until the last one
+        keywords
+          ? keywords.map((keyword, i, keywords) => {
+              return i === keywords.length - 1 ? keyword : `${keyword}, `;
+            })
+          : null
+      }
+    </div>
+  </div>
+</header>
+
+<style>
+  .author-stuff {
+    .author {
+      font-weight: bold;
+    }
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .tags {
+    font-size: 0.94rem;
+    font-weight: bold;
+    a {
+      text-transform: uppercase;
+    }
+  }
+  .dates {
+    font-size: 0.96rem;
+  }
+  .keywords {
+    padding-top: 1rem;
+    font-style: italic;
+    font-size: 0.93rem;
+    color: var(--muted);
+  }
+</style>

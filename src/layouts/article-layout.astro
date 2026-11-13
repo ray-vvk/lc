@@ -1,5 +1,6 @@
 ---
-import ArticleHeader from "../components/article/article-header.astro";
+import ReviewHeader from "../components/article/review-header.astro";
+import ProtocolHeader from "../components/protocol/protocol-header.astro";
 import RandomCta from "../components/cta/random-cta.astro";
 import GlobalLayout from "./global-layout.astro";
 interface Props {
@@ -65,15 +66,33 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
 </Fragment>
 
 <GlobalLayout>
-  <ArticleHeader
-    title={articleTitle}
-    subtitle={articleSubtitle}
-    author={articleAuthor}
-    tags={articleTags}
-    pubDate={articlePubDate}
-    updatedDate={articleUpdateDate}
-    keywords={articleKeywords}
-  />
+  {
+    articleTags.includes("reviews") 
+    ?
+    <ReviewHeader
+      title={articleTitle}
+      subtitle={articleSubtitle}
+      author={articleAuthor}
+      tags={articleTags}
+      pubDate={articlePubDate}
+      updatedDate={articleUpdateDate}
+      keywords={articleKeywords}
+    />
+    :
+    articleTags.includes("protocols") 
+    ?
+    <ProtocolHeader 
+      title={articleTitle}
+      subtitle={articleSubtitle}
+      author={articleAuthor}
+      tags={articleTags}
+      pubDate={articlePubDate}
+      updatedDate={articleUpdateDate}
+      keywords={articleKeywords} 
+    />
+    :
+    null 
+  }
   <main>
     <slot />
   </main>
