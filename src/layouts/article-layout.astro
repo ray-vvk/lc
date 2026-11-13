@@ -67,31 +67,25 @@ const realUrl = `https://kc.virovek.com/articles/${articleId}`;
 
 <GlobalLayout>
   {
-    articleTags.includes("reviews") 
-    ?
-    <ReviewHeader
-      title={articleTitle}
-      subtitle={articleSubtitle}
-      author={articleAuthor}
-      tags={articleTags}
-      pubDate={articlePubDate}
-      updatedDate={articleUpdateDate}
-      keywords={articleKeywords}
-    />
-    :
-    articleTags.includes("protocols") 
-    ?
-    <ProtocolHeader 
-      title={articleTitle}
-      subtitle={articleSubtitle}
-      author={articleAuthor}
-      tags={articleTags}
-      pubDate={articlePubDate}
-      updatedDate={articleUpdateDate}
-      keywords={articleKeywords} 
-    />
-    :
-    null 
+    articleTags.includes("reviews") ? (
+      <ReviewHeader
+        title={articleTitle}
+        subtitle={articleSubtitle}
+        author={articleAuthor}
+        tags={articleTags}
+        pubDate={articlePubDate}
+        updatedDate={articleUpdateDate}
+        keywords={articleKeywords}
+      />
+    ) : articleTags.includes("protocols") ? (
+      <ProtocolHeader
+        title={articleTitle}
+        subtitle={articleSubtitle}
+        author={articleAuthor}
+        tags={articleTags}
+        keywords={articleKeywords}
+      />
+    ) : null
   }
   <main>
     <slot />
