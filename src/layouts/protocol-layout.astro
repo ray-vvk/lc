@@ -1,0 +1,30 @@
+---
+
+---
+
+<Fragment>
+  <div id="protocol-layout">
+    <slot />
+  </div>
+</Fragment>;
+
+<style>
+  #protocol-layout {
+    main section {
+      border: none;
+    }
+    .comparison {
+      margin: 0;
+    }
+    @media (max-width: 600px) {
+      main {
+        h2 {
+          font-size: 1.4rem;
+        }
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+</style>
