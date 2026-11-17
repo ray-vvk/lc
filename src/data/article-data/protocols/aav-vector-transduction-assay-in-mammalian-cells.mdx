@@ -66,6 +66,83 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
   2. Detach cells and prepare a suspension at 4 × 10⁵ cells/mL.
   3. Dispense 100 µL per well (4 × 10⁴ cells/well) into a tissue-culture-treated 96-well plate. Incubate overnight.
 
+  <h3>4.2. Day 0 | Prepare assay medium</h3>
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Cell line</th>
+      <th>Serum-free DMEM supplement</th>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>HEK293T, HEK293, HepG2</td>
+      <td>20 µM etoposide (from 20 mM stock; 1:1,000 final dilution).</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>RC32</td>
+      <td>wtAd5 at 1.6 × 10⁹ vg/mL, per Virovek’s established RC32 assay condition.</td>
+    </tr>
+  </ArticleTable>
+
+  <h3>4.3. Day 0 | Prepare AAV dilution series</h3>
+
+  Example: eight AAV samples (rows A–H), each with a starting stock titer of 2 × 10¹³ vg/mL. If the actual stock titer differs, recalculate the predilution accordingly.
+
+  1. For each AAV sample, add 2 µL stock to 198 µL appropriate serum-free assay medium (1:100 predilution; 2 × 10¹¹ vg/mL in this example). Mix consistently.
+  2. In the round-bottom dilution plate, dispense 270 µL assay medium into column 1 (rows A–H) and 135 µL into columns 3–10.
+  3. Add 30 µL of each prediluted sample to the corresponding well in column 1; mix. Transfer 150 µL from column 1 to column 2.
+  4. Transfer 15 µL from column 1 to column 3 and 15 µL from column 2 to column 4; mix columns 3 and 4. Continue similarly: 3→5, 4→6, 5→7, 6→8, 7→9, and 8→10, mixing after each transfer and using fresh tips where needed.
+  5. Reserve columns 11 and 12 for no-AAV negative controls. Add the same serum-free assay medium, including the cell-line-specific supplement, but no AAV vector.
+  
+  <br />
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Columns</th>
+      <th>AAV concentration (vg/mL)</th>
+      <th>AAV dose (vg/well; 100µL)</th>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>1-2</td>
+      <td>2 × 10¹⁰</td>
+      <td>2 × 10⁹</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>3-4</td>
+      <td>2 × 10⁹</td>
+      <td>2 × 10⁸</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>5-6</td>
+      <td>2 × 10⁸</td>
+      <td>2 × 10⁷</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>7-8</td>
+      <td>2 × 10⁷</td>
+      <td>2 × 10⁶</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>9-10</td>
+      <td>2 × 10⁶</td>
+      <td>2 × 10⁵</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>11-12</td>
+      <td>No AAV</td>
+      <td>Negative control</td>
+    </tr>
+
+    <span slot="figcaption-contents">Columns 1–10 contain paired dilution wells for each sample; the layout does not by itself constitute independent biological replication.</span>
+  </ArticleTable>
+
   <h3>4.4. Day 0 | AAV exposure</h3>
 
   1. Carefully remove culture medium from the cell plate, proceeding from column 12 toward column 1 to minimize cross-contamination.
