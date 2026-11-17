@@ -4,6 +4,7 @@ it gets taken in by astro's content collections APIs and then used elsewhere.
 tag name ought to be pretty. Full-Stack Development.
 it will get lowercased and hyphenated when processed later on. 
 
+by the way, draft in data is optional but controls whether or not an article appears in the recent articles component or in the all articles search area. use draft by setting it to true in order to hide something from appearing in either of those locations. 
 
 
 steps to take for readying an article: 
