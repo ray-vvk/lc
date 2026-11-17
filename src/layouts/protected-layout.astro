@@ -4,11 +4,13 @@
 
 <div id="all-password-stuff">
   <div id="directions">
-    Enter the passphrase to view protected page contents.
+    This page is currently a draft. It may become available soon.
+    <br/>
+    To view page contents, enter the password.
   </div>
   <div id="textbox-and-button">
     <input type="password" id="password-box" />
-    <button id="password-submit" type="submit">Submit</button>
+    <button id="submit-button" type="submit">Submit</button>
   </div>
 </div>
 
@@ -20,30 +22,46 @@
 </div>
 
 <script>
-  const passwordBox = document.getElementById("password-box") as HTMLInputElement
-  const submitButton  = document.getElementById("password-submit") as HTMLButtonElement
-  const protectedContents  = document.getElementById("protected-contents") as HTMLDivElement
-  const allPasswordStuff  = document.getElementById("all-password-stuff") as HTMLDivElement
+  const passwordBox = document.getElementById(
+    "password-box",
+  ) as HTMLInputElement;
+  const submitButton = document.getElementById(
+    "submit-button",
+  ) as HTMLButtonElement;
+  const protectedContents = document.getElementById(
+    "protected-contents",
+  ) as HTMLDivElement;
+  const allPasswordStuff = document.getElementById(
+    "all-password-stuff",
+  ) as HTMLDivElement;
   submitButton.addEventListener("click", () => {
-    if (passwordBox.value === "LookOverThere") {
-      protectedContents.style = "display: block;"
-      allPasswordStuff.style = "display: none;"
+    if (passwordBox.value === "DecentPassword68") {
+      protectedContents.style = "display: block;";
+      allPasswordStuff.style = "display: none;";
     }
-  })
+  });
 </script>
-
 
 <style>
   #all-password-stuff {
     display: block;
+    border: 1px solid #ccc;
+    padding: 2rem;
   }
   #directions {
     text-align: center;
+    font-family: monospace;
+    font-weight: bold;
   }
   #textbox-and-button {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    padding: 1rem;
+  }
+  #submit-button {
+    font-family: monospace;
+    font-weight: bold;
   }
   #protected-contents {
     display: none;

@@ -50,6 +50,9 @@
         ]
       }
     },
+    "draft": {
+      "type": "boolean"
+    },
     "$schema": {
       "type": "string"
     }

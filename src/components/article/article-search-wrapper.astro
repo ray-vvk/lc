@@ -6,7 +6,12 @@ import { articleSearchDisplaySimple } from "../../store";
 import ArticleSimpleTogglerScript from "../tags/article-simple-toggler-script.astro";
 import { sortRecentFirst } from "../../lib/article/article-helper-functions";
 
-const articleData = sortRecentFirst(await getCollection("articleData"));
+const articleData = sortRecentFirst(await getCollection("articleData")).filter(
+  (article) => {
+    console.log(article.data)
+    return article.data.draft !== true
+  }
+);
 ---
 
 <div class="all-holder">
