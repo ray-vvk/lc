@@ -21,6 +21,10 @@ import ArticleImage from "../../../components/article/article-image.astro";
 import SectionReferences from "../../../components/article/section-references.astro";
 import ArticleCallout from "../../../components/article/article-callout.astro";
 
+import ProtectedLayout from "../../../layouts/protected-layout.astro"
+
+<ProtectedLayout>
+
 <SectionBasic h2="1. Purpose and scope">
   This protocol describes a 96-well reporter-based assay for assessing functional transduction of mammalian cells by AAV vectors. It is applicable to AAV2 and other AAV serotypes. The supported cell lines are HEK293T, HEK293, HepG2, and RC32. Reporter expression is assessed by fluorescence microscopy or an appropriate antigen-specific detection method. Results reflect the specified cell line and assay conditions.
 </SectionBasic>
@@ -94,8 +98,6 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
   3. Add 30 µL of each prediluted sample to the corresponding well in column 1; mix. Transfer 150 µL from column 1 to column 2.
   4. Transfer 15 µL from column 1 to column 3 and 15 µL from column 2 to column 4; mix columns 3 and 4. Continue similarly: 3→5, 4→6, 5→7, 6→8, 7→9, and 8→10, mixing after each transfer and using fresh tips where needed.
   5. Reserve columns 11 and 12 for no-AAV negative controls. Add the same serum-free assay medium, including the cell-line-specific supplement, but no AAV vector.
-  
-  <br />
 
   <ArticleTable>
     <tr slot="thead-contents">
@@ -183,3 +185,6 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
     </tr>
   </ArticleTable>
 </SectionBasic>
+
+
+</ProtectedLayout>
