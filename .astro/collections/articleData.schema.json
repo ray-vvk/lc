@@ -31,13 +31,34 @@
         "type": "string"
       }
     },
+    "metadata": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "draft": {
+      "type": "boolean"
+    },
     "$schema": {
       "type": "string"
     }
   },
   "required": [
     "title",
-    "author",
     "pubDate",
     "updatedDate",
     "tags"

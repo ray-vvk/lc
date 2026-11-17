@@ -6,6 +6,7 @@ pubDate: 2026-11-10
 updatedDate: 2026-11-10
 tags: [reviews]
 keywords: ["AAV capsid engineering", "adeno-associated virus", "directed evolution", "peptide display", "DNA family shuffling", "structure-guided engineering", "computational capsid design", "receptor-mediated targeting", "Precision AAV Capsid Engineering (PACE)", "CD3scFv-AAV", "in vivo CAR-T therapy"]
+draft: true 
 
 ---
 
@@ -16,6 +17,10 @@ import ArticleImage from "../../components/article/article-image.astro";
 import SectionReferences from "../../components/article/section-references.astro";
 import ArticleCallout from "../../components/article/article-callout.astro";
 import ArticleCiteLinks from "../../components/article/article-cite-links.astro";
+
+import ProtectedLayout from "../../layouts/protected-layout.astro";
+
+<ProtectedLayout>
 
 <SectionBasic h2="Abstract">
   Adeno-associated virus (AAV) capsid engineering has evolved from random diversification and directed evolution toward rational and computational approaches designed to improve transduction efficiency, tissue tropism, and cellular specificity. Although these strategies have generated numerous engineered capsids, their biological performance often depends on incompletely understood receptor interactions and may not translate across species. Receptor-guided engineering offers a complementary strategy by directing capsid design toward defined cellular targets. Here, we review major advances in AAV capsid engineering and introduce Precision AAV Capsid Engineering (PACE™), a receptor-first framework integrating target-cell and receptor identification, selection of characterized binding ligands, capsid incorporation, vector production optimization, and functional validation. As an illustrative application, we describe CD3scFv-modified AAV6 capsids engineered to selectively transduce human T cells. Incorporation of a CD3-binding single-chain variable fragment into surface-exposed capsid loops markedly enhanced primary human T-cell transduction compared with unmodified AAV6. In humanized mouse models of CD19-positive lymphoma, systemic administration of CD3-targeted AAV encoding a CD19-directed chimeric antigen receptor generated CAR-expressing T cells and demonstrated significant antitumor activity. These findings illustrate the potential of receptor-first capsid engineering for in vivo CAR-T generation. We further discuss the challenges of receptor specificity, immunogenicity, biodistribution, manufacturing, and clinical translation. Integrating defined receptor biology with capsid engineering and functional validation may facilitate the development of more selective AAV vectors for precision gene delivery.
@@ -271,3 +276,6 @@ import ArticleCiteLinks from "../../components/article/article-cite-links.astro"
     <li id="reference-46">Salabarria, S.M., Corti, M., Coleman, K.E., Wichman, M.B., Berthy, J.A., D'Souza, P., Tifft, C.J., Herzog, R.W., Elder, M.E., Shoemaker, L.R., Leon-Astudillo, C., et al. (2024). Thrombotic microangiopathy following systemic AAV administration is dependent on anti-capsid antibodies. J Clin Invest 134. doi:10.1172/JCI173510.</li>
   </ol>
 </SectionReferences>
+
+
+</ProtectedLayout>

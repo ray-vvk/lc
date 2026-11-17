@@ -16,6 +16,9 @@ const { maxArticles } = Astro.props;
       // sort by recent pubDate first. so oldest pubDate last.
       articleData
         .map((article) => {
+          if (article.data.draft === true) {
+            return <></>
+          }
           return (
             <li>
               <a href={`/articles/${article.id}`}>{article.data.title}</a>

@@ -1,0 +1,191 @@
+---
+title: AAV Vector Transduction Assay in Mammalian Cells
+author: Virovek Team
+pubDate: 2026-09-01
+updatedDate: 2026-09-01
+tags: [protocols]
+metadata: 
+  document_number: VVK-PRO-019
+  version: "1.0"
+  status: Established research laboratory protocol
+  description: "Research use only. Public research protocol aligned by subject with internal Virovek-SOP-019; independently maintained and not a controlled GLP SOP."
+  cells_wells: "HEK293T · HEK293 · HepG2 · RC32  |  96-well plate format"
+keywords: ["AAV transduction","transduction efficiency","AAV serotypes","GFP","HEK293T","HEK293","HepG2","RC32","AAV infectivity assay","etoposide-enhanced AAV transduction","protocol"]
+draft: true
+
+---
+
+import ArticleTable from "../../../components/article/article-table.astro"
+import SectionBasic from "../../../components/article/section-basic.astro";
+import SectionWithAside from "../../../components/article/section-with-aside.astro";
+import ArticleImage from "../../../components/article/article-image.astro";
+import SectionReferences from "../../../components/article/section-references.astro";
+import ArticleCallout from "../../../components/article/article-callout.astro";
+
+import ProtectedLayout from "../../../layouts/protected-layout.astro"
+
+<ProtectedLayout>
+
+<SectionBasic h2="1. Purpose and scope">
+  This protocol describes a 96-well reporter-based assay for assessing functional transduction of mammalian cells by AAV vectors. It is applicable to AAV2 and other AAV serotypes. The supported cell lines are HEK293T, HEK293, HepG2, and RC32. Reporter expression is assessed by fluorescence microscopy or an appropriate antigen-specific detection method. Results reflect the specified cell line and assay conditions.
+</SectionBasic>
+
+<SectionBasic h2="2. Assay principle">
+  Cells are plated one day before AAV exposure. AAV vectors are applied in serum-free DMEM using a five-point, tenfold dilution series. HEK293T, HEK293, and HepG2 assays use 20 µM etoposide as an expression-enhancing condition; RC32 assays use the laboratory-established wild-type adenovirus 5 (wtAd5) helper condition. After overnight exposure, an equal volume of DMEM containing 20% FBS is added, restoring a nominal final FBS concentration of 10%.
+
+  The helper-virus-assisted RC32 assay and etoposide-enhanced assays represent different biological conditions; their readouts should not be interpreted as directly equivalent measures of intrinsic AAV infectivity.
+</SectionBasic>
+
+<SectionBasic h2="3. Materials and reagents">
+  HEK293T, HEK293, HepG2, or RC32 cells; DMEM; fetal bovine serum (FBS); AAV reporter vector samples; trypsin or validated cell dissociation reagent; tissue-culture-treated 96-well plates; round-bottom 96-well dilution plates; sterile microcentrifuge tubes; single- and multichannel pipettes; fluorescence microscope or equivalent reporter assay equipment. For applicable assays: etoposide stock (20 mM in DMSO) or laboratory-approved wtAd5 helper preparation.
+
+  <strong>Media formulations</strong>
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Medium</th>
+      <th>Preparation/Use</th>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Routine maintenance</th>
+      <td>DMEM + 10% FBS (all four cell lines).</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>Serum-free transduction medium</th>
+      <td>DMEM without FBS; supplement according to the applicable assay condition.</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>DMEM + 20% FBS</th>
+      <td>Combine 40 mL DMEM with 10 mL FBS (50 mL total); used for next-day supplementation.</td>
+    </tr>
+  </ArticleTable>
+</SectionBasic>
+
+<SectionBasic h2="4. Procedure">
+  <h3>4.1. Day −1 | Cell seeding</h3>
+
+  1. Maintain the selected cell line in DMEM containing 10% FBS and grow to approximately 70–90% confluence.
+  2. Detach cells and prepare a suspension at 4 × 10⁵ cells/mL.
+  3. Dispense 100 µL per well (4 × 10⁴ cells/well) into a tissue-culture-treated 96-well plate. Incubate overnight.
+
+  <h3>4.2. Day 0 | Prepare assay medium</h3>
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Cell line</th>
+      <th>Serum-free DMEM supplement</th>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>HEK293T, HEK293, HepG2</td>
+      <td>20 µM etoposide (from 20 mM stock; 1:1,000 final dilution).</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>RC32</td>
+      <td>wtAd5 at 1.6 × 10⁹ vg/mL, per Virovek’s established RC32 assay condition.</td>
+    </tr>
+  </ArticleTable>
+
+  <h3>4.3. Day 0 | Prepare AAV dilution series</h3>
+
+  Example: eight AAV samples (rows A–H), each with a starting stock titer of 2 × 10¹³ vg/mL. If the actual stock titer differs, recalculate the predilution accordingly.
+
+  1. For each AAV sample, add 2 µL stock to 198 µL appropriate serum-free assay medium (1:100 predilution; 2 × 10¹¹ vg/mL in this example). Mix consistently.
+  2. In the round-bottom dilution plate, dispense 270 µL assay medium into column 1 (rows A–H) and 135 µL into columns 3–10.
+  3. Add 30 µL of each prediluted sample to the corresponding well in column 1; mix. Transfer 150 µL from column 1 to column 2.
+  4. Transfer 15 µL from column 1 to column 3 and 15 µL from column 2 to column 4; mix columns 3 and 4. Continue similarly: 3→5, 4→6, 5→7, 6→8, 7→9, and 8→10, mixing after each transfer and using fresh tips where needed.
+  5. Reserve columns 11 and 12 for no-AAV negative controls. Add the same serum-free assay medium, including the cell-line-specific supplement, but no AAV vector.
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Columns</th>
+      <th>AAV concentration (vg/mL)</th>
+      <th>AAV dose (vg/well; 100µL)</th>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>1-2</td>
+      <td>2 × 10¹⁰</td>
+      <td>2 × 10⁹</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>3-4</td>
+      <td>2 × 10⁹</td>
+      <td>2 × 10⁸</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>5-6</td>
+      <td>2 × 10⁸</td>
+      <td>2 × 10⁷</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>7-8</td>
+      <td>2 × 10⁷</td>
+      <td>2 × 10⁶</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>9-10</td>
+      <td>2 × 10⁶</td>
+      <td>2 × 10⁵</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <td>11-12</td>
+      <td>No AAV</td>
+      <td>Negative control</td>
+    </tr>
+
+    <span slot="figcaption-contents">Columns 1–10 contain paired dilution wells for each sample; the layout does not by itself constitute independent biological replication.</span>
+  </ArticleTable>
+
+  <h3>4.4. Day 0 | AAV exposure</h3>
+
+  1. Carefully remove culture medium from the cell plate, proceeding from column 12 toward column 1 to minimize cross-contamination.
+  2. Transfer 100 µL of the corresponding AAV dilution or no-AAV control medium into each well. Use a transfer order and tip-change practice that prevents carryover from higher to lower vector concentrations.
+  3. Incubate overnight under the routine conditions appropriate for the cell line.
+
+  <h3>4.5. Day +1 | Restore maintenance serum concentration</h3>
+
+  Add 100 µL of DMEM + 20% FBS to each well without removing the existing 100 µL serum-free transduction medium. Each well then contains 200 µL total volume. The final FBS concentration is (100 µL × 0% + 100 µL × 20%)/200 µL = 10% (v/v), matching the routine maintenance medium. The assay-specific supplements remain present at approximately half their exposure concentrations after this addition.
+
+  <h3>4.6. Days +2 to +3 | Reporter readout</h3>
+
+  Continue culture for 2–3 days as established for the reporter and cell line. Examine GFP or RFP expression by fluorescence microscopy, or perform validated antigen-specific staining when appropriate. Record cell morphology, viability, image acquisition settings, and reporter-positive readout alongside the no-AAV controls.
+</SectionBasic>
+
+<SectionBasic h2="5. Controls, reporting, and interpretation">
+  Columns 11 and 12 serve as no-AAV negative controls for the relevant cell-line and assay-medium condition. Document the AAV serotype, reporter cassette, sample identifier, stock titer, applied vg/well, cell line, supplement, incubation times, and readout method. Where quantitative comparisons are made, report replicate structure and normalization method; assess cell viability because enhanced reporter expression is not necessarily proportional to vector entry or productive infection.
+</SectionBasic>
+
+<SectionBasic h2="6. Laboratory experience and limitations">
+  Virovek has applied this assay repeatedly to evaluate AAV-mediated reporter expression. Serum effects, helper-virus effects, and enhancement by etoposide can vary with cell line, vector, and experimental context.
+</SectionBasic>
+
+<SectionBasic h2="7. Safety and document control">
+  Etoposide is a hazardous cytotoxic reagent; wtAd5 is an infectious biological agent. Follow institutional biosafety assessments, applicable containment requirements, and chemical safety procedures. This protocol is for research use only and is not intended for clinical administration or as evidence of GLP compliance.
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Document</th>
+      <th>Version</th>
+      <th>Change summary</th>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>VVK-PRO-019</th>
+      <td>1.0</td>
+      <td style={{maxWidth: '16rem'}}>Public research protocol; expanded serotype/cell-line scope, media formulation, no-AAV controls, and final serum calculation.</td>
+    </tr>
+  </ArticleTable>
+</SectionBasic>
+
+
+</ProtectedLayout>

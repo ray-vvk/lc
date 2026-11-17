@@ -1,7 +1,3 @@
----
-
----
-
 <div class="table-overflower">
   <table class="comparison">
     <thead>
@@ -15,3 +11,36 @@
 <figcaption>
   <slot name="figcaption-contents" />
 </figcaption>
+
+<style is:global>
+  .comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.4rem 0;
+  }
+
+  .comparison th,
+  .comparison td {
+    border: 1px solid var(--line);
+    padding: 0.8rem;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .comparison th {
+    background: var(--pale);
+    color: var(--dark-blue);
+  }
+
+  @media (max-width: 850px) {
+    .comparison {
+      min-width: 40rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .comparison {
+      font-size: 1rem;
+    }
+  }
+</style>

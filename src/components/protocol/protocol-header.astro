@@ -1,0 +1,123 @@
+---
+interface Props {
+  title: string;
+  tags: string[];
+  keywords?: string[];
+  metadata?: Record<string, string | string[]>;
+}
+const { title, tags, keywords, metadata } = Astro.props;
+---
+
+<header>
+  <div class="wrap">
+    <!-- <div class="eyebrow">{category}</div> -->
+    <h1>{title}</h1>
+    <hr />
+    <div class="top-info-table">
+      <div class="row">
+        <div class="left-cell"><strong>Document number: </strong></div>
+        <div class="right-cell">{metadata?.document_number || "N/A"}</div>
+      </div>
+      <div class="row">
+        <div class="left-cell"><strong>Version: </strong></div>
+        <div class="right-cell">{metadata?.version || "N/A"}</div>
+      </div>
+      <div class="row">
+        <div class="left-cell"><strong>Status: </strong></div>
+        <div class="right-cell">{metadata?.status || "N/A"}</div>
+      </div>
+    </div>
+    <hr />
+    <div class="description">
+      {metadata?.description || "Description not provided."}
+    </div>
+    <hr />
+    <div class="cells-wells">
+      {metadata?.cells_wells || "N/A"}
+    </div>
+
+    <div class="tags">
+      Tags: &nbsp;
+      {
+        tags.map((tag, i, tags) => {
+          if (i !== tags.length - 1) {
+            return (
+              <span>
+                <a href={`/tags/${tag}`}>{tag}</a>,&nbsp;
+              </span>
+            );
+          }
+          return (
+            <span>
+              <a href={`/tags/${tag}`}>{tag}</a>
+            </span>
+          );
+        })
+      }
+    </div>
+    <div class="keywords">
+      {keywords ? "Keywords: " : null}
+      {
+        // write keywords with commas until the last one
+        keywords
+          ? keywords.map((keyword, i, keywords) => {
+              return i === keywords.length - 1 ? keyword : `${keyword}, `;
+            })
+          : null
+      }
+    </div>
+  </div>
+</header>
+
+<style>
+  h1 {
+    font-size: 3rem;
+  }
+  .top-info-table {
+    max-width: 32rem;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: max-content;
+    }
+    .right-cell {
+      text-align: right;
+    }
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .cells-wells {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .tags {
+    font-size: 0.94rem;
+    font-weight: bold;
+    a {
+      text-transform: uppercase;
+    }
+  }
+  .keywords {
+    padding-top: 1rem;
+    font-style: italic;
+    font-size: 0.93rem;
+    color: var(--muted);
+  }
+  hr {
+    height: 1px;
+    border: 0;
+    background: #999;
+  }
+  @media (max-width: 600px) {
+    .top-info-table {
+      .row {
+        display: block;
+      }
+      .right-cell {
+        text-align: left;
+      }
+    }
+  }
+</style>

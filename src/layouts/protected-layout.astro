@@ -1,0 +1,69 @@
+---
+
+---
+
+<div id="all-password-stuff">
+  <div id="directions">
+    This page is currently a draft. It may become available soon.
+    <br/>
+    To view page contents, enter the password.
+  </div>
+  <div id="textbox-and-button">
+    <input type="password" id="password-box" />
+    <button id="submit-button" type="submit">Submit</button>
+  </div>
+</div>
+
+<!-- warning: THIS LAYOUT DOESN'T ACTUALLY SECURE PAGE CONTENTS. IT JUST HIDES THEM SO MOST PEOPLE WITHOUT KNOWLEDGE OF WEB DEVELOPMENT WON'T SEE THEM. THE PASSWORD IS ACCESSIBLE FROM THE CLIENT.  -->
+
+<div id="protected-contents">
+  <!-- hello, developers. please don't tell the non-developers how to view protected page contents. -->
+  <slot />
+</div>
+
+<script>
+  const passwordBox = document.getElementById(
+    "password-box",
+  ) as HTMLInputElement;
+  const submitButton = document.getElementById(
+    "submit-button",
+  ) as HTMLButtonElement;
+  const protectedContents = document.getElementById(
+    "protected-contents",
+  ) as HTMLDivElement;
+  const allPasswordStuff = document.getElementById(
+    "all-password-stuff",
+  ) as HTMLDivElement;
+  submitButton.addEventListener("click", () => {
+    if (passwordBox.value === "DecentPassword68") {
+      protectedContents.style = "display: block;";
+      allPasswordStuff.style = "display: none;";
+    }
+  });
+</script>
+
+<style>
+  #all-password-stuff {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 2rem;
+  }
+  #directions {
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+  }
+  #textbox-and-button {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  #submit-button {
+    font-family: monospace;
+    font-weight: bold;
+  }
+  #protected-contents {
+    display: none;
+  }
+</style>

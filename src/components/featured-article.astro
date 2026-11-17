@@ -8,7 +8,7 @@ import AuthorImage from "./authors/author-image.astro";
 const articles = await getCollection("articleData");
 // specify an article by id.
 const id =
-  "aav-capsid-engineering-precision-receptor-guided-targeting";
+  "in-vivo-car-t-autoimmune-diseases-potential-t-cell-targeted-aav-gene-delivery";
 const featuredArticle = articles.find((a) => {
   return a.id === id;
 });
@@ -24,7 +24,7 @@ const featuredArticle = articles.find((a) => {
         </a>
         <div />
         <div class="author-stuff">
-          <AuthorImage authorName={featuredArticle.data.author.toLowerCase()} />{" "}
+          <AuthorImage authorName={featuredArticle.data.author?.toLowerCase() ?? ""} />{" "}
           <div>{featuredArticle.data.author}</div>
         </div>
         <div>
