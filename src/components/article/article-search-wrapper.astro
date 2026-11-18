@@ -7,10 +7,7 @@ import ArticleSimpleTogglerScript from "../tags/article-simple-toggler-script.as
 import { sortRecentFirst } from "../../lib/article/article-helper-functions";
 
 const articleData = sortRecentFirst(await getCollection("articleData")).filter(
-  (article) => {
-    console.log(article.data)
-    return article.data.draft !== true
-  }
+  (article) => article.data.draft !== true,
 );
 ---
 
