@@ -21,150 +21,101 @@ import SectionReferences from "../../../components/article/section-references.as
 import ArticleCallout from "../../../components/article/article-callout.astro";
 
 <SectionBasic h2="1. Purpose and scope">
-  This protocol describes a 96-well reporter-based assay for assessing functional transduction of mammalian cells by AAV vectors. It is applicable to AAV2 and other AAV serotypes. The supported cell lines are HEK293T, HEK293, HepG2, and RC32. Reporter expression is assessed by fluorescence microscopy or an appropriate antigen-specific detection method. Results reflect the specified cell line and assay conditions.
+  This protocol describes the amplification of recombinant baculovirus (rBV) in Sf9 insect cell suspension culture, recovery of the virus-containing culture supernatant, titer determination by qPCR, and preparation for storage. It is intended for laboratory research use.
 </SectionBasic>
 
-<SectionBasic h2="2. Assay principle">
-  Cells are plated one day before AAV exposure. AAV vectors are applied in serum-free DMEM using a five-point, tenfold dilution series. HEK293T, HEK293, and HepG2 assays use 20 µM etoposide as an expression-enhancing condition; RC32 assays use the laboratory-established wild-type adenovirus 5 (wtAd5) helper condition. After overnight exposure, an equal volume of DMEM containing 20% FBS is added, restoring a nominal final FBS concentration of 10%.
-
-  The helper-virus-assisted RC32 assay and etoposide-enhanced assays represent different biological conditions; their readouts should not be interpreted as directly equivalent measures of intrinsic AAV infectivity.
+<SectionBasic h2="2. Method principle">
+  A recombinant baculovirus contains a heterologous DNA sequence introduced by recombinant DNA methods. Sf9 insect cells are infected with an rBV stock and maintained in shaking culture to amplify the virus. The clarified supernatant is sampled for qPCR-based titer determination and then prepared for long-term storage. The stated inoculation ratio is a volume ratio, not a defined multiplicity of infection (MOI).
 </SectionBasic>
 
 <SectionBasic h2="3. Materials and reagents">
-  HEK293T, HEK293, HepG2, or RC32 cells; DMEM; fetal bovine serum (FBS); AAV reporter vector samples; trypsin or validated cell dissociation reagent; tissue-culture-treated 96-well plates; round-bottom 96-well dilution plates; sterile microcentrifuge tubes; single- and multichannel pipettes; fluorescence microscope or equivalent reporter assay equipment. For applicable assays: etoposide stock (20 mM in DMSO) or laboratory-approved wtAd5 helper preparation.
-
-  <strong>Media formulations</strong>
+  Sf9 cell line; recombinant baculovirus stock; ESF AF medium; sodium citrate dihydrate; 70% isopropanol; suitable culture vessels; 250 mL centrifuge tubes; storage bottles and aliquot containers; pipettes; biological safety cabinet; incubator shaker; centrifuge; cell counter; microscope; and qPCR equipment. Use appropriate laboratory-approved equipment and reagent lots.
 
   <ArticleTable>
     <tr slot="thead-contents">
-      <th>Medium</th>
-      <th>Preparation/Use</th>
+      <th>Parameter</th>
+      <th>Source procedure condition</th>
     </tr>
 
     <tr slot="thead-contents">
-      <th>Routine maintenance</th>
-      <td>DMEM + 10% FBS (all four cell lines).</td>
+      <th>Sf9 cell concentration at infection</th>
+      <td>2 × 10⁶ cells/mL</td>
     </tr>
 
-    <tr slot="tbody-contents">
-      <th>Serum-free transduction medium</th>
-      <td>DMEM without FBS; supplement according to the applicable assay condition.</td>
+    <tr slot="thead-contents">
+      <th>rBV inoculation</th>
+      <td>1:200 (v/v); example 1 mL stock (typical 1 x 107 ~ 1 x 108 pfu/mL) per 200 mL Sf9 culture</td>
     </tr>
 
-    <tr slot="tbody-contents">
-      <th>DMEM + 20% FBS</th>
-      <td>Combine 40 mL DMEM with 10 mL FBS (50 mL total); used for next-day supplementation.</td>
+    <tr slot="thead-contents">
+      <th>Incubation</th>
+      <td>28 °C, shaking at 140 rpm, 3 days</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Harvest clarification</th>
+      <td>2,000 rpm, 5 minutes</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>qPCR sample	</th>
+      <td>0.1 mL</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Holding temperature pending titer</th>
+      <td>4 °C</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Storage additive</th>
+      <td>Sodium citrate, final 100 mM</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Long-term storage</th>
+      <td>−80 °C</td>
     </tr>
   </ArticleTable>
 </SectionBasic>
 
 <SectionBasic h2="4. Procedure">
-  <h3>4.1. Day −1 | Cell seeding</h3>
+  <h3>4.1. Prepare the work area and rBV stock</h3>
 
-  1. Maintain the selected cell line in DMEM containing 10% FBS and grow to approximately 70–90% confluence.
-  2. Detach cells and prepare a suspension at 4 × 10⁵ cells/mL.
-  3. Dispense 100 µL per well (4 × 10⁴ cells/well) into a tissue-culture-treated 96-well plate. Incubate overnight.
+  1. Prepare the biological safety cabinet according to the laboratory’s established procedures (internal source: Virovek-SOP-001).
+  2. Thaw the rBV stock using hand warmth as described in the source SOP; disinfect the outside of the vial with 70% isopropanol before transferring it into the cabinet. Record the rBV identity and stock information.
 
-  <h3>4.2. Day 0 | Prepare assay medium</h3>
+  <h3>4.2. Prepare and infect Sf9 culture</h3>
 
-  <ArticleTable>
-    <tr slot="thead-contents">
-      <th>Cell line</th>
-      <th>Serum-free DMEM supplement</th>
-    </tr>
+  1. Bring the Sf9 culture into the cabinet. Determine cell concentration and viability using the established cell-counting method (internal source: Virovek-SOP-040).
+  2. Adjust the Sf9 suspension to 2 × 10⁶ cells/mL with fresh medium.
+  3. Add rBV stock at a 1:200 volume ratio (e.g., 1 mL rBV stock to 200 mL Sf9 cell culture). Record inoculum and culture volumes.
+  4. Incubate in a shaking incubator at 28 °C, 140 rpm, for 3 days. Record the incubation start and harvest times.
 
-    <tr slot="tbody-contents">
-      <td>HEK293T, HEK293, HepG2</td>
-      <td>20 µM etoposide (from 20 mM stock; 1:1,000 final dilution).</td>
-    </tr>
+  <h3>4.3. Harvest and determine rBV titer</h3>
 
-    <tr slot="tbody-contents">
-      <td>RC32</td>
-      <td>wtAd5 at 1.6 × 10⁹ vg/mL, per Virovek’s established RC32 assay condition.</td>
-    </tr>
-  </ArticleTable>
+  1. Transfer the culture to the biological safety cabinet and dispense into centrifuge tubes.
+  2. Centrifuge at 2,000 rpm for 5 minutes. Transfer the clarified supernatant into a fresh bottle in the cabinet.
+  3. Remove a 0.1 mL aliquot for qPCR. Hold the remaining supernatant at 4 °C while the rBV titer is determined.
+  4. Determine rBV titer by the laboratory’s established qPCR assay (internal source: Virovek-SOP-005). Record the assay result and sample identification. The amplified rBV now can be used to infect insect cells for protein expression, AAV production, or other experimental purposes.
 
-  <h3>4.3. Day 0 | Prepare AAV dilution series</h3>
+  <h3>4.4. Formulate and store rBV stock</h3>
 
-  Example: eight AAV samples (rows A–H), each with a starting stock titer of 2 × 10¹³ vg/mL. If the actual stock titer differs, recalculate the predilution accordingly.
-
-  1. For each AAV sample, add 2 µL stock to 198 µL appropriate serum-free assay medium (1:100 predilution; 2 × 10¹¹ vg/mL in this example). Mix consistently.
-  2. In the round-bottom dilution plate, dispense 270 µL assay medium into column 1 (rows A–H) and 135 µL into columns 3–10.
-  3. Add 30 µL of each prediluted sample to the corresponding well in column 1; mix. Transfer 150 µL from column 1 to column 2.
-  4. Transfer 15 µL from column 1 to column 3 and 15 µL from column 2 to column 4; mix columns 3 and 4. Continue similarly: 3→5, 4→6, 5→7, 6→8, 7→9, and 8→10, mixing after each transfer and using fresh tips where needed.
-  5. Reserve columns 11 and 12 for no-AAV negative controls. Add the same serum-free assay medium, including the cell-line-specific supplement, but no AAV vector.
-
-  <ArticleTable>
-    <tr slot="thead-contents">
-      <th>Columns</th>
-      <th>AAV concentration (vg/mL)</th>
-      <th>AAV dose (vg/well; 100µL)</th>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <td>1-2</td>
-      <td>2 × 10¹⁰</td>
-      <td>2 × 10⁹</td>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <td>3-4</td>
-      <td>2 × 10⁹</td>
-      <td>2 × 10⁸</td>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <td>5-6</td>
-      <td>2 × 10⁸</td>
-      <td>2 × 10⁷</td>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <td>7-8</td>
-      <td>2 × 10⁷</td>
-      <td>2 × 10⁶</td>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <td>9-10</td>
-      <td>2 × 10⁶</td>
-      <td>2 × 10⁵</td>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <td>11-12</td>
-      <td>No AAV</td>
-      <td>Negative control</td>
-    </tr>
-
-    <span slot="figcaption-contents">Columns 1–10 contain paired dilution wells for each sample; the layout does not by itself constitute independent biological replication.</span>
-  </ArticleTable>
-
-  <h3>4.4. Day 0 | AAV exposure</h3>
-
-  1. Carefully remove culture medium from the cell plate, proceeding from column 12 toward column 1 to minimize cross-contamination.
-  2. Transfer 100 µL of the corresponding AAV dilution or no-AAV control medium into each well. Use a transfer order and tip-change practice that prevents carryover from higher to lower vector concentrations.
-  3. Incubate overnight under the routine conditions appropriate for the cell line.
-
-  <h3>4.5. Day +1 | Restore maintenance serum concentration</h3>
-
-  Add 100 µL of DMEM + 20% FBS to each well without removing the existing 100 µL serum-free transduction medium. Each well then contains 200 µL total volume. The final FBS concentration is (100 µL × 0% + 100 µL × 20%)/200 µL = 10% (v/v), matching the routine maintenance medium. The assay-specific supplements remain present at approximately half their exposure concentrations after this addition.
-
-  <h3>4.6. Days +2 to +3 | Reporter readout</h3>
-
-  Continue culture for 2–3 days as established for the reporter and cell line. Examine GFP or RFP expression by fluorescence microscopy, or perform validated antigen-specific staining when appropriate. Record cell morphology, viability, image acquisition settings, and reporter-positive readout alongside the no-AAV controls.
+  1. If long term storage is required, add sodium citrate to a final concentration of 100 mM.
+  2. Dispense into appropriately sized, labeled aliquots for the intended research use. Typical vial sizes are 1 mL, 5 mL, or 10 mL.
+  3. Store at −80 °C for long-term storage, following the laboratory’s established storage procedure (internal source: Virovek-SOP-037). Stored rBV should be used as seed stock for further amplification, not directly used for protein expression or AAV production.
 </SectionBasic>
 
 <SectionBasic h2="5. Controls, reporting, and interpretation">
-  Columns 11 and 12 serve as no-AAV negative controls for the relevant cell-line and assay-medium condition. Document the AAV serotype, reporter cassette, sample identifier, stock titer, applied vg/well, cell line, supplement, incubation times, and readout method. Where quantitative comparisons are made, report replicate structure and normalization method; assess cell viability because enhanced reporter expression is not necessarily proportional to vector entry or productive infection.
+  Record rBV identity, Sf9 culture identity, initial cell count and viability, culture volume, stock inoculum volume, incubation conditions, harvest date, clarification conditions, qPCR titer and assay reference, sodium citrate formulation, aliquot sizes, and storage location. Retain the qPCR titer file and aliquot record. A qPCR genome-based titer does not, by itself, establish infectious titer.
 </SectionBasic>
 
 <SectionBasic h2="6. Laboratory experience and limitations">
-  Virovek has applied this assay repeatedly to evaluate AAV-mediated reporter expression. Serum effects, helper-virus effects, and enhancement by etoposide can vary with cell line, vector, and experimental context.
+  The protocol reflects the conditions documented in Virovek-SOP-003, Rev. 004. The 1:200 inoculation is volume-based and may not provide equivalent infection conditions for rBV stocks of different titers. Centrifugation is specified in rpm in the source SOP; the corresponding relative centrifugal force depends on rotor geometry. The source does not specify shaker speed, minimum cell viability, or a release specification for rBV titer; these should not be inferred.
 </SectionBasic>
 
 <SectionBasic h2="7. Safety and document control">
-  Etoposide is a hazardous cytotoxic reagent; wtAd5 is an infectious biological agent. Follow institutional biosafety assessments, applicable containment requirements, and chemical safety procedures. This protocol is for research use only and is not intended for clinical administration or as evidence of GLP compliance.
+  Handle recombinant baculovirus and infected insect cells under institutional biosafety procedures and approved recombinant DNA practices. Follow applicable laboratory rules for disinfectants, centrifugation, and low-temperature storage. Research use only; not for clinical administration or as evidence of GLP compliance.
 
   <ArticleTable>
     <tr slot="thead-contents">
@@ -174,9 +125,15 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
     </tr>
 
     <tr slot="tbody-contents">
-      <th>VVK-PRO-019</th>
+      <th>VVK-PRO-003</th>
       <td>1.0</td>
-      <td style={{maxWidth: '16rem'}}>Public research protocol; expanded serotype/cell-line scope, media formulation, no-AAV controls, and final serum calculation.</td>
+      <td style={{maxWidth: '16rem'}}>VVK-PRO-003	1.0	Public research protocol adapted from Virovek-SOP-003 Rev. 004; reformatted for Knowledge Center publication.</td>
     </tr>
   </ArticleTable>
+</SectionBasic>
+
+<SectionBasic h2="8. References">
+  1. Virovek-SOP-003, Rev. 004 (October 29, 2025).
+  2. Haifeng Chen (2008), “Intron Splicing-Mediated Expression of AAV Rep and Cap Genes and Production of AAV in Insect Cells,” American Society of Gene Therapy (as cited in source SOP).
+  3. Invitrogen protocol (as cited in source SOP).
 </SectionBasic>
