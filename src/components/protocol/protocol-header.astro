@@ -6,6 +6,7 @@ interface Props {
   metadata?: Record<string, string | string[]>;
 }
 const { title, tags, keywords, metadata } = Astro.props;
+const cells_wells = metadata?.cells_wells || ""
 ---
 
 <header>
@@ -32,9 +33,12 @@ const { title, tags, keywords, metadata } = Astro.props;
       {metadata?.description || "Description not provided."}
     </div>
     <hr />
-    <div class="cells-wells">
-      {metadata?.cells_wells || "N/A"}
-    </div>
+
+    {
+      cells_wells ? (
+        <div class="cells-wells">{cells_wells}</div>
+      ) : null
+    }
 
     <div class="tags">
       Tags: &nbsp;
