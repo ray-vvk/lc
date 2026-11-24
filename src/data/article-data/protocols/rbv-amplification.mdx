@@ -9,6 +9,7 @@ metadata:
   version: "1.0"
   status: Established research laboratory protocol
   description: "Research use only. Public research protocol adapted from internal Virovek-SOP-003, Rev. 004 (October 29, 2025); independently maintained and not a controlled GLP SOP."
+  cells_wells: "Sf9 insect cell culture  |  Recombinant baculovirus stock amplification"
 keywords: ["recombinant baculovirus","rBV","Sf9","baculovirus amplification","insect cell culture","qPCR titer","sodium citrate","Bac-to-AAV",]
 
 ---
@@ -44,7 +45,7 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
 
     <tr slot="thead-contents">
       <th>rBV inoculation</th>
-      <td>1:200 (v/v); example 1 mL stock (typical 1 x 107 ~ 1 x 108 pfu/mL) per 200 mL Sf9 culture</td>
+      <td>1:200 (v/v); example 1 mL stock (typical 1 x 10⁷ ~ 1 x 10⁸ pfu/mL) per 200 mL Sf9 culture</td>
     </tr>
 
     <tr slot="thead-contents">
@@ -82,58 +83,31 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
 <SectionBasic h2="4. Procedure">
   <h3>4.1. Prepare the work area and rBV stock</h3>
 
-  1. Prepare the biological safety cabinet according to the laboratory’s established procedures (internal source: Virovek-SOP-001).
-  2. Thaw the rBV stock using hand warmth as described in the source SOP; disinfect the outside of the vial with 70% isopropanol before transferring it into the cabinet. Record the rBV identity and stock information.
+  1. Prepare the biosafety cabinet according to the laboratory’s established procedures (internal source: Virovek-SOP-001).
+  2. Thaw the rBV stock using hand warmth; disinfect the outside of the vial with 70% isopropanol before transferring it into the biosafety cabinet. Record the rBV identity and stock information.
 
   <h3>4.2. Prepare and infect Sf9 culture</h3>
 
-  1. Bring the Sf9 culture into the cabinet. Determine cell concentration and viability using the established cell-counting method (internal source: Virovek-SOP-040).
+  1. Bring the Sf9 culture into the biosafety cabinet. Determine cell concentration and viability using the Countess II cell counter or manual cell counter.
   2. Adjust the Sf9 suspension to 2 × 10⁶ cells/mL with fresh medium.
   3. Add rBV stock at a 1:200 volume ratio (e.g., 1 mL rBV stock to 200 mL Sf9 cell culture). Record inoculum and culture volumes.
-  4. Incubate in a shaking incubator at 28 °C, 140 rpm, for 3 days. Record the incubation start and harvest times.
+  4. Incubate in a shaking incubator at 28 °C, 140 rpm, for 3 days.
 
   <h3>4.3. Harvest and determine rBV titer</h3>
 
-  1. Transfer the culture to the biological safety cabinet and dispense into centrifuge tubes.
+  1. Transfer the culture to the biosafety cabinet and dispense into centrifuge tubes.
   2. Centrifuge at 2,000 rpm for 5 minutes. Transfer the clarified supernatant into a fresh bottle in the cabinet.
   3. Remove a 0.1 mL aliquot for qPCR. Hold the remaining supernatant at 4 °C while the rBV titer is determined.
-  4. Determine rBV titer by the laboratory’s established qPCR assay (internal source: Virovek-SOP-005). Record the assay result and sample identification. The amplified rBV now can be used to infect insect cells for protein expression, AAV production, or other experimental purposes.
+  4. Determine rBV titer by the laboratory’s established qPCR assay using primers corresponding to the GOI (we empirically determined that 1pfu is roughly 20 vg). The rBV is now ready for protein expression or AAV production depending on your experimental purposes.
 
   <h3>4.4. Formulate and store rBV stock</h3>
 
-  1. If long term storage is required, add sodium citrate to a final concentration of 100 mM.
+  1. If long term storage is required, add sodium citrate to a final concentration of 100 mM. Sodium citrate prevents rBV from aggregation and preserves its infectivity.
   2. Dispense into appropriately sized, labeled aliquots for the intended research use. Typical vial sizes are 1 mL, 5 mL, or 10 mL.
-  3. Store at −80 °C for long-term storage, following the laboratory’s established storage procedure (internal source: Virovek-SOP-037). Stored rBV should be used as seed stock for further amplification, not directly used for protein expression or AAV production.
+  3. Store at −80 °C for long-term storage. Stored rBV should be used as seed stock for further amplification, not directly used for protein expression or AAV production since sodium citrate may inhibit cell growth.
 </SectionBasic>
 
-<SectionBasic h2="5. Controls, reporting, and interpretation">
-  Record rBV identity, Sf9 culture identity, initial cell count and viability, culture volume, stock inoculum volume, incubation conditions, harvest date, clarification conditions, qPCR titer and assay reference, sodium citrate formulation, aliquot sizes, and storage location. Retain the qPCR titer file and aliquot record. A qPCR genome-based titer does not, by itself, establish infectious titer.
-</SectionBasic>
-
-<SectionBasic h2="6. Laboratory experience and limitations">
-  The protocol reflects the conditions documented in Virovek-SOP-003, Rev. 004. The 1:200 inoculation is volume-based and may not provide equivalent infection conditions for rBV stocks of different titers. Centrifugation is specified in rpm in the source SOP; the corresponding relative centrifugal force depends on rotor geometry. The source does not specify shaker speed, minimum cell viability, or a release specification for rBV titer; these should not be inferred.
-</SectionBasic>
-
-<SectionBasic h2="7. Safety and document control">
-  Handle recombinant baculovirus and infected insect cells under institutional biosafety procedures and approved recombinant DNA practices. Follow applicable laboratory rules for disinfectants, centrifugation, and low-temperature storage. Research use only; not for clinical administration or as evidence of GLP compliance.
-
-  <ArticleTable>
-    <tr slot="thead-contents">
-      <th>Document</th>
-      <th>Version</th>
-      <th>Change summary</th>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <th>VVK-PRO-003</th>
-      <td>1.0</td>
-      <td style={{maxWidth: '16rem'}}>VVK-PRO-003	1.0	Public research protocol adapted from Virovek-SOP-003 Rev. 004; reformatted for Knowledge Center publication.</td>
-    </tr>
-  </ArticleTable>
-</SectionBasic>
-
-<SectionBasic h2="8. References">
-  1. Virovek-SOP-003, Rev. 004 (October 29, 2025).
-  2. Haifeng Chen (2008), “Intron Splicing-Mediated Expression of AAV Rep and Cap Genes and Production of AAV in Insect Cells,” American Society of Gene Therapy (as cited in source SOP).
-  3. Invitrogen protocol (as cited in source SOP).
+<SectionBasic h2="5. References">
+  1. Virovek-SOP-003, Rev. 004 (October 29, 2025);
+  2. Invitrogen protocol (Bac-to-Bac™ Baculovirus Expression System USER GUIDE).
 </SectionBasic>

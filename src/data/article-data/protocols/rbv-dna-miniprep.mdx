@@ -9,6 +9,7 @@ metadata:
   version: "1.0"
   status: Established research laboratory protocol
   description: "Research use only. Public research protocol adapted from internal Virovek-SOP-002, Rev. 004 (October 29, 2025); independently maintained and not a controlled GLP SOP."
+  cells_wells: "Sf9 insect cells  |  Alkaline lysis and alcohol precipitation"
 keywords: ["recombinant baculovirus","rBV","Sf9","baculoviral DNA miniprep","alkaline lysis","isopropanol precipitation","qPCR","insect cell culture"]
 
 ---
@@ -25,7 +26,7 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
 </SectionBasic>
 
 <SectionBasic h2="2. Method principle">
-  Infected Sf9 cells are collected and subjected to sequential P1, P2, and P3 buffer treatment. Clarified lysate is subjected to isopropanol precipitation and an ethanol wash; recovered DNA is resuspended in TE buffer and evaluated by qPCR. This procedure uses the volumes and centrifugation settings described in Virovek-SOP-002, Rev. 004.
+  Infected Sf9 cells are collected and subjected to sequential P1, P2, and P3 buffer treatment. Clarified lysate is subjected to isopropanol precipitation and an ethanol wash; recovered DNA is resuspended in TE buffer and evaluated by qPCR.
 </SectionBasic>
 
 <SectionBasic h2="3. Materials, reagents, and equipment">
@@ -103,33 +104,7 @@ import ArticleCallout from "../../../components/article/article-callout.astro";
   3. Store the recovered baculoviral DNA at −20 °C.
 </SectionBasic>
 
-<SectionBasic h2="5. Controls, reporting, and interpretation">
-  Record the recombinant baculovirus/sample identifier, infected Sf9 culture source, preparation date, reagent identifiers where relevant, centrifugation settings, final resuspension volume, qPCR primer set, and qPCR results. The source SOP specifies qPCR verification but does not define acceptance criteria, DNA yield targets, or a quantitative purity threshold; these should not be inferred from this protocol.
-</SectionBasic>
-
-<SectionBasic h2="6. Laboratory experience and limitations">
-  This is an alkaline-lysis-based minipreparation from infected Sf9 cells. Recovery and suitability for downstream applications may vary with culture condition, infection state, and sample handling. Centrifugation is specified in rpm in the source SOP; relative centrifugal force depends on rotor geometry and should be documented when transferring the method to different equipment.
-</SectionBasic>
-
-<SectionBasic h2="7. Safety and document control">
-  Handle recombinant baculovirus-infected cultures and chemical reagents according to institutional biosafety assessments, chemical safety requirements, and approved waste-disposal procedures. This research protocol is not intended for clinical use or as evidence of GLP compliance.
-
-  <ArticleTable>
-    <tr slot="thead-contents">
-      <th>Document</th>
-      <th>Version</th>
-      <th>Change summary</th>
-    </tr>
-
-    <tr slot="tbody-contents">
-      <th>VVK-PRO-002</th>
-      <td>1.0</td>
-      <td style={{maxWidth: '16rem'}}>VVK-PRO-002	1.0	Public research protocol adapted from Virovek-SOP-002 Rev. 004; research-oriented organization and reporting notes.</td>
-    </tr>
-  </ArticleTable>
-</SectionBasic>
-
-<SectionBasic h2="8. References">
+<SectionBasic h2="5. References">
   1. Virovek-SOP-002, Rev. 004. Minipreparation of Recombinant Baculoviral DNA. October 29, 2025 (internal source).
   2. QIAprep Miniprep Handbook, Fourth Edition, June 2015 (cited in source SOP).
 </SectionBasic>
