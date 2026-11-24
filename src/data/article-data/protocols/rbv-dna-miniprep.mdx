@@ -1,0 +1,110 @@
+---
+title: Minipreparation of Recombinant Baculoviral DNA
+author: Virovek Team
+pubDate: 2026-11-18
+updatedDate: 2026-11-18
+tags: [protocols]
+metadata: 
+  document_number: VVK-PRO-002
+  version: "1.0"
+  status: Established research laboratory protocol
+  description: "Research use only. Public research protocol adapted from internal Virovek-SOP-002, Rev. 004 (October 29, 2025); independently maintained and not a controlled GLP SOP."
+  cells_wells: "Sf9 insect cells  |  Alkaline lysis and alcohol precipitation"
+keywords: ["recombinant baculovirus","rBV","Sf9","baculoviral DNA miniprep","alkaline lysis","isopropanol precipitation","qPCR","insect cell culture"]
+
+---
+
+import ArticleTable from "../../../components/article/article-table.astro"
+import SectionBasic from "../../../components/article/section-basic.astro";
+import SectionWithAside from "../../../components/article/section-with-aside.astro";
+import ArticleImage from "../../../components/article/article-image.astro";
+import SectionReferences from "../../../components/article/section-references.astro";
+import ArticleCallout from "../../../components/article/article-callout.astro";
+
+<SectionBasic h2="1. Purpose and scope">
+  This protocol describes minipreparation of recombinant baculoviral (rBV) DNA from infected Sf9 insect cells. The isolated DNA is intended for research analysis, including verification using appropriate qPCR primers.
+</SectionBasic>
+
+<SectionBasic h2="2. Method principle">
+  Infected Sf9 cells are collected and subjected to sequential P1, P2, and P3 buffer treatment. Clarified lysate is subjected to isopropanol precipitation and an ethanol wash; recovered DNA is resuspended in TE buffer and evaluated by qPCR.
+</SectionBasic>
+
+<SectionBasic h2="3. Materials, reagents, and equipment">
+  Sf9 cells infected with recombinant baculovirus; ESF AF medium; 6-well plates or culture bottles; microcentrifuge tubes; P1, P2, and P3 miniprep buffers (Qiagen); 99.99% isopropanol; 70% ethanol; TE buffer; CaviCide and 70% isopropanol for work-area cleaning; microcentrifuge; pipettes; and qPCR instrument with appropriate primers. Use laboratory-approved supplies and equipment.
+
+  <strong>Reagents and working quantities</strong>
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Reagent/input</th>
+      <th>Amount/condition</th>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Infected Sf9 cell sample</th>
+      <td>1 mL culture or one infected well of a 6-well plate</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>P1 buffer	</th>
+      <td>200 µL</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>P2 buffer (warm)</th>
+      <td>200 µL</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>P3 buffer (cold)</th>
+      <td>200 µL</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>Isopropanol (99.99%)	</th>
+      <td>420 µL</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>Ethanol (70%)	</th>
+      <td>500 µL</td>
+    </tr>
+
+    <tr slot="tbody-contents">
+      <th>TE buffer</th>
+      <td>30 µL</td>
+    </tr>
+  </ArticleTable>
+</SectionBasic>
+
+<SectionBasic h2="4. Procedure">
+  <h3>4.1. Prepare the work area and collect infected cells</h3>
+
+  1. Clear unnecessary materials and clean the workspace with Metrex CaviCide solution and 70% isopropanol.
+  2. Collect 1 mL of baculovirus-infected insect cell culture, or the infected cells from one well of a 6-well plate, into a microcentrifuge tube. Centrifuge at 13,000 rpm for 1 minute.
+  3. Discard the supernatant and add 200 µL P1 buffer to the pellet. Vortex to resuspend the cells.
+
+  <h3>4.2. Lyse cells and clarify the lysate</h3>
+
+  1. Add 200 µL warm P2 buffer and invert the tube 10 times to lyse the cells.
+  2. Add 200 µL cold P3 buffer, invert 10 times, and incubate on ice for 5 minutes.
+  3. Centrifuge at 13,000 rpm for 5 minutes. Transfer the supernatant to a fresh microcentrifuge tube.
+
+  <h3>4.3. Precipitate and wash DNA</h3>
+
+  1. Add 420 µL of 99.99% isopropanol to each tube and invert 10 times to mix.
+  2. Centrifuge at 13,000 rpm for 10 minutes and discard the supernatant.
+  3. Slowly add 500 µL of 70% ethanol and centrifuge at 13,000 rpm for 5 minutes.
+  4. Discard the supernatant and centrifuge again to remove residual liquid.
+
+  <h3>4.4. Resuspend, verify, and store DNA</h3>
+
+  1. Add 30 µL TE buffer and rinse the tube sidewall to recover the DNA.
+  2. Perform qPCR using appropriate primers to verify rBV DNA.
+  3. Store the recovered baculoviral DNA at −20 °C.
+</SectionBasic>
+
+<SectionBasic h2="5. References">
+  1. Virovek-SOP-002, Rev. 004. Minipreparation of Recombinant Baculoviral DNA. October 29, 2025 (internal source).
+  2. QIAprep Miniprep Handbook, Fourth Edition, June 2015 (cited in source SOP).
+</SectionBasic>

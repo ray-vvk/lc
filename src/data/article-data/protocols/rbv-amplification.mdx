@@ -1,0 +1,113 @@
+---
+title: Amplification of Recombinant Baculovirus (rBV)
+author: Virovek Team
+pubDate: 2026-11-18
+updatedDate: 2026-11-18
+tags: [protocols]
+metadata: 
+  document_number: VVK-PRO-003
+  version: "1.0"
+  status: Established research laboratory protocol
+  description: "Research use only. Public research protocol adapted from internal Virovek-SOP-003, Rev. 004 (October 29, 2025); independently maintained and not a controlled GLP SOP."
+  cells_wells: "Sf9 insect cell culture  |  Recombinant baculovirus stock amplification"
+keywords: ["recombinant baculovirus","rBV","Sf9","baculovirus amplification","insect cell culture","qPCR titer","sodium citrate","Bac-to-AAV",]
+
+---
+
+import ArticleTable from "../../../components/article/article-table.astro"
+import SectionBasic from "../../../components/article/section-basic.astro";
+import SectionWithAside from "../../../components/article/section-with-aside.astro";
+import ArticleImage from "../../../components/article/article-image.astro";
+import SectionReferences from "../../../components/article/section-references.astro";
+import ArticleCallout from "../../../components/article/article-callout.astro";
+
+<SectionBasic h2="1. Purpose and scope">
+  This protocol describes the amplification of recombinant baculovirus (rBV) in Sf9 insect cell suspension culture, recovery of the virus-containing culture supernatant, titer determination by qPCR, and preparation for storage. It is intended for laboratory research use.
+</SectionBasic>
+
+<SectionBasic h2="2. Method principle">
+  A recombinant baculovirus contains a heterologous DNA sequence introduced by recombinant DNA methods. Sf9 insect cells are infected with an rBV stock and maintained in shaking culture to amplify the virus. The clarified supernatant is sampled for qPCR-based titer determination and then prepared for long-term storage. The stated inoculation ratio is a volume ratio, not a defined multiplicity of infection (MOI).
+</SectionBasic>
+
+<SectionBasic h2="3. Materials and reagents">
+  Sf9 cell line; recombinant baculovirus stock; ESF AF medium; sodium citrate dihydrate; 70% isopropanol; suitable culture vessels; 250 mL centrifuge tubes; storage bottles and aliquot containers; pipettes; biological safety cabinet; incubator shaker; centrifuge; cell counter; microscope; and qPCR equipment. Use appropriate laboratory-approved equipment and reagent lots.
+
+  <ArticleTable>
+    <tr slot="thead-contents">
+      <th>Parameter</th>
+      <th>Source procedure condition</th>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Sf9 cell concentration at infection</th>
+      <td>2 × 10⁶ cells/mL</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>rBV inoculation</th>
+      <td>1:200 (v/v); example 1 mL stock (typical 1 x 10⁷ ~ 1 x 10⁸ pfu/mL) per 200 mL Sf9 culture</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Incubation</th>
+      <td>28 °C, shaking at 140 rpm, 3 days</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Harvest clarification</th>
+      <td>2,000 rpm, 5 minutes</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>qPCR sample	</th>
+      <td>0.1 mL</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Holding temperature pending titer</th>
+      <td>4 °C</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Storage additive</th>
+      <td>Sodium citrate, final 100 mM</td>
+    </tr>
+
+    <tr slot="thead-contents">
+      <th>Long-term storage</th>
+      <td>−80 °C</td>
+    </tr>
+  </ArticleTable>
+</SectionBasic>
+
+<SectionBasic h2="4. Procedure">
+  <h3>4.1. Prepare the work area and rBV stock</h3>
+
+  1. Prepare the biosafety cabinet according to the laboratory’s established procedures (internal source: Virovek-SOP-001).
+  2. Thaw the rBV stock using hand warmth; disinfect the outside of the vial with 70% isopropanol before transferring it into the biosafety cabinet. Record the rBV identity and stock information.
+
+  <h3>4.2. Prepare and infect Sf9 culture</h3>
+
+  1. Bring the Sf9 culture into the biosafety cabinet. Determine cell concentration and viability using the Countess II cell counter or manual cell counter.
+  2. Adjust the Sf9 suspension to 2 × 10⁶ cells/mL with fresh medium.
+  3. Add rBV stock at a 1:200 volume ratio (e.g., 1 mL rBV stock to 200 mL Sf9 cell culture). Record inoculum and culture volumes.
+  4. Incubate in a shaking incubator at 28 °C, 140 rpm, for 3 days.
+
+  <h3>4.3. Harvest and determine rBV titer</h3>
+
+  1. Transfer the culture to the biosafety cabinet and dispense into centrifuge tubes.
+  2. Centrifuge at 2,000 rpm for 5 minutes. Transfer the clarified supernatant into a fresh bottle in the cabinet.
+  3. Remove a 0.1 mL aliquot for qPCR. Hold the remaining supernatant at 4 °C while the rBV titer is determined.
+  4. Determine rBV titer by the laboratory’s established qPCR assay using primers corresponding to the GOI (we empirically determined that 1pfu is roughly 20 vg). The rBV is now ready for protein expression or AAV production depending on your experimental purposes.
+
+  <h3>4.4. Formulate and store rBV stock</h3>
+
+  1. If long term storage is required, add sodium citrate to a final concentration of 100 mM. Sodium citrate prevents rBV from aggregation and preserves its infectivity.
+  2. Dispense into appropriately sized, labeled aliquots for the intended research use. Typical vial sizes are 1 mL, 5 mL, or 10 mL.
+  3. Store at −80 °C for long-term storage. Stored rBV should be used as seed stock for further amplification, not directly used for protein expression or AAV production since sodium citrate may inhibit cell growth.
+</SectionBasic>
+
+<SectionBasic h2="5. References">
+  1. Virovek-SOP-003, Rev. 004 (October 29, 2025);
+  2. Invitrogen protocol (Bac-to-Bac™ Baculovirus Expression System USER GUIDE).
+</SectionBasic>
