@@ -199,6 +199,25 @@
     margin-bottom: 1.4rem;
   }
 
+  .comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.4rem 0;
+  }
+
+  .comparison th,
+  .comparison td {
+    border: 1px solid var(--line);
+    padding: 0.8rem;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .comparison th {
+    background: var(--pale);
+    color: var(--dark-blue);
+  }
+
   .callout {
     border-left: 5px solid var(--cyan);
     background: #eefaff;
@@ -299,6 +318,10 @@
         padding-bottom: 1rem;
       }
     }
+
+    .comparison {
+      min-width: 40rem;
+    }
   }
 
   @media (max-width: 600px) {
@@ -307,6 +330,9 @@
     }
     main section {
       padding: 2.4rem 0;
+    }
+    .comparison {
+      font-size: 1rem;
     }
   }
 </style>
