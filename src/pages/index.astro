@@ -54,19 +54,26 @@ const tagData = await getCollection("tagData");
           <h2 id="tags">Tags:</h2>
           <CardsLinks>
             {
-              tagData.map((tag) => {
-                const tagNamePretty = tag.data.name.replaceAll("-", " ");
-                return (
-                  <CardLink
-                    cardTitle={<span class="capitalize">{tagNamePretty}</span>}
-                    link={`/tags/${tag.id}`}
-                  >
-                    {tag.data.description
-                      ? tag.data.description
-                      : "Tag description goes here eventually."}
-                  </CardLink>
-                );
-              })
+              tagData
+                .sort((tag1, tag2) =>
+                  // just make sure miscellaneous is last.
+                  tag1.id === "miscellaneous" ? 1 : -1,
+                )
+                .map((tag) => {
+                  const tagNamePretty = tag.data.name.replaceAll("-", " ");
+                  return (
+                    <CardLink
+                      cardTitle={
+                        <span class="capitalize">{tagNamePretty}</span>
+                      }
+                      link={`/tags/${tag.id}`}
+                    >
+                      {tag.data.description
+                        ? tag.data.description
+                        : "Tag description goes here eventually."}
+                    </CardLink>
+                  );
+                })
             }
           </CardsLinks>
         </div>
